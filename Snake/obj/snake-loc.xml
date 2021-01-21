@@ -1,10 +1,142 @@
 <?xml version="1.0"?>
-<Locations>
+<Locations >
   <Project>
     <vfs_file />
-    <file_marker current="true" column=" 4" line=" 3" >
+    <file_marker column=" 4" line=" 3" >
       <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
       <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/gamecontext.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/gamecontext.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/gamecontext.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/gamecontext.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/Context/gamecontext-context.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/Context/gamecontext-context.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/Context/gamecontext.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 3" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/Context/gamecontext.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/Context/gamecontext.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/Context/gamecontext.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/Context/gamecontext-context.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/Context/gamecontext-context.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 32" line=" 4" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 11" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/Context/gamecontexts-gamecontext.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/Context/gamecontext.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 6" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/Context/gamecontexts.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/Context/gamecontexts.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 7" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 12" line=" 4" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 30" line=" 1" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 32" line=" 3" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/Context/gamecontexts-gamecontext.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 30" line=" 1" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 9" line=" 4" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 28" line=" 7" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/Context/gamecontexts-gamecontext.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 3" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/Context/gamecontexts-gameconfig.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 3" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/Context/gamecontexts-gameconfig.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 3" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/Context/gamecontexts-gameinfo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 3" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/Context/gamecontexts-gameinfo.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 28" line=" 7" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/Context/gamecontexts-gamecontext.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 3" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/utility.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 2" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/utility.ads</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 4" line=" 3" >
+      <vfs_project>/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr</vfs_project>
+      <vfs_file>/home/florent/Documents/Code/Ada/Snake/Snake/src/InGame/ingame.adb</vfs_file>
     </file_marker>
   </Project>
 </Locations>

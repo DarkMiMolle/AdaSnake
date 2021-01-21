@@ -1,0 +1,46 @@
+V "GNAT Lib v2020"
+M P W=b
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U main%b		main.adb		ba133990 NE OO SU
+W gamecontexts%s	gamecontexts.ads	gamecontexts.ali
+W gamecontexts.gamecontext%s  gamecontexts-gamecontext.ads  gamecontexts-gamecontext.ali
+
+D ada.ads		20200819050642 76789da1 ada%s
+D a-except.ads		20200819050642 a7106115 ada.exceptions%s
+D a-stream.ads		20200819050642 119b8fb3 ada.streams%s
+D a-tags.ads		20200819050643 edddc8f0 ada.tags%s
+D a-unccon.ads		20200819050643 0e9b276f ada.unchecked_conversion%s
+D gamecontexts.ads	20210121152042 f218144d gamecontexts%s
+D gamecontexts-gamecontext.ads  20210121152141 20b761f4 gamecontexts.gamecontext%s
+D main.adb		20210121152121 9aa45864 main%b
+D system.ads		20200819050647 4635ec04 system%s
+D s-exctab.ads		20200819050645 54135002 system.exception_table%s
+D s-parame.ads		20200819050646 4752c4cb system.parameters%s
+D s-secsta.ads		20200819050646 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20200819050646 a7318a92 system.soft_links%s
+D s-stache.ads		20200819050646 a37c21ec system.stack_checking%s
+D s-stalib.ads		20200819050646 6b7a13f2 system.standard_library%s
+D s-stoele.ads		20200819050646 2dc34a04 system.storage_elements%s
+D s-stratt.ads		20200819050646 9a2744e9 system.stream_attributes%s
+D s-traent.ads		20200819050646 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200819050646 5ecf7212 system.unsigned_types%s
+G a e
+G c Z b b [main standard 3 11 none]
+G r s context [main standard 3 11 none] [contextIP gamecontexts__gamecontext 6 14 none]
+X 6 gamecontexts.ads
+1K9*GameContexts 5e17 8|1r6 1r36
+X 7 gamecontexts-gamecontext.ads
+1K22*GameContext 11e29 8|1w19 4r12
+3R14*Context 8e19 8|4r24
+X 8 main.adb
+3U11*Main 3b11 8l5 8t9
+4r9 C{7|3R14}
+
