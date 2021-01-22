@@ -2,21 +2,23 @@ package GameContext is
 	-- it is unfortunatly not possible to separate package in multiple files.
 	-- The GameContext must define the Context which have the Config and the GameInfo, both of them need the Context to be set up.
 	
-	type Config is tagged private;
+	type Configuration is tagged private;
 	type GameInfo is tagged private;
-	type Context is tagged aliased private;
+	type Context is tagged private;
+	-- they aren't tagged because we want inherits them, but because we want to be able to use the dot notation.
 	
-	type ZoomIndice is new Positive range 1 .. 3;
+	type Key is (Up, Down, Left, Right, Pause, ExitGame);
 	type KeyMap is array (Key) of Character;
+	type ZoomIndice is new Positive range 1 .. 3;	
 	type Level is ( Lv1, Lv2, LvCustom);
 	
 	
 	-- Config
 	procedure SetUpConfig(ctxt: access Context);
 	
-	function Color(c: in Config) return Boolean;
-	function Zoom(c: in Config) return ZoomIndice;
-	function KeyMapped(c: in Config; k: Key) return Character;
+	function Color(c: in Configuration) return Boolean;
+	function Zoom(c: in Configuration) return ZoomIndice;
+	function KeyMapped(c: in Configuration; k: Key) return Character;
 	
 	
 	-- GameInfo
@@ -32,16 +34,16 @@ package GameContext is
 	
 	function MaxWidth(ctxt: in Context) return Positive;
 	function MaxHeight(ctxt: in Context) return Positive;
-	function Config(ctxt: in Context) return Config;
-	function Game(ctxt: in out Context) return access GameInfo; 
+	function Config(ctxt: in Context) return Configuration'Class; -- to make the dispatching possible
+	function Game(ctxt: in out Context) return access GameInfo'Class; -- to make the dispatching possible
 	-- return *GameInfo, we want to be able to modify it
 	-- not: to return the access to the GameInfo, we must use: 'Access or 'Unchecked_Access
 	-- the in out allows us to return a non const access.
 	
 private
 	
-	type Config is tagged record
-		keymap: KeyMap := (
+	type Configuration is tagged record
+		keymapping: KeyMap := (
 					 Up => 'z',
 					 Down => 's',
 					 Left => 'q',
@@ -56,12 +58,13 @@ private
 	type GameInfo is tagged record
 		running: Boolean := False;
 		pausing: Boolean := False;
-		level: Level := 1;
-		lvRef: String; -- or Ada.File. to the .snake.sv
+		lv: Level := Lv1;
+		lvRef: Character; -- or Ada.File. to the .snake.sv
 	end record;
 	
-	type Context(maxWidth, maxHeight: Positive) is tagged record
-		conf: Config;
+	type Context is tagged record
+		maxWidth, maxHeight: Positive;
+		conf: Configuration;
 		game: aliased GameInfo; -- aliased means that it is store on the stack (and then has an address) instead of on a register
 	end record;
 	

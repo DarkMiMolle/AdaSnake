@@ -1,4 +1,4 @@
-with GameContexts.GameContext; use GameContexts;
+with GameContext;
 
 procedure Main is
 	C: GameContext.Context;

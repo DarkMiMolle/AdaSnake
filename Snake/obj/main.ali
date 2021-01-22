@@ -9,18 +9,16 @@ RN
 RV NO_DEFAULT_INITIALIZATION
 RV NO_IMPLEMENTATION_PRAGMAS
 
-U main%b		main.adb		ba133990 NE OO SU
-W gamecontexts%s	gamecontexts.ads	gamecontexts.ali
-W gamecontexts.gamecontext%s  gamecontexts-gamecontext.ads  gamecontexts-gamecontext.ali
+U main%b		main.adb		94cce417 NE OO SU
+W gamecontext%s		gamecontext.adb		gamecontext.ali
 
 D ada.ads		20200819050642 76789da1 ada%s
 D a-except.ads		20200819050642 a7106115 ada.exceptions%s
 D a-stream.ads		20200819050642 119b8fb3 ada.streams%s
 D a-tags.ads		20200819050643 edddc8f0 ada.tags%s
 D a-unccon.ads		20200819050643 0e9b276f ada.unchecked_conversion%s
-D gamecontexts.ads	20210121152042 f218144d gamecontexts%s
-D gamecontexts-gamecontext.ads  20210121152141 20b761f4 gamecontexts.gamecontext%s
-D main.adb		20210121152121 9aa45864 main%b
+D gamecontext.ads	20210122140520 6ac17496 gamecontext%s
+D main.adb		20210122135353 fe0d9081 main%b
 D system.ads		20200819050647 4635ec04 system%s
 D s-exctab.ads		20200819050645 54135002 system.exception_table%s
 D s-parame.ads		20200819050646 4752c4cb system.parameters%s
@@ -34,13 +32,11 @@ D s-traent.ads		20200819050646 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20200819050646 5ecf7212 system.unsigned_types%s
 G a e
 G c Z b b [main standard 3 11 none]
-G r s context [main standard 3 11 none] [contextIP gamecontexts__gamecontext 6 14 none]
-X 6 gamecontexts.ads
-1K9*GameContexts 5e17 8|1r6 1r36
-X 7 gamecontexts-gamecontext.ads
-1K22*GameContext 11e29 8|1w19 4r12
-3R14*Context 8e19 8|4r24
-X 8 main.adb
+G r s context [main standard 3 11 none] [contextIP gamecontext 64 14 none]
+X 6 gamecontext.ads
+1K9*GameContext 74e16 7|1w6 4r12
+7R14*Context 68e19 7|4r24
+X 7 main.adb
 3U11*Main 3b11 8l5 8t9
-4r9 C{7|3R14}
+4r9 C{6|7R14}
 
