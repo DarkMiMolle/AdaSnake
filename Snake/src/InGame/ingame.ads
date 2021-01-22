@@ -1,10 +1,12 @@
+with Snake;
+with GameContexts;
 package InGame is
-	with Snake;
 
 	package SnakePkg renames Snake;
-	function CreatSnake return SnakePkg.Snake renames SnakePkg.Creat;
+	function CreatSnake(ctxt: in out GameContexts.Context) return SnakePkg.Snake renames SnakePkg.Creat;
 	
 	subtype Snake is SnakePkg.Snake; -- "rename" Snake.Snake in InGame.Snake
    
+	
 
 end InGame;

@@ -1,13 +1,14 @@
+with GameContexts;
 package Snake is
 
 	type Snake is tagged private;
 	
-	function Creat return Snake;
+	function Creat(ctxt: in out GameContexts.Context) return Snake;
 	
 private
 	
 	type Snake is tagged record
-		
+		ctxt: access GameContexts.Context;
 	end record;
 	
 

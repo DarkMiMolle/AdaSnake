@@ -1,0 +1,3 @@
+gamecontexts-gameconfig.ads:3:27: missing "new"
+gamecontexts-gameconfig.ads:7:38: missing ";"
+gamecontexts-gameconfig.ads:13:43: missing ":"

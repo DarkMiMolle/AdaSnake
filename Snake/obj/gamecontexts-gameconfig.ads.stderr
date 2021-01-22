@@ -1,0 +1,9 @@
+gamecontexts-gameconfig.ads:1:06: circular unit dependency
+gamecontexts-gameconfig.ads:1:06: "Gamecontexts.Gameconfig (spec)" depends on "Gamecontexts.Gamecontext (spec)"
+gamecontexts-gameconfig.ads:1:06: "Gamecontexts.Gamecontext (spec)" depends on "Gamecontexts.Gameconfig (spec)"
+gamecontexts-gameconfig.adb:1:26: circular unit dependency
+gamecontexts-gameconfig.adb:1:26: "Gamecontexts.Gameconfig (spec)" depends on "Gamecontexts.Gamecontext (spec)"
+gamecontexts-gameconfig.adb:1:26: "Gamecontexts.Gamecontext (spec)" depends on "Gamecontexts.Gameconfig (spec)"
+gamecontexts-gameconfig.adb:1:26: "Gamecontexts.Gameconfig (spec)" depends on "Gamecontexts.Gameconfig (body)"
+gamecontexts-gameconfig.adb:1:26: "Gamecontexts.Gameconfig (body)" depends on "Gamecontexts.Gameconfig (spec)"
+gamecontexts-gameconfig.adb:1:26: "Gamecontexts.Gameconfig (spec)" depends on "Gamecontexts.Gameconfig (spec)"
