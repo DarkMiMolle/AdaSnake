@@ -4,7 +4,7 @@ package GameContexts.GameConfig is
 	
 	type KeyMap is array (Key) of Character;
 	
-	type Config is private
+	type Config is tagged private
 	
 	procedure SetUpConfig(ctxt: in out GameContext.Context);
 	

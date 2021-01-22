@@ -1,6 +1,6 @@
 package GameContexts.GameContext  is
 
-	type Context is private;
+	type Context is tagged private;
 	
 	function CreatContext(width, height: Positive) return Context;
 	

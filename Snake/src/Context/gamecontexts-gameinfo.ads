@@ -2,7 +2,7 @@ package GameContexts.GameInfo is
 
 	type Level is ( Lv1, Lv2, LvCustom);
 	
-	type GameInfo is private;
+	type GameInfo is tagged private;
 	
 	procedure SetUpGameInfo(ctxt: in out GameContext.Context);
 	
