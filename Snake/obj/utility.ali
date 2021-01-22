@@ -1,0 +1,295 @@
+V "GNAT Lib v2020"
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U utility%b		utility.adb		9e84fb02 NE OO PK
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W interfaces.c.strings%s  i-cstrin.adb		i-cstrin.ali
+
+U utility%s		utility.ads		1224d6ef EE OO PF PK
+W ada%s			ada.ads			ada.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+Z ada.containers.generic_array_sort%s
+Z ada.containers.helpers%s  a-conhel.adb	a-conhel.ali
+W ada.containers.vectors%s
+Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.finalization%s	a-finali.ads		a-finali.ali
+Z ada.iterator_interfaces%s
+Z ada.streams%s		a-stream.adb		a-stream.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z ada.unchecked_deallocation%s
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W interfaces.c.strings%s  i-cstrin.adb		i-cstrin.ali
+Z system%s		system.ads		system.ali
+Z system.finalization_masters%s  s-finmas.adb	s-finmas.ali
+Z system.pool_global%s	s-pooglo.adb		s-pooglo.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+Z system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
+Z system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+Z system.tasking%s	s-taskin.adb		s-taskin.ali
+
+D ada.ads		20200819050642 76789da1 ada%s
+D a-contai.ads		20200819050641 61e5e089 ada.containers%s
+D a-cgarso.ads		20200819050641 9129bfa8 ada.containers.generic_array_sort%s
+D a-conhel.ads		20200819050641 20298884 ada.containers.helpers%s
+D a-conhel.adb		20200819050641 e8b6ff51 ada.containers.helpers%b
+D a-convec.ads		20200819050641 7e2b0fdf ada.containers.vectors%s
+D a-convec.adb		20200819050641 0b31d694 ada.containers.vectors%b
+D a-except.ads		20200819050642 a7106115 ada.exceptions%s
+D a-finali.ads		20200819050642 bf4f806b ada.finalization%s
+D a-iteint.ads		20200819050642 7c7305e9 ada.iterator_interfaces%s
+D a-stream.ads		20200819050642 119b8fb3 ada.streams%s
+D a-tags.ads		20200819050643 edddc8f0 ada.tags%s
+D a-unccon.ads		20200819050643 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		20200819050643 eff36322 ada.unchecked_deallocation%s
+D interfac.ads		20200819050644 5ab55268 interfaces%s
+D i-c.ads		20200819050644 c624fa43 interfaces.c%s
+D i-cstrin.ads		20200819050644 341d0ddf interfaces.c.strings%s
+D system.ads		20200819050647 4635ec04 system%s
+D s-atacco.ads		20200819050645 4c36d12f system.address_to_access_conversions%s
+D s-atocou.ads		20200819050645 b45c2d8d system.atomic_counters%s
+D s-atocou.adb		20200819050645 b65612c0 system.atomic_counters%b
+D s-exctab.ads		20200819050645 54135002 system.exception_table%s
+D s-finmas.ads		20200819050645 7811a767 system.finalization_masters%s
+D s-finroo.ads		20200819050645 4ff27390 system.finalization_root%s
+D s-linux.ads		20200819050640 ed0b8aee system.linux%s
+D s-memory.ads		20200819050645 597d6634 system.memory%s
+D s-multip.ads		20200819050645 38ac9f73 system.multiprocessors%s
+D s-oscons.ads		20200819100019 ffb5e830 system.os_constants%s
+D s-osinte.ads		20200819050640 675bad69 system.os_interface%s
+D s-parame.ads		20200819050646 4752c4cb system.parameters%s
+D s-pooglo.ads		20200819050646 ede33ef8 system.pool_global%s
+D s-secsta.ads		20200819050646 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20200819050646 a7318a92 system.soft_links%s
+D s-stache.ads		20200819050646 a37c21ec system.stack_checking%s
+D s-stausa.ads		20200819050646 017a0a05 system.stack_usage%s
+D s-stalib.ads		20200819050646 6b7a13f2 system.standard_library%s
+D s-stalib.adb		20200819050646 f2fe2716 system.standard_library%b
+D s-stoele.ads		20200819050646 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20200819050646 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20200819050646 e9fa2dd8 system.storage_pools%s
+D s-stposu.ads		20200819050646 e251976f system.storage_pools.subpools%s
+D s-stratt.ads		20200819050646 9a2744e9 system.stream_attributes%s
+D s-tasinf.ads		20200819050641 2b3f8252 system.task_info%s
+D s-taspri.ads		20200819050641 f40ac08d system.task_primitives%s
+D s-taskin.ads		20200819050641 88fba9ad system.tasking%s
+D s-traent.ads		20200819050646 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200819050646 5ecf7212 system.unsigned_types%s
+D utility.ads		20210122163744 9e362eac utility%s
+D utility.adb		20210122163809 34afd871 utility%b
+G a e
+G c Z s s [positionIP utility 8 14 none]
+G c Z s s [has_element utility__vectorpospkg 107 13 12_9]
+G c Z s s [Oeq utility__vectorpospkg 117 24 12_9]
+G c Z s s [to_vector utility__vectorpospkg 126 13 12_9]
+G c Z s s [to_vector utility__vectorpospkg 129 13 12_9]
+G c Z s s [Oconcat utility__vectorpospkg 135 13 12_9]
+G c Z s s [Oconcat utility__vectorpospkg 139 13 12_9]
+G c Z s s [Oconcat utility__vectorpospkg 143 13 12_9]
+G c Z s s [Oconcat utility__vectorpospkg 147 13 12_9]
+G c Z s s [capacity utility__vectorpospkg 151 13 12_9]
+G c Z s s [reserve_capacity utility__vectorpospkg 154 14 12_9]
+G c Z s s [length utility__vectorpospkg 165 13 12_9]
+G c Z s s [set_length utility__vectorpospkg 168 14 12_9]
+G c Z s s [is_empty utility__vectorpospkg 177 13 12_9]
+G c Z s s [clear utility__vectorpospkg 180 14 12_9]
+G c Z s s [to_cursor utility__vectorpospkg 184 13 12_9]
+G c Z s s [to_index utility__vectorpospkg 191 13 12_9]
+G c Z s s [element utility__vectorpospkg 196 13 12_9]
+G c Z s s [element utility__vectorpospkg 203 13 12_9]
+G c Z s s [replace_element utility__vectorpospkg 207 14 12_9]
+G c Z s s [replace_element utility__vectorpospkg 218 14 12_9]
+G c Z s s [query_element utility__vectorpospkg 229 14 12_9]
+G c Z s s [query_element utility__vectorpospkg 240 14 12_9]
+G c Z s s [update_element utility__vectorpospkg 249 14 12_9]
+G c Z s s [update_element utility__vectorpospkg 266 14 12_9]
+G c Z s s [constant_reference utility__vectorpospkg 293 13 12_9]
+G c Z s s [reference utility__vectorpospkg 298 13 12_9]
+G c Z s s [constant_reference utility__vectorpospkg 303 13 12_9]
+G c Z s s [reference utility__vectorpospkg 308 13 12_9]
+G c Z s s [assign utility__vectorpospkg 313 14 12_9]
+G c Z s s [copy utility__vectorpospkg 315 13 12_9]
+G c Z s s [move utility__vectorpospkg 317 14 12_9]
+G c Z s s [insert utility__vectorpospkg 323 14 12_9]
+G c Z s s [insert utility__vectorpospkg 341 14 12_9]
+G c Z s s [insert utility__vectorpospkg 352 14 12_9]
+G c Z s s [insert utility__vectorpospkg 363 14 12_9]
+G c Z s s [insert utility__vectorpospkg 370 14 12_9]
+G c Z s s [insert utility__vectorpospkg 377 14 12_9]
+G c Z s s [insert utility__vectorpospkg 386 14 12_9]
+G c Z s s [insert utility__vectorpospkg 403 14 12_9]
+G c Z s s [prepend utility__vectorpospkg 414 14 12_9]
+G c Z s s [prepend utility__vectorpospkg 419 14 12_9]
+G c Z s s [append utility__vectorpospkg 426 14 12_9]
+G c Z s s [append utility__vectorpospkg 431 14 12_9]
+G c Z s s [insert_space utility__vectorpospkg 438 14 12_9]
+G c Z s s [insert_space utility__vectorpospkg 455 14 12_9]
+G c Z s s [delete utility__vectorpospkg 466 14 12_9]
+G c Z s s [delete utility__vectorpospkg 476 14 12_9]
+G c Z s s [delete_first utility__vectorpospkg 485 14 12_9]
+G c Z s s [delete_last utility__vectorpospkg 490 14 12_9]
+G c Z s s [reverse_elements utility__vectorpospkg 498 14 12_9]
+G c Z s s [swap utility__vectorpospkg 501 14 12_9]
+G c Z s s [swap utility__vectorpospkg 506 14 12_9]
+G c Z s s [first_index utility__vectorpospkg 512 13 12_9]
+G c Z s s [first utility__vectorpospkg 515 13 12_9]
+G c Z s s [first_element utility__vectorpospkg 519 13 12_9]
+G c Z s s [last_index utility__vectorpospkg 522 13 12_9]
+G c Z s s [last utility__vectorpospkg 526 13 12_9]
+G c Z s s [last_element utility__vectorpospkg 530 13 12_9]
+G c Z s s [next utility__vectorpospkg 533 13 12_9]
+G c Z s s [next utility__vectorpospkg 539 14 12_9]
+G c Z s s [previous utility__vectorpospkg 542 13 12_9]
+G c Z s s [previous utility__vectorpospkg 548 14 12_9]
+G c Z s s [find_index utility__vectorpospkg 551 13 12_9]
+G c Z s s [find utility__vectorpospkg 561 13 12_9]
+G c Z s s [reverse_find_index utility__vectorpospkg 575 13 12_9]
+G c Z s s [reverse_find utility__vectorpospkg 587 13 12_9]
+G c Z s s [contains utility__vectorpospkg 601 13 12_9]
+G c Z s s [iterate utility__vectorpospkg 606 14 12_9]
+G c Z s s [reverse_iterate utility__vectorpospkg 614 14 12_9]
+G c Z s s [iterate utility__vectorpospkg 621 13 12_9]
+G c Z s s [iterate utility__vectorpospkg 624 13 12_9]
+G c Z s s [adjust utility__vectorpospkg__implementation 90 28 678_4_12_9]
+G c Z s s [finalize utility__vectorpospkg__implementation 93 28 678_4_12_9]
+G c Z s s [zero_counts utility__vectorpospkg__implementation 96 17 678_4_12_9]
+G c Z s s [busy utility__vectorpospkg__implementation 100 17 678_4_12_9]
+G c Z s s [unbusy utility__vectorpospkg__implementation 104 17 678_4_12_9]
+G c Z s s [lock utility__vectorpospkg__implementation 108 17 678_4_12_9]
+G c Z s s [unlock utility__vectorpospkg__implementation 112 17 678_4_12_9]
+G c Z s s [tc_check utility__vectorpospkg__implementation 116 17 678_4_12_9]
+G c Z s s [te_check utility__vectorpospkg__implementation 120 17 678_4_12_9]
+G c Z s s [initialize utility__vectorpospkg__implementation 139 28 678_4_12_9]
+G c Z s s [finalize utility__vectorpospkg__implementation 140 28 678_4_12_9]
+G c Z s s [initialize utility__vectorpospkg__implementation 145 28 678_4_12_9]
+G c Z s s [finalize utility__vectorpospkg__implementation 146 28 678_4_12_9]
+G c Z s s [reference_control_typeDA utility__vectorpospkg__implementation 84 12 678_4_12_9]
+G c Z s s [reference_control_typeDF utility__vectorpospkg__implementation 84 12 678_4_12_9]
+G c Z s s [reference_control_typeIP utility__vectorpospkg__implementation 84 12 678_4_12_9]
+G c Z s s [with_busyDF utility__vectorpospkg__implementation 136 12 678_4_12_9]
+G c Z s s [with_busyIP utility__vectorpospkg__implementation 136 12 678_4_12_9]
+G c Z s s [with_lockDF utility__vectorpospkg__implementation 142 12 678_4_12_9]
+G c Z s s [with_lockIP utility__vectorpospkg__implementation 142 12 678_4_12_9]
+G c Z s s [adjust utility__vectorpospkg 699 25 12_9]
+G c Z s s [finalize utility__vectorpospkg 700 25 12_9]
+G c Z s s [write utility__vectorpospkg 702 14 12_9]
+G c Z s s [read utility__vectorpospkg 708 14 12_9]
+G c Z s s [read utility__vectorpospkg 722 14 12_9]
+G c Z s s [write utility__vectorpospkg 728 14 12_9]
+G c Z s s [write utility__vectorpospkg 747 14 12_9]
+G c Z s s [read utility__vectorpospkg 753 14 12_9]
+G c Z s s [write utility__vectorpospkg 769 14 12_9]
+G c Z s s [read utility__vectorpospkg 775 14 12_9]
+G c Z s s [pseudo_reference utility__vectorpospkg 786 13 12_9]
+G c Z s s [get_element_access utility__vectorpospkg 795 13 12_9]
+G c Z s s [cursorIP utility__vectorpospkg 717 9 12_9]
+G c Z s s [vectorDA utility__vectorpospkg 693 9 12_9]
+G c Z s s [vectorDF utility__vectorpospkg 693 9 12_9]
+G c Z s s [vectorIP utility__vectorpospkg 693 9 12_9]
+G c Z s s [constant_reference_typeDI utility__vectorpospkg 737 9 12_9]
+G c Z s s [constant_reference_typeDA utility__vectorpospkg 737 9 12_9]
+G c Z s s [constant_reference_typeDF utility__vectorpospkg 737 9 12_9]
+G c Z s s [constant_reference_typeIP utility__vectorpospkg 737 9 12_9]
+G c Z s s [reference_typeDI utility__vectorpospkg 759 9 12_9]
+G c Z s s [reference_typeDA utility__vectorpospkg 759 9 12_9]
+G c Z s s [reference_typeDF utility__vectorpospkg 759 9 12_9]
+G c Z s s [reference_typeIP utility__vectorpospkg 759 9 12_9]
+G c Z s s [finalize utility__vectorpospkg 811 25 12_9]
+G c Z s s [first utility__vectorpospkg 813 24 12_9]
+G c Z s s [last utility__vectorpospkg 814 24 12_9]
+G c Z s s [next utility__vectorpospkg 816 24 12_9]
+G c Z s s [previous utility__vectorpospkg 820 24 12_9]
+G c Z s s [elements_arrayIP utility__vectorpospkg 681 9 12_9]
+G c Z s s [elements_typeIP utility__vectorpospkg 684 9 12_9]
+G c Z s s [iteratorDF utility__vectorpospkg 803 9 12_9]
+G c Z s s [iteratorIP utility__vectorpospkg 803 9 12_9]
+G c Z s s [free utility__vectorpospkg 41 14 12_9]
+G c Z s s [append_slow_path utility__vectorpospkg 44 14 12_9]
+G c Z s b [print utility 19 19 none]
+G c Z s b [moveto utility 20 19 none]
+G c Z s b [setcolor utility 21 19 none]
+G c Z s s [c_print_at utility 24 19 none]
+G c Z s s [c_move_to utility 27 19 none]
+G c Z s s [c_set_color utility 30 19 none]
+X 1 ada.ads
+16K9*Ada 20e8 48|3r6 3r34
+X 2 a-contai.ads
+16K13*Containers 28e19 48|3r10 3r38
+X 6 a-convec.ads
+73k24*Vectors 824e27 48|3w21 12r37
+88R9*Vector<9|43R9> 48|13r43[12]
+X 10 a-iteint.ads
+24h9 Forward_Iterator
+32h9 Reversible_Iterator<24R9[6|111]>
+X 15 interfac.ads
+38K9*Interfaces 184e15 48|1r6 1r24 2r6 49|1r6 1r32
+X 16 i-c.ads
+18K20*C 232e17 48|1w17 1r35 2r17 49|1r17 1r43
+35I9*int<integer> 48|24r57 24r65 27r32 27r40 30r34 49|8r31 8r44 14r27 14r35
+. 19r29
+X 17 i-cstrin.ads
+36K22*Strings 106e25 48|2w19 24r35 49|1w19 6r20 6r41 9r17
+47P9*chars_ptr 48|24r43 49|6r28
+60V13*New_String{47P9} 49|6s49
+62U14*Free 49|9s25
+X 18 system.ads
+67M9*Address
+X 26 s-memory.ads
+53V13*Alloc{18|67M9} 103i<c,__gnat_malloc>22
+68U14*Free 104i<c,__gnat_free>22
+76V13*Realloc{18|67M9} 105i<c,__gnat_realloc>22
+X 35 s-stausa.ads
+208U14*Initialize 209i<c,__gnat_stack_usage_initialize>22
+273U14*Output_Results 277i<c,__gnat_stack_usage_output_results>22
+X 37 s-stalib.adb
+93U14 Break_Start 94i<c,__gnat_break_start>22
+X 48 utility.ads
+4K9*Utility 24E19 33l5 33e12 49|2b14 23l5 23t12
+6i9*StartTerm{integer}
+8R14*Position 10e19 12r54 19r44 49|5r44
+9i17*x{integer} 49|8r40
+9i20*y{integer} 49|8r53
+12K17*VectorPosPkg[6|73] 13r30
+13R17*VectorPos{6|88R9[12]}
+16E14*ColorName 16e65 21r31 49|17r31 19r33
+16n28*Blue{16E14}
+16n34*Red{16E14}
+16n39*Green{16E14}
+16n46*Brown{16E14}
+16n53*Black{16E14}
+16n60*None{16E14}
+19U19*Print 19>25 19>38 49|5b19 10l13 10t18
+19a25 str{string} 49|5b25 6r60
+19r38 from{8R14} 49|5b38 8r35 8r48
+20U19*MoveTo 20>26 20>29 49|12b19 15l13 15t19
+20i26 x{integer} 49|12b26 14r31
+20i29 y{integer} 49|12b29 14r39
+21U19*SetColor 21>28 49|17b19 20l13 20t21
+21e28 c{16E14} 49|17b28 19r47
+24U19 C_print_at 24>30 24>54 24>62 49|8s17
+24p30 str{17|47P9}
+24i54 x{16|35I9}
+24i62 y{16|35I9}
+27U19 C_move_to 27>29 27>37 49|14s17
+27i29 x{16|35I9}
+27i37 y{16|35I9}
+30U19 C_set_color 30>31 49|19s17
+30i31 c{16|35I9}
+X 49 utility.adb
+6p17 s{17|47P9} 8r28 9m30 9r30
+

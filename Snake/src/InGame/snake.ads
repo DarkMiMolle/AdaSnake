@@ -12,7 +12,7 @@ package Snake is
 		Right: constant Dir := 2;
 	end Direction;
 	
-	function NextPosFrom(dir: constant Direction; pos: Position) return Position;
+	function NextPosFrom(dir: in Direction.Dir; pos: Position) return Position;
 	
 	function Creat(ctxt: in out GameContext.Context) return Snake;
 	
@@ -22,7 +22,7 @@ package Snake is
 	procedure Move(s: in out Snake);
 	procedure Pos(s: in out Snake; p: Position);
 	function Pos(s: in Snake) return Position;
-	procedure ChangeDir(s: in out Snake; dir: constant Direction.Dir);
+	procedure ChangeDir(s: in out Snake; dir: in Direction.Dir);
 	
 	procedure AddPoint(s: in out Snake);
 	function Score(s: in out Snake) return Integer;

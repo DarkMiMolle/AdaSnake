@@ -1,4 +1,5 @@
 with Ada.Strings.Unbounded;
+with Utility; use Utility;
 package GameContext is
 	-- it is unfortunatly not possible to separate package in multiple files.
 	-- The GameContext must define the Context which have the Config and the GameInfo, both of them need the Context to be set up.
@@ -33,10 +34,10 @@ package GameContext is
 	
 	
 	-- Context
-	function CreatContext(width, height: Positive) return Context;
+	function CreatContext(width, height: SizeTerm) return Context;
 	
-	function MaxWidth(ctxt: in Context) return Positive;
-	function MaxHeight(ctxt: in Context) return Positive;
+	function MaxWidth(ctxt: in Context) return SizeTerm;
+	function MaxHeight(ctxt: in Context) return SizeTerm;
 	function Config(ctxt: in Context) return Configuration'Class; -- to make the dispatching possible
 	function Game(ctxt: in out Context) return access GameInfo'Class; -- to make the dispatching possible
 	-- return *GameInfo, we want to be able to modify it
@@ -66,7 +67,7 @@ private
 	end record;
 	
 	type Context is tagged record
-		maxWidth, maxHeight: Positive;
+		maxWidth, maxHeight: SizeTerm;
 		conf: Configuration;
 		game: aliased GameInfo; -- aliased means that it is store on the stack (and then has an address) instead of on a register
 	end record;
