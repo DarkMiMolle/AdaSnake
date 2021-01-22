@@ -1,6 +1,9 @@
+with Ada.Strings.Unbounded;
 package GameContext is
 	-- it is unfortunatly not possible to separate package in multiple files.
 	-- The GameContext must define the Context which have the Config and the GameInfo, both of them need the Context to be set up.
+	package Str renames Ada.Strings.Unbounded;
+	use Str;
 	
 	type Configuration is tagged private;
 	type GameInfo is tagged private;
@@ -59,7 +62,7 @@ private
 		running: Boolean := False;
 		pausing: Boolean := False;
 		lv: Level := Lv1;
-		lvRef: Character; -- or Ada.File. to the .snake.sv
+		lvRef: Unbounded_String; -- or Ada.File. to the .snake.sv
 	end record;
 	
 	type Context is tagged record

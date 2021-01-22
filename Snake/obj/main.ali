@@ -6,37 +6,71 @@ A -march=x86-64
 P SS ZX
 
 RN
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTION_PROPAGATION
+RV NO_EXCEPTIONS
+RV NO_NESTED_FINALIZATION
 RV NO_DEFAULT_INITIALIZATION
 RV NO_IMPLEMENTATION_PRAGMAS
 
-U main%b		main.adb		94cce417 NE OO SU
+U main%b		main.adb		fad605d1 NE OO SU
+Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
 W gamecontext%s		gamecontext.adb		gamecontext.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
 
 D ada.ads		20200819050642 76789da1 ada%s
+D a-charac.ads		20200819050641 2d3ec45b ada.characters%s
+D a-chlat1.ads		20200819050641 66457d31 ada.characters.latin_1%s
 D a-except.ads		20200819050642 a7106115 ada.exceptions%s
+D a-finali.ads		20200819050642 bf4f806b ada.finalization%s
 D a-stream.ads		20200819050642 119b8fb3 ada.streams%s
+D a-string.ads		20200819050642 90ac6797 ada.strings%s
+D a-strmap.ads		20200819050642 e8bb714a ada.strings.maps%s
+D a-strunb.ads		20200819050642 1656705b ada.strings.unbounded%s
 D a-tags.ads		20200819050643 edddc8f0 ada.tags%s
 D a-unccon.ads		20200819050643 0e9b276f ada.unchecked_conversion%s
-D gamecontext.ads	20210122140520 6ac17496 gamecontext%s
+D a-uncdea.ads		20200819050643 eff36322 ada.unchecked_deallocation%s
+D gamecontext.ads	20210122144158 04db9550 gamecontext%s
 D main.adb		20210122135353 fe0d9081 main%b
 D system.ads		20200819050647 4635ec04 system%s
+D s-atocou.ads		20200819050645 b45c2d8d system.atomic_counters%s
 D s-exctab.ads		20200819050645 54135002 system.exception_table%s
+D s-finmas.ads		20200819050645 7811a767 system.finalization_masters%s
+D s-finroo.ads		20200819050645 4ff27390 system.finalization_root%s
+D s-memory.ads		20200819050645 597d6634 system.memory%s
 D s-parame.ads		20200819050646 4752c4cb system.parameters%s
 D s-secsta.ads		20200819050646 9b3ab94b system.secondary_stack%s
 D s-soflin.ads		20200819050646 a7318a92 system.soft_links%s
 D s-stache.ads		20200819050646 a37c21ec system.stack_checking%s
 D s-stalib.ads		20200819050646 6b7a13f2 system.standard_library%s
+D s-stalib.adb		20200819050646 f2fe2716 system.standard_library%b
 D s-stoele.ads		20200819050646 2dc34a04 system.storage_elements%s
+D s-stopoo.ads		20200819050646 e9fa2dd8 system.storage_pools%s
+D s-stposu.ads		20200819050646 e251976f system.storage_pools.subpools%s
 D s-stratt.ads		20200819050646 9a2744e9 system.stream_attributes%s
+D s-string.ads		20200819050646 8fe54fb7 system.strings%s
+D s-ststop.ads		20200819050646 5fbf1b38 system.strings.stream_ops%s
 D s-traent.ads		20200819050646 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20200819050646 5ecf7212 system.unsigned_types%s
 G a e
 G c Z b b [main standard 3 11 none]
-G r s context [main standard 3 11 none] [contextIP gamecontext 64 14 none]
-X 6 gamecontext.ads
-1K9*GameContext 74e16 7|1w6 4r12
-7R14*Context 68e19 7|4r24
-X 7 main.adb
+G r s context [main standard 3 11 none] [contextIP gamecontext 68 14 none]
+G r l context [main standard 3 11 none] [contextDI gamecontext 68 14 none]
+G r k context [main standard 3 11 none] [contextDF gamecontext 68 14 none]
+X 13 gamecontext.ads
+2K9*GameContext 78e16 14|1w6 4r12
+10R14*Context 72e19 14|4r24
+X 14 main.adb
 3U11*Main 3b11 8l5 8t9
-4r9 C{6|7R14}
+4r9 C{13|10R14}
+X 15 system.ads
+67M9*Address
+X 20 s-memory.ads
+53V13*Alloc{15|67M9} 103i<c,__gnat_malloc>22
+68U14*Free 104i<c,__gnat_free>22
+76V13*Realloc{15|67M9} 105i<c,__gnat_realloc>22
+X 26 s-stalib.adb
+93U14 Break_Start 94i<c,__gnat_break_start>22
 
