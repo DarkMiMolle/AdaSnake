@@ -30,7 +30,7 @@ package GameContext is
 	
 	function Running(g: in GameInfo) return Boolean;
 	function Pausing(g: in GameInfo) return Boolean;
-	procedure StopGame(g: in out GameInfo);
+	procedure StopGame(g: in out GameInfo); -- TODO: add parametter reason
 	
 	
 	-- Context
