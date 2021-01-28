@@ -1,5 +1,56 @@
 package body GameContext is
 
+    procedure ClearMenu(ctxt: in Context) is
+
+    begin -- ClearMenu
+
+    end ClearMenu;
+
+
+    procedure displayMenu is
+
+    begin -- displayMenu
+
+    end displayMenu;
+
+    procedure displayConfigPan(ctxt: in Context) is
+
+    begin -- displayConfigPan
+
+    end displayConfigPan;
+
+    procedure SetUpKeymap(ctxt: in out Context) is
+        selection: Key := Key'First;
+        oldSelection: Key := selection;
+        c: Character;
+    begin -- SetUpKeymap
+        loop
+            oldSelection := selection;
+            Get_Immediate(c);
+            case c is
+                when 'z' =>
+                    if selection > Key'First then
+                        selection := Key'Succ(selection);
+                    end if;
+                when 's' =>
+                    if selection < Key'Last then
+                        selection := Key'Prev(selection);
+                    end if;
+                when 'r' =>
+                    ClearMenu(ctxt);
+                    displayConfigPan(ctxt);
+                    return;
+                when ' ' =>
+                    Print("* " & selection'Image & " : ", 2 + selection, 3);
+                    Get_Immediate(c);
+                    Print("" & c);
+                    ctxt.conf.keymapping(selection) = c;
+            end case;
+            Print("-", 2 + oldSelection, 3);
+            Print("o", 2 + selection, 3);
+        end loop;
+    end SetUpKeymap;
+
     procedure SetUpConfig(ctxt: in out Context) is
         selection: Natural := 0;
         oldSelection: Natural := selection;
@@ -71,6 +122,7 @@ package body GameContext is
                    loopContinue := False;
                    ctxt.game.lv := prevSelection;
                 else
+                    -- May be remove the 2 +
                     Print("-  ", Position'(2 + prevSelection - 1, 3));
                     prevSelection := selection + 1;
                     Print("o *", Position'(2 + selection, 3));
@@ -79,8 +131,8 @@ package body GameContext is
                     end if;
                 end if;
             end case;
-            Print("-", Position'(StartTerm + 2 + oldSelection, 3));
-		    Print("o", Position'(StartTerm + 2 + selection, 3));
+            Print("-", Position'(2 + oldSelection, 3));
+		    Print("o", Position'(2 + selection, 3));
        end loop;
        ctxt.game.running := True;
        ctxt.game.pausing := False;

@@ -5,13 +5,13 @@ package body Utility is
 	procedure Print(str: String; from: Position := (-1, -1)) is
 		s: Strings.chars_ptr := Strings.New_String(str);
 	begin
-		C_print_at(s, int(from.x), int(from.y));
+		C_print_at(s, int(from.x + StartTerm), int(from.y));
 		Strings.Free(s);
 	end Print;
 	
 	procedure MoveTo(x, y: Integer) is
 	begin
-		C_move_to(int(x), int(y));
+		C_move_to(int(x + StartTerm), int(y));
 	end MoveTo;
 	
 	procedure SetColor(c: ColorName) is
