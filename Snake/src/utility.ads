@@ -18,7 +18,7 @@ package Utility is
 	type ColorName is (Blue, Red, Green, Brown, Black, None);
 
 	-- ADA API for the private C function linked, used to interact in the term
-	procedure Print(str: String; from: Position := (-1, -1));
+	procedure Print_at(str: String; from: Position := (-1, -1));
 	procedure Print(str: String; x: SizeTerm := -1; y: SizeTerm := -1);
 	procedure MoveTo(x, y: Integer);
 	procedure SetColor(c: ColorName);

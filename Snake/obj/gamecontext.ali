@@ -1,0 +1,271 @@
+V "GNAT Lib v2020"
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_DISPATCH
+RV NO_DISPATCHING_CALLS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTION_PROPAGATION
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_LOCAL_ALLOCATORS
+RV NO_NESTED_FINALIZATION
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_ACCESS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_IMPLICIT_LOOPS
+RV NO_ELABORATION_CODE
+
+U gamecontext%b		gamecontext.adb		a71abb8c OO PK
+W ada%s			ada.ads			ada.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z interfaces%s		interfac.ads		interfac.ali
+Z system%s		system.ads		system.ali
+Z system.concat_3%s	s-conca3.adb		s-conca3.ali
+Z system.img_enum_new%s	s-imenne.adb		s-imenne.ali
+Z system.img_int%s	s-imgint.adb		s-imgint.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
+
+U gamecontext%s		gamecontext.ads		d49a980a EE OO PF PK
+W ada%s			ada.ads			ada.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.streams%s		a-stream.adb		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z system%s		system.ads		system.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
+Z system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+Z system.strings.stream_ops%s  s-ststop.adb	s-ststop.ali
+W utility%s		utility.adb		utility.ali
+
+D ada.ads		20200819050642 76789da1 ada%s
+D a-charac.ads		20200819050641 2d3ec45b ada.characters%s
+D a-chlat1.ads		20200819050641 66457d31 ada.characters.latin_1%s
+D a-contai.ads		20200819050641 61e5e089 ada.containers%s
+D a-conhel.ads		20200819050641 20298884 ada.containers.helpers%s
+D a-convec.ads		20200819050641 7e2b0fdf ada.containers.vectors%s
+D a-except.ads		20200819050642 a7106115 ada.exceptions%s
+D a-finali.ads		20200819050642 bf4f806b ada.finalization%s
+D a-ioexce.ads		20200819050642 e4a01f64 ada.io_exceptions%s
+D a-iteint.ads		20200819050642 7c7305e9 ada.iterator_interfaces%s
+D a-stream.ads		20200819050642 119b8fb3 ada.streams%s
+D a-string.ads		20200819050642 90ac6797 ada.strings%s
+D a-strmap.ads		20200819050642 e8bb714a ada.strings.maps%s
+D a-strunb.ads		20200819050642 1656705b ada.strings.unbounded%s
+D a-tags.ads		20200819050643 edddc8f0 ada.tags%s
+D a-textio.ads		20200819050643 aef4d56d ada.text_io%s
+D a-unccon.ads		20200819050643 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		20200819050643 eff36322 ada.unchecked_deallocation%s
+D gamecontext.ads	20210128121831 a8fcf4f3 gamecontext%s
+D gamecontext.adb	20210128121916 a1129a12 gamecontext%b
+D interfac.ads		20200819050644 5ab55268 interfaces%s
+D i-c.ads		20200819050644 c624fa43 interfaces.c%s
+D i-cstrin.ads		20200819050644 341d0ddf interfaces.c.strings%s
+D i-cstrea.ads		20200819050644 e53d8b8e interfaces.c_streams%s
+D system.ads		20200819050647 4635ec04 system%s
+D s-atacco.ads		20200819050645 4c36d12f system.address_to_access_conversions%s
+D s-atocou.ads		20200819050645 b45c2d8d system.atomic_counters%s
+D s-conca3.ads		20200819050645 0b705ca5 system.concat_3%s
+D s-crtl.ads		20200819050645 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200819050645 54135002 system.exception_table%s
+D s-ficobl.ads		20200819050645 078245e4 system.file_control_block%s
+D s-finmas.ads		20200819050645 7811a767 system.finalization_masters%s
+D s-finroo.ads		20200819050645 4ff27390 system.finalization_root%s
+D s-imenne.ads		20200819050645 614c06c0 system.img_enum_new%s
+D s-imgint.ads		20200819050645 02dbe0c2 system.img_int%s
+D s-linux.ads		20200819050640 ed0b8aee system.linux%s
+D s-memory.ads		20200819050645 597d6634 system.memory%s
+D s-multip.ads		20200819050645 38ac9f73 system.multiprocessors%s
+D s-oscons.ads		20200819100019 ffb5e830 system.os_constants%s
+D s-osinte.ads		20200819050640 675bad69 system.os_interface%s
+D s-parame.ads		20200819050646 4752c4cb system.parameters%s
+D s-secsta.ads		20200819050646 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20200819050646 a7318a92 system.soft_links%s
+D s-stache.ads		20200819050646 a37c21ec system.stack_checking%s
+D s-stausa.ads		20200819050646 017a0a05 system.stack_usage%s
+D s-stalib.ads		20200819050646 6b7a13f2 system.standard_library%s
+D s-stalib.adb		20200819050646 f2fe2716 system.standard_library%b
+D s-stoele.ads		20200819050646 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20200819050646 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20200819050646 e9fa2dd8 system.storage_pools%s
+D s-stposu.ads		20200819050646 e251976f system.storage_pools.subpools%s
+D s-stratt.ads		20200819050646 9a2744e9 system.stream_attributes%s
+D s-string.ads		20200819050646 8fe54fb7 system.strings%s
+D s-ststop.ads		20200819050646 5fbf1b38 system.strings.stream_ops%s
+D s-tasinf.ads		20200819050641 2b3f8252 system.task_info%s
+D s-taspri.ads		20200819050641 f40ac08d system.task_primitives%s
+D s-taskin.ads		20200819050641 88fba9ad system.tasking%s
+D s-traent.ads		20200819050646 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200819050646 5ecf7212 system.unsigned_types%s
+D s-wchcon.ads		20200819050646 1b7d22d2 system.wch_con%s
+D utility.ads		20210128120108 6a301ca2 utility%s
+G a e
+G c Z s b [setupconfig gamecontext 21 19 none]
+G c Z s b [color gamecontext 23 18 none]
+G c Z s b [zoom gamecontext 24 18 none]
+G c Z s b [keymapped gamecontext 25 18 none]
+G c Z s b [setupgameinfo gamecontext 29 19 none]
+G c Z s b [running gamecontext 31 18 none]
+G c Z s b [pausing gamecontext 32 18 none]
+G c Z s b [stopgame gamecontext 33 19 none]
+G c Z s b [creatcontext gamecontext 37 18 none]
+G c Z s b [maxwidth gamecontext 39 18 none]
+G c Z s b [maxheight gamecontext 40 18 none]
+G c Z s b [config gamecontext 41 18 none]
+G c Z s b [game gamecontext 42 18 none]
+G c Z s b [clearmenu gamecontext 75 19 none]
+G c Z s b [displaymenu gamecontext 76 19 none]
+G c Z s b [displayconfigpan gamecontext 77 19 none]
+G c Z s b [setupkeymap gamecontext 78 19 none]
+G c Z s b [displayplaypan gamecontext 79 19 none]
+G c Z s s [TkeymapBIP gamecontext 15 9 none]
+G c Z s s [configurationDA gamecontext 49 14 none]
+G c Z s s [configurationDF gamecontext 49 14 none]
+G c Z s s [configurationIP gamecontext 49 14 none]
+G c Z s s [gameinfoDA gamecontext 62 14 none]
+G c Z s s [gameinfoDF gamecontext 62 14 none]
+G c Z s s [gameinfoDI gamecontext 62 14 none]
+G c Z s s [gameinfoIP gamecontext 62 14 none]
+G c Z s s [contextDA gamecontext 69 14 none]
+G c Z s s [contextDF gamecontext 69 14 none]
+G c Z s s [contextDI gamecontext 69 14 none]
+G c Z s s [contextIP gamecontext 69 14 none]
+G r c none [setupconfig gamecontext 21 19 none] [print utility 22 19 none]
+G r c none [setupgameinfo gamecontext 29 19 none] [print utility 22 19 none]
+G r c none [setupkeymap gamecontext 78 19 none] [print utility 22 19 none]
+X 1 ada.ads
+16K9*Ada 20e8 19|1r6 6r29 20|1r6 1r23
+X 10 a-iteint.ads
+24h9 Forward_Iterator
+32h9 Reversible_Iterator<24R9[6|111]>
+X 12 a-string.ads
+16K13*Strings 35e16 19|1r10 6r33
+X 14 a-strunb.ads
+82K21*Unbounded 758e26 19|1w18 6r41
+87R9*Unbounded_String<8|43R9> 741e14 19|66r24
+X 16 a-textio.ads
+57K13*Text_IO 727e16 20|1w10 1r27
+422U14*Get_Immediate 20|31s13 47s21 70s13 140s13
+X 19 gamecontext.ads
+3K9*GameContext 49E14 81l5 81e16 20|3b14 214l5 214t16
+6K17*Str=6:41 7r13
+9R14*Configuration 23p18 23r30 24p18 24r29 25p18 25r34 41r50 49c14 60e19
+. 71r23 20|108r30 113r29 118r34 205r50
+10R14*GameInfo 31p18 31r32 32p18 32r32 33p19 33r38 42r59 62c14 67e19 72r31
+. 20|172r28 177r32 182r38 210r59
+11R14*Context 21p19 21r44 29p19 29r46 37p18 37r63 39p18 39r36 40p18 40r37
+. 41p18 41r34 42p18 42r36 69c14 73e19 75p19 75r38 77p19 77r45 78p19 78r44
+. 20|5r34 18r41 24r40 60r40 130r43 189r63 190r23 195r36 200r37 205r34 210r36
+14E14*Key 14e61 15r31 25r52 20|25r20 25r27 26r23 34r36 35r38 38r36 39r38
+. 46r63 53r28 54r28 118r52
+14n22*Up{14E14} 51r42
+14n26*Down{14E14} 52r42
+14n32*Left{14E14} 53r42
+14n38*Right{14E14} 54r42
+14n45*Pause{14E14} 55r42
+14n52*ExitGame{14E14} 56r42
+15A14*KeyMap(character)<14E14> 50r29
+16I14*ZoomIndice<integer> 24r51 59r23 20|113r51
+17E14*Level 17e44 65r21 20|132r23 132r32 156r47 157r38
+17n25*Lv1{17E14} 65r30
+17n30*Lv2{17E14}
+17n35*LvCustom{17E14}
+21U19*SetUpConfig 21=31 20|60b15 106l9 106t20
+21r31 ctxt{11R14} 20|60b27 66r19 67r26 81r27 87m37 89m25 89r48 90r28 96m25
+. 96r43 97m25 97r43 98r60
+23V18*Color{boolean} 23>24 20|108b18 111l13 111t18
+23r24 c{9R14} 20|108b24 110r24
+24V18*Zoom{16I14} 24>23 20|113b18 116l9 116t13
+24r23 c{9R14} 20|113b23 115r16
+25V18*KeyMapped{character} 25>28 25>49 20|118b18 121l9 121t18
+25r28 c{9R14} 20|118b28 120r16
+25e49 k{14E14} 20|118b49 120r29
+29U19*SetUpGameInfo 29=33 20|130b15 170l9 170t22
+29r33 ctxt{11R14} 20|130b30 153m20 168m8 169m8
+31V18*Running{boolean} 31>26 20|172b14 175l9 175t16
+31r26 g{10R14} 20|172b22 174r16
+32V18*Pausing{boolean} 32>26 20|177b18 180l9 180t16
+32r26 g{10R14} 20|177b26 179r16
+33U19*StopGame 33=28 20|182b19 185l9 185t17
+33r28 g{10R14} 20|182b28 184m9
+37V18*CreatContext{11R14} 37>31 37>38 20|189b18 193l9 193t21
+37i31 width{61|6I14} 20|189b31
+37i38 height{61|6I14} 20|189b38
+39V18*MaxWidth{61|6I14} 39>27 20|195b18 198l9 198t17
+39r27 ctxt{11R14} 20|195b27 197r16
+40V18*MaxHeight{61|6I14} 40>28 20|200b18 203l9 203t18
+40r28 ctxt{11R14} 20|200b28 202r16
+41V18*Config{9C14} 41>25 20|205b18 208l9 208t15
+41r25 ctxt{11R14} 20|205b25 207r16
+42V18*Game(10R14) 42=23 20|210b18 213l9 213t13
+42r23 ctxt{11R14} 20|210b23 212m16 212r16
+50a17*keymapping{15A14} 20|49m51 120r18
+58b17*color{boolean} 20|89m35 89r58 90r38 110r26
+59i17*zoom{16I14} 20|96m35 96r53 97m35 97r53 98r70 115r18
+63b17*running{boolean} 20|168m18 174r18 184m11
+64b17*pausing{boolean} 20|169m18 179r18
+65e17*lv{17E14} 20|153m30
+66r17*lvRef{14|87R9}
+70i17*maxWidth{61|6I14} 20|197r21
+70i27*maxHeight{61|6I14} 20|202r21
+71r17*conf{9R14} 20|49m46 89m30 89r53 90r33 96m30 96r48 97m30 97r48 98r65
+. 207r21
+72r17*game{10R14} 20|153m25 168m13 169m13 212m21
+75U19 ClearMenu 75>29 20|5b15 9l9 9t18 42s21 66s9 81s17
+75r29 ctxt{11R14} 20|5b25
+76U19 displayMenu 20|12b15 16l9 16t20 82s17
+77U19 displayConfigPan 77>36 20|18b15 22l9 22t25 43s21 67s9
+77r36 ctxt{11R14} 20|18b32
+78U19 SetUpKeymap 78=31 20|24b15 56l9 56t20 87s25
+78r31 ctxt{11R14} 20|24b27 42r31 43r38 49m41
+79U19 displayPlayPan 20|124b19 127l13 127t27
+X 20 gamecontext.adb
+25e9 selection{19|14E14} 26r30 30r29 34r24 35m25 35r47 38r24 39m25 39r47
+. 46r34 46r71 49r62 54r36
+26e9 oldSelection{19|14E14} 30m13 53r36
+27e9 c{character} 31m27 32r18 47m35 48r32 49r76
+61i9 selection{natural} 62r34 69r29 73r24 74m25 74r38 77r24 78m25 78r38 85r22
+. 104r37
+62i9 oldSelection{natural} 69m13 103r37
+64e9 c{character} 70m27 71r18
+131i8 selection{natural} 132r42 133r33 139r29 143r20 144m21 144r34 147r20
+. 148m20 148r33 151r20 157r48 158r47 159r24 166r45
+132e8 prevSelection{19|17E14} 153r36 156r57 157m21
+133i8 oldSelection{natural} 139m13 165r37
+134b8 loopContinue{boolean} 138r27 152m20
+135e8 c{character} 140m27 141r18
+190r17 ctxt{19|11R14} 192r16
+X 25 system.ads
+67M9*Address
+X 37 s-memory.ads
+53V13*Alloc{25|67M9} 103i<c,__gnat_malloc>22
+68U14*Free 104i<c,__gnat_free>22
+76V13*Realloc{25|67M9} 105i<c,__gnat_realloc>22
+X 45 s-stausa.ads
+208U14*Initialize 209i<c,__gnat_stack_usage_initialize>22
+273U14*Output_Results 277i<c,__gnat_stack_usage_output_results>22
+X 47 s-stalib.adb
+93U14 Break_Start 94i<c,__gnat_break_start>22
+X 61 utility.ads
+4K9*Utility 19|2w6 2r19 61|36e12
+6I14*SizeTerm<integer> 19|37r46 39r52 40r53 70r38 20|103r24 104r24 156r34
+. 158r34 165r24 166r32 189r46 195r52 200r53
+22U19*Print 20|46s21 48s21 53s13 54s13 91s29 93s29 98s49 103s13 104s13 156s21
+. 158s21 165s13 166s21
+

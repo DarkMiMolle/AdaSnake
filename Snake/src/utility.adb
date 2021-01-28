@@ -2,10 +2,17 @@ with Interfaces.C.Strings; use Interfaces.C;
 package body Utility is
 	
 	-- API body
-	procedure Print(str: String; from: Position := (-1, -1)) is
+	procedure Print_at(str: String; from: Position := (-1, -1)) is
 		s: Strings.chars_ptr := Strings.New_String(str);
 	begin
 		C_print_at(s, int(from.x + StartTerm), int(from.y));
+		Strings.Free(s);
+	end Print_at;
+	
+	procedure Print(str: String; x: SizeTerm; y: SizeTerm) is
+		s: Strings.chars_ptr := Strings.New_String(str);
+	begin
+		C_print_at(s, int(x + StartTerm), int(y));
 		Strings.Free(s);
 	end Print;
 	
