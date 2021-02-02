@@ -1,11 +1,16 @@
 with Interfaces.C.Strings; use Interfaces.C;
+with Ada.Text_IO; use Ada.Text_IO;
 package body Utility is
 	
 	-- API body
 	procedure Print_at(str: String; from: Position := (-1, -1)) is
 		s: Strings.chars_ptr := Strings.New_String(str);
 	begin
-		C_print_at(s, int(from.x + StartTerm), int(from.y));
+		if from.x < 0 or from.y < 0 then
+			Put(str);
+		else
+			C_print_at(s, int(SizeTerm(from.x) + StartTerm), int(from.y));
+		end if;
 		Strings.Free(s);
 	end Print_at;
 	
@@ -16,9 +21,14 @@ package body Utility is
 		Strings.Free(s);
 	end Print;
 	
-	procedure MoveTo(x, y: Integer) is
+	procedure Print(str: String) is
 	begin
-		C_move_to(int(x + StartTerm), int(y));
+		Put(str);
+	end Print;
+	
+	procedure MoveTo(x, y: SizeTerm) is
+	begin
+		C_move_to(int(x), int(y));
 	end MoveTo;
 	
 	procedure SetColor(c: ColorName) is

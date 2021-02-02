@@ -1,76 +1,148 @@
-V "GNAT Lib v2020"
+V "GNAT Lib v9"
 M P W=b
 A -gnatA
 A -mtune=generic
 A -march=x86-64
-P SS ZX
+P ZX
 
 RN
+RV NO_DISPATCHING_CALLS
 RV NO_EXCEPTION_HANDLERS
-RV NO_EXCEPTION_PROPAGATION
 RV NO_EXCEPTIONS
+RV NO_IO
 RV NO_NESTED_FINALIZATION
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_TASK_HIERARCHY
+RV NO_TASKING
 RV NO_DEFAULT_INITIALIZATION
 RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+RV MAX_TASK_ENTRIES=1
+RV MAX_TASKS=1+
 
-U main%b		main.adb		fad605d1 NE OO SU
+U main%b		main.adb		697d126b NE OO SU
+W ada%s			ada.ads			ada.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.real_time%s	a-reatim.adb		a-reatim.ali
 Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
 W gamecontext%s		gamecontext.adb		gamecontext.ali
+Z interfaces%s		interfac.ads		interfac.ali
+Z system%s		system.ads		system.ali
+Z system.parameters%s	s-parame.adb		s-parame.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 Z system.soft_links%s	s-soflin.adb		s-soflin.ali
-Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+Z system.task_info%s	s-tasinf.adb		s-tasinf.ali
+Z system.tasking%s	s-taskin.adb		s-taskin.ali
+Z system.tasking.stages%s  s-tassta.adb		s-tassta.ali
+Z system.val_int%s	s-valint.adb		s-valint.ali
+W utility%s		utility.adb		utility.ali
 
-D ada.ads		20200819050642 76789da1 ada%s
-D a-charac.ads		20200819050641 2d3ec45b ada.characters%s
-D a-chlat1.ads		20200819050641 66457d31 ada.characters.latin_1%s
-D a-except.ads		20200819050642 a7106115 ada.exceptions%s
-D a-finali.ads		20200819050642 bf4f806b ada.finalization%s
-D a-stream.ads		20200819050642 119b8fb3 ada.streams%s
-D a-string.ads		20200819050642 90ac6797 ada.strings%s
-D a-strmap.ads		20200819050642 e8bb714a ada.strings.maps%s
-D a-strunb.ads		20200819050642 1656705b ada.strings.unbounded%s
-D a-tags.ads		20200819050643 edddc8f0 ada.tags%s
-D a-unccon.ads		20200819050643 0e9b276f ada.unchecked_conversion%s
-D a-uncdea.ads		20200819050643 eff36322 ada.unchecked_deallocation%s
-D gamecontext.ads	20210122144158 04db9550 gamecontext%s
-D main.adb		20210122135353 fe0d9081 main%b
-D system.ads		20200819050647 4635ec04 system%s
-D s-atocou.ads		20200819050645 b45c2d8d system.atomic_counters%s
-D s-exctab.ads		20200819050645 54135002 system.exception_table%s
-D s-finmas.ads		20200819050645 7811a767 system.finalization_masters%s
-D s-finroo.ads		20200819050645 4ff27390 system.finalization_root%s
-D s-memory.ads		20200819050645 597d6634 system.memory%s
-D s-parame.ads		20200819050646 4752c4cb system.parameters%s
-D s-secsta.ads		20200819050646 9b3ab94b system.secondary_stack%s
-D s-soflin.ads		20200819050646 a7318a92 system.soft_links%s
-D s-stache.ads		20200819050646 a37c21ec system.stack_checking%s
-D s-stalib.ads		20200819050646 6b7a13f2 system.standard_library%s
-D s-stalib.adb		20200819050646 f2fe2716 system.standard_library%b
-D s-stoele.ads		20200819050646 2dc34a04 system.storage_elements%s
-D s-stopoo.ads		20200819050646 e9fa2dd8 system.storage_pools%s
-D s-stposu.ads		20200819050646 e251976f system.storage_pools.subpools%s
-D s-stratt.ads		20200819050646 9a2744e9 system.stream_attributes%s
-D s-string.ads		20200819050646 8fe54fb7 system.strings%s
-D s-ststop.ads		20200819050646 5fbf1b38 system.strings.stream_ops%s
-D s-traent.ads		20200819050646 005bf670 system.traceback_entries%s
-D s-unstyp.ads		20200819050646 5ecf7212 system.unsigned_types%s
-G a e
-G c Z b b [main standard 3 11 none]
-G r s context [main standard 3 11 none] [contextIP gamecontext 68 14 none]
-G r l context [main standard 3 11 none] [contextDI gamecontext 68 14 none]
-G r k context [main standard 3 11 none] [contextDF gamecontext 68 14 none]
-X 13 gamecontext.ads
-2K9*GameContext 78e16 14|1w6 4r12
-10R14*Context 72e19 14|4r24
-X 14 main.adb
-3U11*Main 3b11 8l5 8t9
-4r9 C{13|10R14}
-X 15 system.ads
-67M9*Address
-X 20 s-memory.ads
-53V13*Alloc{15|67M9} 103i<c,__gnat_malloc>22
-68U14*Free 104i<c,__gnat_free>22
-76V13*Realloc{15|67M9} 105i<c,__gnat_realloc>22
-X 26 s-stalib.adb
-93U14 Break_Start 94i<c,__gnat_break_start>22
+D ada.ads		20200312110721 76789da1 ada%s
+D a-charac.ads		20200312110721 2d3ec45b ada.characters%s
+D a-chlat1.ads		20200312110721 66457d31 ada.characters.latin_1%s
+D a-contai.ads		20200312110721 61e5e089 ada.containers%s
+D a-conhel.ads		20200312110721 20298884 ada.containers.helpers%s
+D a-convec.ads		20200312110721 7e2b0fdf ada.containers.vectors%s
+D a-except.ads		20200312110721 291912d5 ada.exceptions%s
+D a-finali.ads		20200312110721 bf4f806b ada.finalization%s
+D a-ioexce.ads		20200312110721 e4a01f64 ada.io_exceptions%s
+D a-iteint.ads		20200312110721 7c7305e9 ada.iterator_interfaces%s
+D a-reatim.ads		20200312110721 0240fc73 ada.real_time%s
+D a-stream.ads		20200312110721 119b8fb3 ada.streams%s
+D a-string.ads		20200312110721 90ac6797 ada.strings%s
+D a-strmap.ads		20200312110721 e8bb714a ada.strings.maps%s
+D a-strunb.ads		20200312110721 8098c91f ada.strings.unbounded%s
+D a-tags.ads		20200312110721 491b781d ada.tags%s
+D a-textio.ads		20200312110721 881db35a ada.text_io%s
+D a-unccon.ads		20200312110721 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		20200312110721 eff36322 ada.unchecked_deallocation%s
+D gamecontext.ads	20210202141353 807c38c7 gamecontext%s
+D interfac.ads		20200312110721 5ab55268 interfaces%s
+D i-c.ads		20200312110721 5421119b interfaces.c%s
+D i-cstrin.ads		20200312110721 341d0ddf interfaces.c.strings%s
+D i-cstrea.ads		20200312110721 e53d8b8e interfaces.c_streams%s
+D main.adb		20210202163535 8a55cf1a main%b
+D system.ads		20200312110721 4635ec04 system%s
+D s-atacco.ads		20200312110721 4c36d12f system.address_to_access_conversions%s
+D s-atocou.ads		20200312110721 b45c2d8d system.atomic_counters%s
+D s-crtl.ads		20200312110721 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200312110721 54135002 system.exception_table%s
+D s-ficobl.ads		20200312110721 078245e4 system.file_control_block%s
+D s-finmas.ads		20200312110721 7811a767 system.finalization_masters%s
+D s-finroo.ads		20200312110721 4ff27390 system.finalization_root%s
+D s-linux.ads		20200312110721 ed0b8aee system.linux%s
+D s-multip.ads		20200312110721 38ac9f73 system.multiprocessors%s
+D s-oscons.ads		20200914100322 0b994636 system.os_constants%s
+D s-osinte.ads		20200312110721 710cf8c6 system.os_interface%s
+D s-parame.ads		20200312110721 48ec542b system.parameters%s
+D s-secsta.ads		20200312110721 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20200312110721 a7318a92 system.soft_links%s
+D s-stache.ads		20200312110721 a37c21ec system.stack_checking%s
+D s-stausa.ads		20200312110721 017a0a05 system.stack_usage%s
+D s-stalib.ads		20200312110721 09bd3940 system.standard_library%s
+D s-stoele.ads		20200312110721 2dc34a04 system.storage_elements%s
+D s-stopoo.ads		20200312110721 b16154c2 system.storage_pools%s
+D s-stposu.ads		20200312110721 97a6219c system.storage_pools.subpools%s
+D s-stratt.ads		20200312110721 aedef97e system.stream_attributes%s
+D s-string.ads		20200312110721 8fe54fb7 system.strings%s
+D s-ststop.ads		20200312110721 5fbf1b38 system.strings.stream_ops%s
+D s-tasinf.ads		20200312110721 2b3f8252 system.task_info%s
+D s-taspri.ads		20200312110721 f40ac08d system.task_primitives%s
+D s-taprop.ads		20200312110721 1dd2e1b6 system.task_primitives.operations%s
+D s-taskin.ads		20200312110721 b9d612e2 system.tasking%s
+D s-tassta.ads		20200312110721 cca55c94 system.tasking.stages%s
+D s-traent.ads		20200312110721 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200312110721 34867c83 system.unsigned_types%s
+D s-valint.ads		20200312110721 48a52a3f system.val_int%s
+D s-wchcon.ads		20200312110721 1b7d22d2 system.wch_con%s
+D utility.ads		20210202143732 eb4956ec utility%s
+X 1 ada.ads
+16K9*Ada 20e8 25|2r6 2r23
+X 10 a-iteint.ads
+24h9 Forward_Iterator
+32h9 Reversible_Iterator<24R9[6|111]>
+X 17 a-textio.ads
+49K13*Text_IO 471e16 25|2w10 2r27
+166U14*New_Line 25|32s25
+223U14*Get_Immediate 25|44s33
+242U14*Put 25|9s17 11s17 25s41 27s41 29s41
+256V13*Get_Line{string} 25|10s45 12s45
+263U14*Put_Line 25|34s17 35s17 36s17 37s17 38s17
+X 20 gamecontext.ads
+3K9*GameContext 82e16 25|1w6 6r30 13r24 17r37 39r17 52r51 55r51 67r23
+9U19*displayMenu 25|39s29
+13R14*Context 75e19 25|6r42 17r49 67r35
+23U19*SetUpConfig 25|52s63
+31U19*SetUpGameInfo 25|55s63
+35U19*StopGame 25|48R54
+39V18*CreatContext{13R14} 25|13s36
+41V18*MaxWidth{59|6I14} 25|23s44 26s62
+42V18*MaxHeight{59|6I14} 25|22s36 24s59
+44V18*Game(12R14) 25|48s49
+X 25 main.adb
+5U11*Main 5b11 78l5 78t9
+6V18 init{20|13R14} 6b18 14l13 14t17 67s46
+7i17 w{59|6I14} 10m17 13r49
+7i20 h{59|6I14} 12m17 13r52
+17U19 Menu 17b19 17=24 64l13 64t17 77s4
+17r24 ctxt{20|13R14} 22r31 23r39 24r54 26r57 48m44 48r44 52m75 55m77
+18e17 c{character} 44m47 45r38
+19i17 selection{natural} 42r58 46m44 46r61 46r80 46r99 47m44 47r61 47r80
+. 47r99 51r46 61r53
+22i21 h<integer> 24r36 24r50
+23i29 w<integer> 26r39 26r53
+42i33 oldSelection{natural} 60r53
+67r9 Ctxt{20|13R14} 77m9 77r9
+69t14 Keybording 73b19 75l13 75t23
+70Y23 Start
+X 42 s-stausa.ads
+203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
+268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
+X 59 utility.ads
+4K9*Utility 25|3w6 3r19 7r23 59|37e12
+6I14*SizeTerm<integer> 25|7r31 10r22 12r22 60r44 61r44
+22U19*Print 25|60s33 61s33
+24U19*MoveTo 25|21s17
 

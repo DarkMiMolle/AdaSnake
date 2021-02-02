@@ -3,7 +3,7 @@ with Interfaces.C.Strings;
 with Ada.Containers.Vectors; use Ada.Containers;
 package Utility is
 
-	type SizeTerm is new Positive range 1 .. 100;
+	type SizeTerm is new Integer range 0 .. 100;
 
 	StartTerm: constant SizeTerm := 2;
 
@@ -19,8 +19,9 @@ package Utility is
 
 	-- ADA API for the private C function linked, used to interact in the term
 	procedure Print_at(str: String; from: Position := (-1, -1));
-	procedure Print(str: String; x: SizeTerm := -1; y: SizeTerm := -1);
-	procedure MoveTo(x, y: Integer);
+	procedure Print(str: String; x: SizeTerm; y: SizeTerm);
+	procedure Print(str: String);
+	procedure MoveTo(x, y: SizeTerm);
 	procedure SetColor(c: ColorName);
 
 private

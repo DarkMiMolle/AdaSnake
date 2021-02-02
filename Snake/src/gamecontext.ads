@@ -6,6 +6,8 @@ package GameContext is
 	package Str renames Ada.Strings.Unbounded;
 	use Str;
 
+	procedure displayMenu;
+
 	type Configuration is tagged private;
 	type GameInfo is tagged private;
 	type Context is tagged private;
@@ -73,7 +75,6 @@ private
 	end record;
 
 	procedure ClearMenu(ctxt: in Context);
-	procedure displayMenu;
 	procedure displayConfigPan(ctxt: in Context);
 	procedure SetUpKeymap(ctxt: in out Context);
 	procedure displayPlayPan;

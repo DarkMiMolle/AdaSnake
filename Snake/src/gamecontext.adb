@@ -5,8 +5,8 @@ package body GameContext is
     procedure ClearMenu(ctxt: in Context) is
 
     begin -- ClearMenu
-		  for x in 1 .. ctxt.maxHeight - 1 loop
-              for y in 1 .. ctxt.MaxWidth - 1 loop
+		  for x in 2 .. ctxt.maxHeight - 1 loop
+              for y in 2 .. ctxt.MaxWidth - 1 loop
                   Print(" ", x, y);
               end loop;
           end loop;
@@ -35,6 +35,9 @@ package body GameContext is
         oldSelection: Key := selection;
         c: Character;
     begin -- SetUpKeymap
+        for k in ctxt.conf.keymapping'range loop
+            Print("- " & k'Image & " : " & ctxt.conf.keymapping(k), 2 + SizeTerm(Key'Pos(k)), 3);
+        end loop;
         loop
             oldSelection := selection;
             Get_Immediate(c);
