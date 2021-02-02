@@ -5,14 +5,21 @@ package body GameContext is
     procedure ClearMenu(ctxt: in Context) is
 
     begin -- ClearMenu
-		  null;
+		  for x in 1 .. ctxt.maxHeight - 1 loop
+              for y in 1 .. ctxt.MaxWidth - 1 loop
+                  Print(" ", x, y);
+              end loop;
+          end loop;
     end ClearMenu;
 
 
     procedure displayMenu is
 
     begin -- displayMenu
-		  null;
+        Print("o Configuration", 2, 3);
+        Print("- Resum", 3, 3);
+        Print("- Load field", 4, 3);
+        Print("- Play", 5, 3);
     end displayMenu;
 
     procedure displayConfigPan(ctxt: in Context) is
