@@ -1,27 +1,24 @@
 [GENERATED OBJECT FILE]
 b__main.o
 [PROJECT FILES]
-/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr
-20210202164911
+/home/raph/Desktop/ADA/AdaSnake/Snake/snake.gpr
+20210202175930 71864df710eec2adde1b77a67d3116c5
 [BOUND OBJECT FILES]
-/home/florent/Documents/Code/Ada/Snake/Snake/obj/utility.o
-/home/florent/Documents/Code/Ada/Snake/Snake/obj/gamecontext.o
-/home/florent/Documents/Code/Ada/Snake/Snake/obj/main.o
+/home/raph/Desktop/ADA/AdaSnake/Snake/obj/utility.o
+/home/raph/Desktop/ADA/AdaSnake/Snake/obj/gamecontext.o
+/home/raph/Desktop/ADA/AdaSnake/Snake/obj/main.o
 [GENERATED SOURCE FILES]
 b__main.ads
 b__main.adb
 b__main.ali
 [RESULTING OPTIONS]
--L/home/florent/Documents/Code/Ada/Snake/Snake/obj/
--L/home/florent/Documents/Code/Ada/Snake/Snake/obj/
--L/usr/lib/gcc/x86_64-linux-gnu/9/adalib/
--shared
--shared-libgcc
--lgnarl-9
--lgnat-9
--lpthread
+-L/home/raph/Desktop/ADA/AdaSnake/Snake/obj/
+-L/home/raph/Desktop/ADA/AdaSnake/Snake/obj/
+-L/opt/GNAT/2020/lib/gcc/x86_64-pc-linux-gnu/9.3.1/adalib/
+-static
+-static-libgcc
+/opt/GNAT/2020/lib/gcc/x86_64-pc-linux-gnu/9.3.1/adalib/libgnarl.a
+/opt/GNAT/2020/lib/gcc/x86_64-pc-linux-gnu/9.3.1/adalib/libgnat.a
 -lrt
+-lpthread
 -ldl
-[RUN PATH OPTION]
-/usr/lib/gcc/x86_64-linux-gnu/9/adalib/
-/usr/lib
