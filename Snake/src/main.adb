@@ -45,7 +45,7 @@ procedure Main is
 				case c is
 				when 'z'=> selection := (if selection > 0 then selection - 1 else selection);
 				when 's'=> selection := (if selection < 3 then selection + 1 else selection);
-				when 'e'=> ctxt.Game.StopGame; -- TODO: add argument reason
+				when 'r'=> ctxt.Game.StopGame; -- TODO: add argument reason
 					return;
 				when ' '=>
 					case selection is

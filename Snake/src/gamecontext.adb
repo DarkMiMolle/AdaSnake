@@ -5,8 +5,8 @@ package body GameContext is
     procedure ClearMenu(ctxt: in Context) is
 
     begin -- ClearMenu
-		  for x in 2 .. ctxt.maxHeight - 1 loop
-              for y in 2 .. ctxt.MaxWidth - 1 loop
+		  for x in 2 .. ctxt.maxHeight - 2 loop
+              for y in 2 .. ctxt.MaxWidth - 2 loop
                   Print(" ", x, y);
               end loop;
           end loop;
@@ -105,9 +105,12 @@ package body GameContext is
                             Print("off", 3, 3 + 8);
                         end if;
                     when 2 =>
-                        ctxt.conf.zoom := ctxt.conf.zoom mod 4;
-                        ctxt.conf.zoom := ctxt.conf.zoom + 1;
-						Print("" & ctxt.conf.zoom'Image, 4, 3 + 7); -- 7 for "- zoom ".len
+                        if ctxt.conf.zoom = ZoomIndice'Last then
+                            ctxt.conf.zoom := ZoomIndice'First;
+                        else
+                            ctxt.conf.zoom := ctxt.conf.zoom + 1;
+                        end if;
+						Print("" & ctxt.conf.zoom'Image, 4, 3 + 6); -- 7 for "- zoom ".len
 					when others => null;
 				end case;
 			when others => null;
