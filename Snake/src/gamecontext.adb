@@ -18,7 +18,9 @@ package body GameContext is
     procedure displayConfigPan(ctxt: in Context) is
 
     begin -- displayConfigPan
-		  null;
+		 Print("o KeyMap", 2, 3);
+         Print("- color off", 3, 3);
+         Print("- zoom 1", 4, 3);
     end displayConfigPan;
 
     procedure SetUpKeymap(ctxt: in out Context) is
@@ -123,7 +125,11 @@ package body GameContext is
 	-- GameInfo
 	procedure displayPlayPan is
 	begin
-		null;
+        Print("o * Lv 1", 2, 3);
+    	Print("-   Lv 2", 2 + 1, 3);
+    	Print("-   Custom", 2 + 2, 3);
+    	Print("- Confirm", 2 + 3, 3);
+    	Print("path:", 2 + 4, 3);
 	end displayPlayPan;
 
 
@@ -134,6 +140,8 @@ package body GameContext is
        loopContinue: Boolean := True;
        c: Character;
     begin
+        ClearMenu(ctxt);
+        displayPlayPan;
        loop
             exit when not loopContinue;
             oldSelection := selection;
@@ -157,7 +165,9 @@ package body GameContext is
                     prevSelection := Level'Val(selection + 1);
                     Print("o *", SizeTerm(2 + selection), 3);
                     if selection = 2 then
-                       null; --TODO
+                        MoveTo(2 + 4, 3 + 6);-- "path: ".len == 6
+         				ctxt.game.lvRef := Str.To_Unbounded_String(Get_Line);
+         				MoveTo(2 + 2, 3);
                     end if;
 				end if;
 			when others => null;
@@ -189,6 +199,10 @@ package body GameContext is
 	function CreatContext(width, height: SizeTerm) return Context is
 		ctxt: Context;
     begin
+        ctxt.maxHeight := height;
+    	ctxt.maxWidth := width;
+    	ctxt.conf.color := false;
+    	ctxt.conf.zoom := 1;
         return ctxt;
     end CreatContext;
 
