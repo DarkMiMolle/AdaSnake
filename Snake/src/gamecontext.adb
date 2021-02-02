@@ -35,20 +35,22 @@ package body GameContext is
         oldSelection: Key := selection;
         c: Character;
     begin -- SetUpKeymap
+        ClearMenu(ctxt);
         for k in ctxt.conf.keymapping'range loop
             Print("- " & k'Image & " : " & ctxt.conf.keymapping(k), 2 + SizeTerm(Key'Pos(k)), 3);
         end loop;
         loop
+            Print("o", 2 + Key'Pos(selection), 3);
             oldSelection := selection;
             Get_Immediate(c);
             case c is
                 when 'z' =>
                     if selection > Key'First then
-                        selection := Key'Succ(selection);
+                        selection := Key'Pred(selection);
                     end if;
                 when 's' =>
                     if selection < Key'Last then
-                        selection := Key'Pred(selection);
+                        selection := Key'Succ(selection);
                     end if;
                 when 'r' =>
                     ClearMenu(ctxt);
@@ -56,14 +58,14 @@ package body GameContext is
                     return;
                 when ' ' =>
                     Print("* " & selection'Image & " : ", 2 + Key'Pos(selection), 3);
+                    MoveTo(StartTerm + SizeTerm(2 + Key'Pos(selection)), SizeTerm(3 + 2 + selection'Image'Last - selection'Image'First + 4));
                     Get_Immediate(c);
-                    Print("" & c);
 					ctxt.conf.keymapping(selection) := c;
+                    Print("" & ctxt.conf.keymapping(selection));
 				when others =>
 					null;
             end case;
             Print("-", 2 + Key'Pos(oldSelection), 3);
-            Print("o", 2 + Key'Pos(selection), 3);
         end loop;
     end SetUpKeymap;
 
@@ -148,7 +150,7 @@ package body GameContext is
 
     procedure SetUpGameInfo (ctxt: in out Context) is
        selection: Natural := 0;
-       prevSelection: Level := Level'Val(selection + 1);
+       prevSelection: Level := Level'Val(selection);
        oldSelection: Natural := selection;
        loopContinue: Boolean := True;
        c: Character;
@@ -168,19 +170,20 @@ package body GameContext is
                 if selection < 3 then
                    selection := selection + 1;
                 end if;
+
             when ' ' =>
                 if selection = 3 then
                    loopContinue := False;
                    ctxt.game.lv := prevSelection;
                 else
-                    -- May be remove the 2 +
-                    Print("-  ", SizeTerm(2 + Level'Pos(prevSelection) - 1), 3);
-                    prevSelection := Level'Val(selection + 1);
+                    -- 2 + --> offset from the top of the menu
+                    Print("-  ", SizeTerm(2 + Level'Pos(prevSelection)), 3);
+                    prevSelection := Level'Val(selection);
                     Print("o *", SizeTerm(2 + selection), 3);
                     if selection = 2 then
-                        MoveTo(2 + 4, 3 + 6);-- "path: ".len == 6
+                        MoveTo(StartTerm + 2 + 4, 3 + 6);-- "path: ".len == 6
          				ctxt.game.lvRef := Str.To_Unbounded_String(Get_Line);
-         				MoveTo(2 + 2, 3);
+         				MoveTo(StartTerm + 2 + 2, 3);
                     end if;
 				end if;
 			when others => null;
