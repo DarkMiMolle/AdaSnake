@@ -1,0 +1,27 @@
+[GENERATED OBJECT FILE]
+b__main.o
+[PROJECT FILES]
+/home/florent/Documents/Code/Ada/Snake/Snake/snake.gpr
+20210202164911
+[BOUND OBJECT FILES]
+/home/florent/Documents/Code/Ada/Snake/Snake/obj/utility.o
+/home/florent/Documents/Code/Ada/Snake/Snake/obj/gamecontext.o
+/home/florent/Documents/Code/Ada/Snake/Snake/obj/main.o
+[GENERATED SOURCE FILES]
+b__main.ads
+b__main.adb
+b__main.ali
+[RESULTING OPTIONS]
+-L/home/florent/Documents/Code/Ada/Snake/Snake/obj/
+-L/home/florent/Documents/Code/Ada/Snake/Snake/obj/
+-L/usr/lib/gcc/x86_64-linux-gnu/9/adalib/
+-shared
+-shared-libgcc
+-lgnarl-9
+-lgnat-9
+-lpthread
+-lrt
+-ldl
+[RUN PATH OPTION]
+/usr/lib/gcc/x86_64-linux-gnu/9/adalib/
+/usr/lib

@@ -2,6 +2,13 @@
 > The well known game *snake* on the (Unix) console with aditional features
 ---
 
+## Build and run
+
+To build:
+`gprbuild -d -PSnake/snake.gpr Snake/src/main.adb`
+To run:
+`./Snake/obj/main`
+
 ## Features
 
 - Menu
@@ -30,7 +37,7 @@ procedure main {
     var ctxt GameContext
     ctxt = Menu() // display the Menu and save the config
     if ctxt.resume then ResumGame(ctxt)
-    else then RunGame(ctxt) 
+    else then RunGame(ctxt)
 }
 
 procedure RunGame(ctxt in GameContext) {
