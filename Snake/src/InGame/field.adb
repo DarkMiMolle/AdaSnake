@@ -81,5 +81,20 @@ package body Field is
 	end if;
 	Print("+");
     end DisplayPt;
+    
+    procedure NextPt(f: in out Field) is
+    	x : Integer := 0;
+	y : Integer := 0;
+    begin
+    	loop
+		x := rand.Int() % len(f.field);
+		y := rand.Int() % len(f.field[x]);
+		if f.field(x, y) = Space then
+			f.ptPos.X = x;
+			f.ptPos.Y = y;
+			return;
+		end if;
+	end loop;
+    end NextPt;
 
 end Field;
