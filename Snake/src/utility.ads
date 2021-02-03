@@ -1,7 +1,7 @@
 with Interfaces.C; use Interfaces.C;
 with Interfaces.C.Strings;
 with Ada.Containers.Vectors; use Ada.Containers;
-with Ada.Numerics; use Ada.Numerics;
+with Ada.Numerics.Discrete_Random; use Ada.Numerics;
 package Utility is
 
 	type PosTerm is new Integer range 0 .. 100;
@@ -16,7 +16,7 @@ package Utility is
 	package VectorPosPkg is new Vectors(Natural, Position);
 	subtype VectorPos is VectorPosPkg.Vector;
 
-	package RandomPosPkg is new Random_Numbers(PosTerm);
+	package RandomPosPkg is new Discrete_Random(PosTerm);
 	subtype RandomPos is RandomPosPkg.Generator;
 
 

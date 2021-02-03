@@ -1,1 +1,2 @@
-cannot generate code for file utility.ads (package spec)
+utility.ads:19:49: "Discrete_Random" not declared in "Numerics"
+utility.ads:20:30: "RandomPosPkg" is undefined

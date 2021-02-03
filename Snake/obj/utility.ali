@@ -13,14 +13,14 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U utility%b		utility.adb		6dbd3e04 NE OO PK
+U utility%b		utility.adb		98661fd2 NE OO PK
 W ada%s			ada.ads			ada.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W interfaces%s		interfac.ads		interfac.ali
 W interfaces.c%s	i-c.adb			i-c.ali
 W interfaces.c.strings%s  i-cstrin.adb		i-cstrin.ali
 
-U utility%s		utility.ads		4d32b693 EE OO PF PK
+U utility%s		utility.ads		c90ccaaa EE OO PF PK
 W ada%s			ada.ads			ada.ali
 W ada.containers%s	a-contai.ads		a-contai.ali
 Z ada.containers.generic_array_sort%s
@@ -29,6 +29,8 @@ W ada.containers.vectors%s
 Z ada.exceptions%s	a-except.adb		a-except.ali
 Z ada.finalization%s	a-finali.ads		a-finali.ali
 Z ada.iterator_interfaces%s
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.discrete_random%s
 Z ada.streams%s		a-stream.adb		a-stream.ali
 Z ada.tags%s		a-tags.adb		a-tags.ali
 Z ada.unchecked_deallocation%s
@@ -38,6 +40,7 @@ W interfaces.c.strings%s  i-cstrin.adb		i-cstrin.ali
 Z system%s		system.ads		system.ali
 Z system.finalization_masters%s  s-finmas.adb	s-finmas.ali
 Z system.pool_global%s	s-pooglo.adb		s-pooglo.ali
+Z system.random_numbers%s  s-rannum.adb		s-rannum.ali
 Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 Z system.soft_links%s	s-soflin.adb		s-soflin.ali
 Z system.standard_library%s  s-stalib.adb	s-stalib.ali
@@ -57,6 +60,9 @@ D a-except.ads		20200312110721 291912d5 ada.exceptions%s
 D a-finali.ads		20200312110721 bf4f806b ada.finalization%s
 D a-ioexce.ads		20200312110721 e4a01f64 ada.io_exceptions%s
 D a-iteint.ads		20200312110721 7c7305e9 ada.iterator_interfaces%s
+D a-numeri.ads		20200312110721 bb51c45a ada.numerics%s
+D a-nudira.ads		20200312110721 71e55def ada.numerics.discrete_random%s
+D a-nudira.adb		20200312110721 72908cdb ada.numerics.discrete_random%b
 D a-stream.ads		20200312110721 119b8fb3 ada.streams%s
 D a-tags.ads		20200312110721 491b781d ada.tags%s
 D a-textio.ads		20200312110721 881db35a ada.text_io%s
@@ -74,9 +80,13 @@ D s-exctab.ads		20200312110721 54135002 system.exception_table%s
 D s-ficobl.ads		20200312110721 078245e4 system.file_control_block%s
 D s-finmas.ads		20200312110721 7811a767 system.finalization_masters%s
 D s-finroo.ads		20200312110721 4ff27390 system.finalization_root%s
+D s-imguns.ads		20200312110721 9ff43cf7 system.img_uns%s
 D s-memory.ads		20200312110721 597d6634 system.memory%s
 D s-parame.ads		20200312110721 48ec542b system.parameters%s
 D s-pooglo.ads		20200312110721 ede33ef8 system.pool_global%s
+D s-rannum.ads		20200312110721 99ade2f2 system.random_numbers%s
+D s-rannum.adb		20200312110721 20ba1217 system.random_numbers%b
+D s-ransee.ads		20200312110721 01a57b33 system.random_seed%s
 D s-secsta.ads		20200312110721 20bbe636 system.secondary_stack%s
 D s-soflin.ads		20200312110721 a7318a92 system.soft_links%s
 D s-stache.ads		20200312110721 a37c21ec system.stack_checking%s
@@ -89,85 +99,100 @@ D s-stposu.ads		20200312110721 97a6219c system.storage_pools.subpools%s
 D s-stratt.ads		20200312110721 aedef97e system.stream_attributes%s
 D s-traent.ads		20200312110721 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20200312110721 34867c83 system.unsigned_types%s
+D s-valuns.ads		20200312110721 10a8ed3b system.val_uns%s
 D s-wchcon.ads		20200312110721 1b7d22d2 system.wch_con%s
-D utility.ads		20210203142450 5325a508 utility%s
+D utility.ads		20210203171105 a6fe84de utility%s
 D utility.adb		20210203163208 82982589 utility%b
 X 1 ada.ads
-16K9*Ada 20e8 45|3r6 3r34 46|2r6 2r23
+16K9*Ada 20e8 53|3r6 3r34 4r6 4r40 54|2r6 2r23
 X 2 a-contai.ads
-16K13*Containers 24e19 45|3r10 3r38
+16K13*Containers 24e19 53|3r10 3r38
 X 6 a-convec.ads
-73k24*Vectors 824e27 45|3w21 15r37
-88R9*Vector<9|43R9> 45|16r43[15]
+73k24*Vectors 824e27 53|3w21 16r37
+88R9*Vector<9|43R9> 53|17r43[16]
 X 11 a-iteint.ads
 24h9 Forward_Iterator
 32h9 Reversible_Iterator<24R9[6|111]>
-X 14 a-textio.ads
-49K13*Text_IO 471e16 46|2w10 2r27
-242U14*Put 46|22s17
-X 17 interfac.ads
-38K9*Interfaces 184e15 45|1r6 1r24 2r6 46|1r6 1r32
-X 18 i-c.ads
-18K20*C 230e17 45|1w17 1r35 2r17 46|1r17 1r43
-35I9*int<integer> 45|30r57 30r65 33r32 33r40 36r34 46|9r31 9r65 16r31 16r51
+X 12 a-numeri.ads
+16K13*Numerics 32e17 53|4r10 4r44
+X 13 a-nudira.ads
+44k22*Discrete_Random 75e33 53|4w19 19r37
+50R9*Generator<36|63R9> 53|20r43[19]
+X 14 a-nudira.adb
+53V16 Random[36|83]{53|7I14} 37|392b13[53|19]
+X 17 a-textio.ads
+49K13*Text_IO 471e16 54|2w10 2r27
+242U14*Put 54|22s17
+X 20 interfac.ads
+38K9*Interfaces 184e15 53|1r6 1r24 2r6 54|1r6 1r32
+74M9*Unsigned_32
+77M9*Unsigned_64
+X 21 i-c.ads
+18K20*C 230e17 53|1w17 1r35 2r17 54|1r17 1r43
+35I9*int<integer> 53|34r57 34r65 37r32 37r40 40r34 54|9r31 9r65 16r31 16r51
 . 27r27 27r47 32r29
-X 19 i-cstrin.ads
-36K22*Strings 106e25 45|2w19 30r35 46|1w19 7r20 7r41 10r17 14r20 14r41 17r17
-47P9*chars_ptr 45|30r43 46|7r28 14r28
-60V13*New_String{47P9} 46|7s49 14s49
-62U14*Free 46|10s25 17s25
-X 21 system.ads
+X 22 i-cstrin.ads
+36K22*Strings 106e25 53|2w19 34r35 54|1w19 7r20 7r41 10r17 14r20 14r41 17r17
+47P9*chars_ptr 53|34r43 54|7r28 14r28
+60V13*New_String{47P9} 54|7s49 14s49
+62U14*Free 54|10s25 17s25
+X 24 system.ads
 67M9*Address
-X 29 s-memory.ads
-53V13*Alloc{21|67M9} 103i<c,__gnat_malloc>22
+X 33 s-memory.ads
+53V13*Alloc{24|67M9} 103i<c,__gnat_malloc>22
 68U14*Free 104i<c,__gnat_free>22
-76V13*Realloc{21|67M9} 105i<c,__gnat_realloc>22
-X 36 s-stalib.adb
+76V13*Realloc{24|67M9} 105i<c,__gnat_realloc>22
+X 36 s-rannum.ads
+75V13*Random{20|74M9} 37|221i21
+76V13*Random{20|77M9} 37|221i21
+X 43 s-stalib.adb
 93U14 Break_Start 94i<c,__gnat_break_start>22
-X 45 utility.ads
-4K9*Utility 30E19 42l5 42e12 46|3b14 41l5 41t12
-6I14*PosTerm<integer> 7r29 9r29 12r23 23r44 23r56 25r32 46|9r35 13r44 13r56
-. 25r32
-7I17*SizeTerm{6I14}
-9i9*StartTerm{6I14} 46|9r53 16r39 27r31
-11R14*Position 13e19 15r54 22r47 46|6r47
-12i17*x{6I14} 46|9r48
-12i20*y{6I14} 46|9r74
-15K17*VectorPosPkg[6|73] 16r30
-16R17*VectorPos{6|88R9[15]}
-19E14*ColorName 19e65 26r31 46|30r31 32r33
-19n28*Blue{19E14}
-19n34*Red{19E14}
-19n39*Green{19E14}
-19n46*Brown{19E14}
-19n53*Black{19E14}
-19n60*None{19E14}
-22U19*Print_at 22>28 22>41 46|6b19 11l13 11t21
-22a28 str{string} 46|6b28 7r60
-22r41 from{11R14} 46|6b41 9r43 9r69
-23U19*Print_at 23>28 23>41 23>53 46|13b19 18l13 18t21
-23a28 str{string} 46|13b28 14r60
-23i41 x{6I14} 46|13b41 16r35
-23i53 y{6I14} 46|13b53 16r55
-24U19*Print 24>25 46|20b19 23l13 23t18
-24a25 str{string} 46|20b25 22r21
-25U19*MoveTo 25>26 25>29 46|25b19 28l13 28t19
-25i26 x{6I14} 46|25b26 27r43
-25i29 y{6I14} 46|25b29 27r51
-26U19*SetColor 26>28 46|30b19 33l13 33t21
-26e28 c{19E14} 46|30b28 32r47
-27U19*EraseConsole 46|35b19 38l13 38t25
-30U19 C_print_at 30>30 30>54 30>62 46|9s17 16s17
-30p30 str{19|47P9}
-30i54 x{18|35I9}
-30i62 y{18|35I9}
-33U19 C_move_to 33>29 33>37 46|27s17
-33i29 x{18|35I9}
-33i37 y{18|35I9}
-36U19 C_set_color 36>31 46|32s17
-36i31 c{18|35I9}
-39U19 C_erase_console 46|37s17
-X 46 utility.adb
-7p17 s{19|47P9} 9r28 10m30 10r30
-14p17 s{19|47P9} 16r28 17m30 17r30
+X 53 utility.ads
+5K9*Utility 34E19 46l5 46e12 54|3b14 41l5 41t12
+7I14*PosTerm<integer> 8r29 10r29 13r23 19r53 27r44 27r56 29r32 54|9r35 13r44
+. 13r56 25r32
+8I17*SizeTerm{7I14}
+10i9*StartTerm{7I14} 54|9r53 16r39 27r31
+12R14*Position 14e19 16r54 26r47 54|6r47
+13i17*x{7I14} 54|9r48
+13i20*y{7I14} 54|9r74
+16K17*VectorPosPkg[6|73] 17r30
+17R17*VectorPos{6|88R9[16]}
+19K17*RandomPosPkg[13|44] 20r30
+20R17*RandomPos{13|50R9[19]}
+23E14*ColorName 23e65 30r31 54|30r31 32r33
+23n28*Blue{23E14}
+23n34*Red{23E14}
+23n39*Green{23E14}
+23n46*Brown{23E14}
+23n53*Black{23E14}
+23n60*None{23E14}
+26U19*Print_at 26>28 26>41 54|6b19 11l13 11t21
+26a28 str{string} 54|6b28 7r60
+26r41 from{12R14} 54|6b41 9r43 9r69
+27U19*Print_at 27>28 27>41 27>53 54|13b19 18l13 18t21
+27a28 str{string} 54|13b28 14r60
+27i41 x{7I14} 54|13b41 16r35
+27i53 y{7I14} 54|13b53 16r55
+28U19*Print 28>25 54|20b19 23l13 23t18
+28a25 str{string} 54|20b25 22r21
+29U19*MoveTo 29>26 29>29 54|25b19 28l13 28t19
+29i26 x{7I14} 54|25b26 27r43
+29i29 y{7I14} 54|25b29 27r51
+30U19*SetColor 30>28 54|30b19 33l13 33t21
+30e28 c{23E14} 54|30b28 32r47
+31U19*EraseConsole 54|35b19 38l13 38t25
+34U19 C_print_at 34>30 34>54 34>62 54|9s17 16s17
+34p30 str{22|47P9}
+34i54 x{21|35I9}
+34i62 y{21|35I9}
+37U19 C_move_to 37>29 37>37 54|27s17
+37i29 x{21|35I9}
+37i37 y{21|35I9}
+40U19 C_set_color 40>31 54|32s17
+40i31 c{21|35I9}
+43U19 C_erase_console 54|37s17
+X 54 utility.adb
+7p17 s{22|47P9} 9r28 10m30 10r30
+14p17 s{22|47P9} 16r28 17m30 17r30
 

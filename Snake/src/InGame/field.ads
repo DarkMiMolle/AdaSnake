@@ -13,7 +13,7 @@ package Field is
 	function Check(f: in out Field; s: in out Snake.Snake) return Boolean;
 	procedure Paint(f: in Field);
 	procedure DisplayPt(f: in Field);
-	procedure NextPt(f: in out Field);
+	procedure NextPoint(f: in out Field);
 
 private
 	type Field2D is array (SizeTerm, SizeTerm) of FieldElem;
