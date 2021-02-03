@@ -37,8 +37,9 @@ private
 	subtype VectorSnakeElem is VectorSnakeElemPkg.Vector;
 
 	function Pos(elem: in SnakeElem) return Position;
-	procedure Display(elem: in SnakeElem);
-	procedure Hide(elem: in SnakeElem);
+	procedure Pos(elem: in SnakeElem; p: Position);
+	procedure Display(elem: in SnakeElem; zm: GameContext.ZoomIndice; cl: ColorName);
+	procedure Hide(elem: in SnakeElem; zm: GameContext.ZoomIndice);
 
 	type Snake is tagged record
 		ctxt: access GameContext.Context;
