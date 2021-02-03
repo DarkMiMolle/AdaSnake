@@ -18,7 +18,6 @@ package Snake is
 	function Creat(ctxt: in out GameContext.Context) return Snake;
 	
 	procedure Display(s: in Snake);
-	procedure Hide(s: in Snake);
 	
 	procedure Move(s: in out Snake);
 	procedure Pos(s: in out Snake; p: Position);
@@ -40,7 +39,7 @@ private
 	
 	function Pos(elem: in SnakeElem) return Position;
 	procedure Display(elem: in SnakeElem; zm: GameContext.ZoomIndice; cl: ColorName);
-	procedure Hide(elem: in SnakeElem);
+	procedure Hide(elem: in SnakeElem; zm: GameContext.ZoomIndice);
 		
 	type Snake is tagged record
 		ctxt: access GameContext.Context;
