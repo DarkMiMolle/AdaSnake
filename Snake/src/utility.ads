@@ -23,6 +23,7 @@ package Utility is
 	procedure Print(str: String);
 	procedure MoveTo(x, y: SizeTerm);
 	procedure SetColor(c: ColorName);
+	procedure EraseConsole();
 
 private
 	procedure C_print_at(str: Strings.chars_ptr; x: int; y: int)
@@ -33,5 +34,8 @@ private
 
 	procedure C_set_color(c: int)
 	  with Import => True, Convention => C, External_name => "set_color";
+	
+	procedure C_erase_console()
+	  with Import => True, Convention => C, External_name => "erase_console";
 
 end Utility;

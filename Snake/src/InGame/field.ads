@@ -21,7 +21,7 @@ private
 		ctxt: access GameContext.Context;
 		snakePos: Position;
 		ptPos: Position;
-		representation: Field2D(1 .. width, 1 .. height);
+		representation: Field2D(0 .. width, 0 .. height);
 	end record;
 	
 
