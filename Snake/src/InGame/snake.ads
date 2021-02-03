@@ -31,16 +31,15 @@ package Snake is
 private
 
 	type SnakeElem is tagged record
-		zoom: GameContext.ZoomIndice;
 		pos: Position;
-		color: ColorName;
 	end record;
 	
 	package VectorSnakeElemPkg is new Vectors(Natural, SnakeElem);
 	subtypes VectorSnakeElem is VectorSnakeElemPkg.Vector;
 	
+	
 	function Pos(elem: in SnakeElem) return Position;
-	procedure Display(elem: in SnakeElem);
+	procedure Display(elem: in SnakeElem; zm: GameContext.ZoomIndice; cl: ColorName);
 	procedure Hide(elem: in SnakeElem);
 		
 	type Snake is tagged record
