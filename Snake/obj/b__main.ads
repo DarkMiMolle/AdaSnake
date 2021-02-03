@@ -325,7 +325,7 @@ package ada_main is
    pragma Export (C, u00143, "system__finalization_rootS");
    u00144 : constant Version_32 := 16#bbaa76ac#;
    pragma Export (C, u00144, "system__file_control_blockS");
-   u00145 : constant Version_32 := 16#51bbdfb3#;
+   u00145 : constant Version_32 := 16#e7b03475#;
    pragma Export (C, u00145, "gamecontextB");
    u00146 : constant Version_32 := 16#ebada734#;
    pragma Export (C, u00146, "gamecontextS");

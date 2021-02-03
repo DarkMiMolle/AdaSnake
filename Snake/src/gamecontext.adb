@@ -23,11 +23,12 @@ package body GameContext is
     end displayMenu;
 
     procedure displayConfigPan(ctxt: in Context) is
-
+        color: String := (if ctxt.conf.color then "on" else "off");
+        --zoom: Integer := ZoomIndice'Pos(ctxt.conf.zoom) + 1;
     begin -- displayConfigPan
 		 Print("o KeyMap", 2, 3);
-         Print("- color off", 3, 3);
-         Print("- zoom 1", 4, 3);
+         Print("- color " & color, 3, 3);
+         Print("- zoom " & ctxt.conf.zoom'Image, 4, 3);
     end displayConfigPan;
 
     procedure SetUpKeymap(ctxt: in out Context) is
@@ -112,7 +113,7 @@ package body GameContext is
                         else
                             ctxt.conf.zoom := ctxt.conf.zoom + 1;
                         end if;
-						Print("" & ctxt.conf.zoom'Image, 4, 3 + 6); -- 7 for "- zoom ".len
+						Print(ctxt.conf.zoom'Image, 4, 3 + 7); -- 7 for "- zoom ".len
 					when others => null;
 				end case;
 			when others => null;
