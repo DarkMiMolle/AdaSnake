@@ -73,8 +73,32 @@ procedure Main is
 	end Keybording;
 
 	task body Keybording is
+	c : Character;
 	begin
-		null;
+		loop
+			exit when not ctxt.Game().Running();
+			Get_Immediate(c);
+			case c is
+				when ctxt.Config.KeyMaped(GameContext.Up) =>
+					dir = InGame.Up -- s.ChangeDir(InGame.Up);
+
+				when ctxt.Config.KeyMaped(GameContext.Down) =>
+					dir = InGame.Down -- s.ChangeDir(InGame.Down);
+
+				when ctxt.Config.KeyMaped(GameContext.Left) =>
+					dir = InGame.Left -- s.ChangeDir(InGame.Left);
+
+				when ctxt.Config.KeyMaped(GameContext.Right) =>
+					dir = InGame.Right -- s.ChangeDir(InGame.Right);
+
+				when ctxt.Config.KeyMaped(GameContext.ExitGame) =>
+					ctxt.Game.Stop(GameContext.Stoped);
+
+				when ctxt.Config.KeyMaped(GameContext.Pause) =>
+					ctxt.Game.Pause(); -- InGame.SaveState(snake, field, ctxt) returning GameContext.GameSaving instade of struct{}{}
+			end case;
+			s.ChangeDir(dir);
+		end loop;
 	end Keybording;
 begin
 	Menu(Ctxt);
