@@ -38,6 +38,7 @@ private
 	
 	
 	function Pos(elem: in SnakeElem) return Position;
+	procedure Pos(elem: in SnakeElem; p: Position);
 	procedure Display(elem: in SnakeElem; zm: GameContext.ZoomIndice; cl: ColorName);
 	procedure Hide(elem: in SnakeElem; zm: GameContext.ZoomIndice);
 		
