@@ -2,19 +2,19 @@
 
 package body Field is
     function CreatField(ctxt: in out GameContext.Context) return Field is
-    f2D : Field2D(ctxt.maxWidth, ctxt.maxHeight);
+    f2D : Field2D(ctxt.MaxWidth, ctxt.MaxHeight);
     begin
 	-- raph: check les ranges mais normalement c'est ok
-        for x in 0 .. ctxt.maxWidth loop
-	    for y in 0 .. ctxt.maxHeight loop
-		if y = 0 or y = ctxt.maxHeight or x = 0 or ctxt.maxWidth then
+        for x in 0 .. ctxt.MaxWidth loop
+	    for y in 0 .. ctxt.MaxHeight loop
+		if y = 0 or y = ctxt.MaxHeight or x = 0 or ctxt.MaxWidth then
 		    f2D(x, y) = Wall;
 		else
 		    f2D(x, y) = Space;
 		end if;
 	    end loop;
         end loop;
-	return (ctxt, (2, 2), (10, 20), f2D);
+	return Field'(ctxt, Position'(2, 2), Position'(10, 20), f2D);
     end CreatField;
 
     -- raph: ATTENTION, LES VALEURS SONT RANDOM, j'ai pas trouvé cette fonction dans le GO
@@ -60,12 +60,12 @@ package body Field is
 			MoveTo(x, y);
 			case f.field(i, j) is
 			    when Empty =>
-				if f.ctxt.conf.color then
+				if f.ctxt.Config.Color then
 					SetColor(Black);
 				end if;
 				Print("°");
 			    when Wall =>
-				if f.ctxt.conf.color then
+				if f.ctxt.Config.Color then
 					SetColor(Brown);
 				end if;
 				Print("#");
@@ -80,7 +80,7 @@ package body Field is
     procedure DisplayPt(f: in Field) is
     begin
     	MoveTo(f.ptPos.X, f.ptPos.Y + 1);
-	if f.ctxt.conf.color then
+	if f.ctxt.Config.Color then
 		SetColor(Green);
 	end if;
 	Print("+");
