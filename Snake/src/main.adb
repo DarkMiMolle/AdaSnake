@@ -67,14 +67,27 @@ procedure Main is
 
 	Ctxt: aliased GameContext.Context := init;
 	field: InGame.Field := InGame.CreatField(ctxt);
-
+	snake: InGame.Snake := InGame.CreatSnake(ctxt);
 	task Keybording is
 		entry Start;
 	end Keybording;
 
-	task body Keybording is begin
+	task body Keybording is
+	begin
 		null;
 	end Keybording;
 begin
 	Menu(Ctxt);
+	f.Paint;
+	Keybording.Start;
+	loop
+		loop
+			exit when not ctxt.Game.Pausing;
+		end loop;
+		exit when not ctxt.Game.Running;
+		exit when not f.Check(s);
+		f.DisplayPt;
+		Print_at(" Current Score: " & s.Score'Image, 2, ctxt.MaxWidth + 2);
+		delay 0.15;
+	end loop;
 end Main;

@@ -21,7 +21,7 @@ RV SPARK_05
 RV MAX_TASK_ENTRIES=1
 RV MAX_TASKS=1+
 
-U main%b		main.adb		d190daed NE OO SU
+U main%b		main.adb		fd5e1685 NE OO SU
 W ada%s			ada.ads			ada.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
 Z ada.real_time%s	a-reatim.adb		a-reatim.ali
@@ -68,7 +68,7 @@ D interfac.ads		20200312110721 5ab55268 interfaces%s
 D i-c.ads		20200312110721 5421119b interfaces.c%s
 D i-cstrin.ads		20200312110721 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20200312110721 e53d8b8e interfaces.c_streams%s
-D main.adb		20210203160439 0422945c main%b
+D main.adb		20210203181428 28ec5834 main%b
 D snake.ads		20210203180552 34609e58 snake%s
 D system.ads		20200312110721 4635ec04 system%s
 D s-atacco.ads		20200312110721 4c36d12f system.address_to_access_conversions%s
@@ -130,7 +130,9 @@ X 23 gamecontext.ads
 44V18*MaxHeight{65|8I17} 29|23s36 25s59
 46V18*Game(12R14) 29|49s49
 X 24 ingame.ads
-3K9*InGame 16e11 29|2w6 69r16 69r32
+3K9*InGame 16e11 29|2w6 69r16 69r32 70r16 70r32
+6V18*CreatSnake=6:102{30|6R14} 29|70s39
+8R17*Snake{30|6R14} 29|70r23
 12V18*CreatField=12:102{22|6R14} 29|69s39
 14R17*Field{22|6R14} 29|69r23
 X 29 main.adb
@@ -146,8 +148,9 @@ X 29 main.adb
 23i21 h<integer> 25r36 25r50
 24i29 w<integer> 27r39 27r53
 43i33 oldSelection{natural} 61r56
-68r9 Ctxt{23|13R14} 69m50 69r50 79m14 79r14
+68r9 Ctxt{23|13R14} 69m50 69r50 70m50 70r50 79m14 79r14
 69r9 field{24|14R17}
+70r9 snake{24|8R17}
 71t14 Keybording 75b19 77l13 77t23
 72Y23 Start
 X 48 s-stausa.ads
