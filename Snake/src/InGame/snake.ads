@@ -1,3 +1,4 @@
+with Ada.Containers.Vectors; use Ada.Containers;
 with GameContext;
 with Utility; use Utility;
 package Snake is
@@ -28,11 +29,15 @@ package Snake is
 	function Score(s: in out Snake) return Integer;
 	
 private
+
 	type SnakeElem is tagged record
 		zoom: GameContext.ZoomIndice;
 		pos: Position;
 		color: ColorName;
 	end record;
+	
+	package VectorSnakeElemPkg is new Vectors(Natural, SnakeElem);
+	subtypes VectorSnakeElem is VectorSnakeElemPkg.Vector;
 	
 	function Pos(elem: in SnakeElem) return Position;
 	procedure Display(elem: in SnakeElem);
@@ -40,7 +45,7 @@ private
 		
 	type Snake is tagged record
 		ctxt: access GameContext.Context;
-		elems: VectorPos;
+		elems: VectorSnakeElem := VectorSnakeElemPkg.to_Vector(4);
 		dir: Direction.Dir;
 	end record;
 	
