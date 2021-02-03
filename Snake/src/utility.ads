@@ -1,6 +1,7 @@
 with Interfaces.C; use Interfaces.C;
 with Interfaces.C.Strings;
 with Ada.Containers.Vectors; use Ada.Containers;
+with Ada.Numerics; use Ada.Numerics;
 package Utility is
 
 	type PosTerm is new Integer range 0 .. 100;
@@ -14,6 +15,9 @@ package Utility is
 
 	package VectorPosPkg is new Vectors(Natural, Position);
 	subtype VectorPos is VectorPosPkg.Vector;
+
+	package RandomPosPkg is new Random_Numbers(PosTerm);
+	subtype RandomPos is RandomPosPkg.Generator;
 
 
 	type ColorName is (Blue, Red, Green, Brown, Black, None);

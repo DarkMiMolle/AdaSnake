@@ -45,8 +45,8 @@ package body Field is
 
     -- raph: tu m'aideras
     procedure Paint(f: in Field) is
-    x : Integer := 0;
-    y : Integer := 0;
+    x : PosTerm := 0;
+    y : PosTerm := 0;
     begin
     	EraseConsole;
 	for i in 0 .. f.width loop
@@ -54,7 +54,7 @@ package body Field is
 			x := i;
 			y := j + 1;
 			MoveTo(x, y);
-			case f.field(i, j) is
+			case f.representation(i, j) is
 			    when Empty =>
 				if f.ctxt.Config.Color then
 					SetColor(Black);
