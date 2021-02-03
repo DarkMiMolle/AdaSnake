@@ -74,44 +74,46 @@ procedure Main is
 
 	task body Keybording is
 		c : Character;
+		dir : InGame.Direction.Dir;
 	begin
+		accept Start;
 		loop
-			exit when not ctxt.Game().Running();
+			exit when not ctxt.Game.Running;
 			Get_Immediate(c);
-			case c is
-				when ctxt.Config.KeyMaped(GameContext.Up) =>
-					dir = InGame.Up -- s.ChangeDir(InGame.Up);
+			if c = ctxt.Config.KeyMapped(GameContext.Up) then
+					dir := InGame.Direction.Up; -- s.ChangeDir(InGame.Up);
 
-				when ctxt.Config.KeyMaped(GameContext.Down) =>
-					dir = InGame.Down -- s.ChangeDir(InGame.Down);
+			elsif ctxt.Config.KeyMapped(GameContext.Down) = c then
+					dir := InGame.Direction.Down; -- s.ChangeDir(InGame.Down);
 
-				when ctxt.Config.KeyMaped(GameContext.Left) =>
-					dir = InGame.Left -- s.ChangeDir(InGame.Left);
+			elsif ctxt.Config.KeyMapped(GameContext.Left) = c then
+					dir := InGame.Direction.Left; -- s.ChangeDir(InGame.Left);
 
-				when ctxt.Config.KeyMaped(GameContext.Right) =>
-					dir = InGame.Right -- s.ChangeDir(InGame.Right);
+			elsif ctxt.Config.KeyMapped(GameContext.Right) = c then
+					dir := InGame.Direction.Right; -- s.ChangeDir(InGame.Right);
 
-				when ctxt.Config.KeyMaped(GameContext.ExitGame) =>
-					ctxt.Game.Stop(GameContext.Stoped);
+			elsif ctxt.Config.KeyMapped(GameContext.ExitGame) = c then
+					ctxt.Game.StopGame(GameContext.Stoped);
 
-				when ctxt.Config.KeyMaped(GameContext.Pause) =>
+			elsif ctxt.Config.KeyMapped(GameContext.Pause) = c then
 					ctxt.Game.Pause; -- InGame.SaveState(snake, field, ctxt) returning GameContext.GameSaving instade of struct{}{}
-			end case;
-			s.ChangeDir(dir);
+			end if;
+			snake.ChangeDir(dir);
 		end loop;
 	end Keybording;
 begin
 	Menu(Ctxt);
-	f.Paint;
+	field.Paint;
 	Keybording.Start;
 	loop
 		loop
 			exit when not ctxt.Game.Pausing;
 		end loop;
 		exit when not ctxt.Game.Running;
-		exit when not f.Check(s);
-		f.DisplayPt;
-		Print_at(" Current Score: " & s.Score'Image, 2, ctxt.MaxWidth + 2);
+		exit when not field.Check(snake);
+		field.DisplayPt;
+		Print_at(" Current Score: " & snake.Score'Image, 2, ctxt.MaxWidth + 2);
+		snake.Move;
 		delay 0.15;
 	end loop;
 end Main;
