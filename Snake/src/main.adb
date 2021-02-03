@@ -73,7 +73,7 @@ procedure Main is
 	end Keybording;
 
 	task body Keybording is
-	c : Character;
+		c : Character;
 	begin
 		loop
 			exit when not ctxt.Game().Running();
@@ -95,7 +95,7 @@ procedure Main is
 					ctxt.Game.Stop(GameContext.Stoped);
 
 				when ctxt.Config.KeyMaped(GameContext.Pause) =>
-					ctxt.Game.Pause(); -- InGame.SaveState(snake, field, ctxt) returning GameContext.GameSaving instade of struct{}{}
+					ctxt.Game.Pause; -- InGame.SaveState(snake, field, ctxt) returning GameContext.GameSaving instade of struct{}{}
 			end case;
 			s.ChangeDir(dir);
 		end loop;

@@ -208,6 +208,10 @@ package body GameContext is
         g.running := reason;
     end StopGame; -- TODO: add parametter reason
 
+    procedure Pause(g: in out GameInfo) is
+    begin -- Pause
+        g.pausing := True;
+    end Pause;
 
     -- Context
 	function CreatContext(width, height: SizeTerm) return Context is
