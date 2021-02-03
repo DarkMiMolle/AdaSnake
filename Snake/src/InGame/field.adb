@@ -7,14 +7,14 @@ package body Field is
 	-- raph: check les ranges mais normalement c'est ok
         for x in 0 .. ctxt.MaxWidth loop
             for y in 0 .. ctxt.MaxHeight loop
-            	if y = 0 or y = ctxt.MaxHeight or x = 0 or ctxt.MaxWidth then
-            	    f2D(x, y) = Wall;
+            	if y = 0 or y = ctxt.MaxHeight or x = 0 or x = ctxt.MaxWidth then
+            	    f2D(x, y) := Wall;
             	else
-            	    f2D(x, y) = Space;
+            	    f2D(x, y) := Space;
             	end if;
             end loop;
         end loop;
-	    return Field'(ctxt.MaxWidth, ctxt.MaxHeight, ctxt, Position'(2, 2), Position'(10, 20), f2D);
+	    return Field'(ctxt.MaxWidth, ctxt.MaxHeight, ctxt'Unchecked_Access, Position'(2, 2), Position'(10, 20), f2D);
     end CreatField;
 
     -- raph: ATTENTION, LES VALEURS SONT RANDOM, j'ai pas trouvé cette fonction dans le GO
@@ -31,13 +31,12 @@ package body Field is
     function Check(f: in out Field; s: in out Snake.Snake) return Boolean is
     begin
         if f.representation(s.Pos.X, s.Pos.Y) = Wall then
-		--f.ctxt.game.Stop(GameContext.LostSnakeOnWall)
-                GameContext.StopGame(GameContext.LostSnakeOnWall);
+		          f.ctxt.game.StopGame(GameContext.LostSnakeOnWall);
 		return false;
 	end if;
 
-	if s.elems.X = f.ptPos.X and s.elems.Y = f.ptPos.Y then
-		s.AddPoint(s);
+	if s.Pos.X = f.ptPos.X and s.Pos.Y = f.ptPos.Y then
+		s.AddPoint;
 		f.nextPoint; -- contrat: Post => f.ptPos n'est pas sur un mur ni en dehors du terrain
 	end if;
 	return true;

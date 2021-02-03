@@ -33,13 +33,13 @@ private
 		pos: Position;
 	end record;
 
-	package VectorSnakeElemPkg is new Vectors(Natural, SnakeElem);
-	subtype VectorSnakeElem is VectorSnakeElemPkg.Vector;
-
 	function Pos(elem: in SnakeElem) return Position;
 	procedure Pos(elem: in SnakeElem; p: Position);
 	procedure Display(elem: in SnakeElem; zm: GameContext.ZoomIndice; cl: ColorName);
 	procedure Hide(elem: in SnakeElem; zm: GameContext.ZoomIndice);
+
+	package VectorSnakeElemPkg is new Vectors(Natural, SnakeElem);
+	subtype VectorSnakeElem is VectorSnakeElemPkg.Vector;
 
 	type Snake is tagged record
 		ctxt: access GameContext.Context;

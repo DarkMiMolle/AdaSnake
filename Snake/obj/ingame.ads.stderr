@@ -1,3 +1,0 @@
-gamecontexts-gamecontext.ads:9:50: "Config" is undefined
-gamecontexts-gamecontext.ads:10:59: "GameInfo" is undefined (more references follow)
-gamecontexts-gamecontext.ads:16:14: full view of "Context" not compatible with declaration at line 3

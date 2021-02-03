@@ -5,7 +5,6 @@ A -march=x86-64
 P ZX
 
 RN
-RV NO_DIRECT_BOOLEAN_OPERATORS
 RV NO_EXCEPTION_HANDLERS
 RV NO_EXCEPTIONS
 RV NO_IO
@@ -14,14 +13,14 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U utility%b		utility.adb		7f50a4c3 NE OO PK
+U utility%b		utility.adb		6dbd3e04 NE OO PK
 W ada%s			ada.ads			ada.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W interfaces%s		interfac.ads		interfac.ali
 W interfaces.c%s	i-c.adb			i-c.ali
 W interfaces.c.strings%s  i-cstrin.adb		i-cstrin.ali
 
-U utility%s		utility.ads		c1eed2f1 EE OO PF PK
+U utility%s		utility.ads		4d32b693 EE OO PF PK
 W ada%s			ada.ads			ada.ali
 W ada.containers%s	a-contai.ads		a-contai.ali
 Z ada.containers.generic_array_sort%s
@@ -91,32 +90,32 @@ D s-stratt.ads		20200312110721 aedef97e system.stream_attributes%s
 D s-traent.ads		20200312110721 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20200312110721 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20200312110721 1b7d22d2 system.wch_con%s
-D utility.ads		20210203101252 dff9c16a utility%s
-D utility.adb		20210203101334 1ca9db2c utility%b
+D utility.ads		20210203142450 5325a508 utility%s
+D utility.adb		20210203163208 82982589 utility%b
 X 1 ada.ads
 16K9*Ada 20e8 45|3r6 3r34 46|2r6 2r23
 X 2 a-contai.ads
 16K13*Containers 24e19 45|3r10 3r38
 X 6 a-convec.ads
-73k24*Vectors 824e27 45|3w21 14r37
-88R9*Vector<9|43R9> 45|15r43[14]
+73k24*Vectors 824e27 45|3w21 15r37
+88R9*Vector<9|43R9> 45|16r43[15]
 X 11 a-iteint.ads
 24h9 Forward_Iterator
 32h9 Reversible_Iterator<24R9[6|111]>
 X 14 a-textio.ads
 49K13*Text_IO 471e16 46|2w10 2r27
-242U14*Put 46|10s25 26s17
+242U14*Put 46|22s17
 X 17 interfac.ads
 38K9*Interfaces 184e15 45|1r6 1r24 2r6 46|1r6 1r32
 X 18 i-c.ads
 18K20*C 230e17 45|1w17 1r35 2r17 46|1r17 1r43
-35I9*int<integer> 45|29r57 29r65 32r32 32r40 35r34 46|12r39 12r74 20r31 20r51
-. 31r27 31r35 36r29
+35I9*int<integer> 45|30r57 30r65 33r32 33r40 36r34 46|9r31 9r65 16r31 16r51
+. 27r27 27r47 32r29
 X 19 i-cstrin.ads
-36K22*Strings 106e25 45|2w19 29r35 46|1w19 7r20 7r41 14r17 18r20 18r41 21r17
-47P9*chars_ptr 45|29r43 46|7r28 18r28
-60V13*New_String{47P9} 46|7s49 18s49
-62U14*Free 46|14s25 21s25
+36K22*Strings 106e25 45|2w19 30r35 46|1w19 7r20 7r41 10r17 14r20 14r41 17r17
+47P9*chars_ptr 45|30r43 46|7r28 14r28
+60V13*New_String{47P9} 46|7s49 14s49
+62U14*Free 46|10s25 17s25
 X 21 system.ads
 67M9*Address
 X 29 s-memory.ads
@@ -126,47 +125,49 @@ X 29 s-memory.ads
 X 36 s-stalib.adb
 93U14 Break_Start 94i<c,__gnat_break_start>22
 X 45 utility.ads
-4K9*Utility 29E19 41l5 41e12 46|3b14 45l5 45t12
-6I14*SizeTerm<integer> 8r29 22r41 22r54 24r32 46|12r43 17r41 17r54 29r32
-8i9*StartTerm{6I14} 46|12r62 20r39
-10R14*Position 12e19 14r54 21r47 46|6r47
-11i17*x{integer} 46|9r25 12r57
-11i20*y{integer} 46|9r39 12r83
-14K17*VectorPosPkg[6|73] 15r30
-15R17*VectorPos{6|88R9[14]}
-18E14*ColorName 18e65 25r31 46|34r31 36r33
-18n28*Blue{18E14}
-18n34*Red{18E14}
-18n39*Green{18E14}
-18n46*Brown{18E14}
-18n53*Black{18E14}
-18n60*None{18E14}
-21U19*Print_at 21>28 21>41 46|6b19 15l13 15t21
-21a28 str{string} 46|6b28 7r60 10r29
-21r41 from{10R14} 46|6b41 9r20 9r34 12r52 12r78
-22U19*Print 22>25 22>38 22>51 46|17b19 22l13 22t18
-22a25 str{string} 46|17b25 18r60
-22i38 x{6I14} 46|17b38 20r35
-22i51 y{6I14} 46|17b51 20r55
-23U19*Print 23>25 46|24b19 27l13 27t18
-23a25 str{string} 46|24b25 26r21
-24U19*MoveTo 24>26 24>29 46|29b19 32l13 32t19
-24i26 x{6I14} 46|29b26 31r31
-24i29 y{6I14} 46|29b29 31r39
-25U19*SetColor 25>28 46|34b19 37l13 37t21
-25e28 c{18E14} 46|34b28 36r47
-26U19*EraseConsole 46|39b19 42l13 42t25
-29U19 C_print_at 29>30 29>54 29>62 46|12s25 20s17
-29p30 str{19|47P9}
-29i54 x{18|35I9}
-29i62 y{18|35I9}
-32U19 C_move_to 32>29 32>37 46|31s17
-32i29 x{18|35I9}
-32i37 y{18|35I9}
-35U19 C_set_color 35>31 46|36s17
-35i31 c{18|35I9}
-38U19 C_erase_console 46|41s17
+4K9*Utility 30E19 42l5 42e12 46|3b14 41l5 41t12
+6I14*PosTerm<integer> 7r29 9r29 12r23 23r44 23r56 25r32 46|9r35 13r44 13r56
+. 25r32
+7I17*SizeTerm{6I14}
+9i9*StartTerm{6I14} 46|9r53 16r39 27r31
+11R14*Position 13e19 15r54 22r47 46|6r47
+12i17*x{6I14} 46|9r48
+12i20*y{6I14} 46|9r74
+15K17*VectorPosPkg[6|73] 16r30
+16R17*VectorPos{6|88R9[15]}
+19E14*ColorName 19e65 26r31 46|30r31 32r33
+19n28*Blue{19E14}
+19n34*Red{19E14}
+19n39*Green{19E14}
+19n46*Brown{19E14}
+19n53*Black{19E14}
+19n60*None{19E14}
+22U19*Print_at 22>28 22>41 46|6b19 11l13 11t21
+22a28 str{string} 46|6b28 7r60
+22r41 from{11R14} 46|6b41 9r43 9r69
+23U19*Print_at 23>28 23>41 23>53 46|13b19 18l13 18t21
+23a28 str{string} 46|13b28 14r60
+23i41 x{6I14} 46|13b41 16r35
+23i53 y{6I14} 46|13b53 16r55
+24U19*Print 24>25 46|20b19 23l13 23t18
+24a25 str{string} 46|20b25 22r21
+25U19*MoveTo 25>26 25>29 46|25b19 28l13 28t19
+25i26 x{6I14} 46|25b26 27r43
+25i29 y{6I14} 46|25b29 27r51
+26U19*SetColor 26>28 46|30b19 33l13 33t21
+26e28 c{19E14} 46|30b28 32r47
+27U19*EraseConsole 46|35b19 38l13 38t25
+30U19 C_print_at 30>30 30>54 30>62 46|9s17 16s17
+30p30 str{19|47P9}
+30i54 x{18|35I9}
+30i62 y{18|35I9}
+33U19 C_move_to 33>29 33>37 46|27s17
+33i29 x{18|35I9}
+33i37 y{18|35I9}
+36U19 C_set_color 36>31 46|32s17
+36i31 c{18|35I9}
+39U19 C_erase_console 46|37s17
 X 46 utility.adb
-7p17 s{19|47P9} 12r36 14m30 14r30
-18p17 s{19|47P9} 20r28 21m30 21r30
+7p17 s{19|47P9} 9r28 10m30 10r30
+14p17 s{19|47P9} 16r28 17m30 17r30
 

@@ -59,7 +59,7 @@ package body GameContext is
                     MoveTo(SizeTerm(2 + Key'Pos(selection)), SizeTerm(3 + 2 + selection'Image'Last - selection'Image'First + 4));
                     Get_Immediate(c);
 					ctxt.conf.keymapping(selection) := c;
-                    Print_at("" & ctxt.conf.keymapping(selection));
+                    Print("" & ctxt.conf.keymapping(selection));
 				when others =>
 					null;
             end case;

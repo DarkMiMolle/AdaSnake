@@ -3,14 +3,10 @@ with Ada.Text_IO; use Ada.Text_IO;
 package body Utility is
 
 	-- API body
-	procedure Print_at(str: String; from: Position := (-1, -1)) is
+	procedure Print_at(str: String; from: Position) is
 		s: Strings.chars_ptr := Strings.New_String(str);
 	begin
-		if from.x < 0 or from.y < 0 then
-			Put(str);
-		else
-			C_print_at(s, int(PosTerm(from.x) + StartTerm), int(from.y));
-		end if;
+		C_print_at(s, int(PosTerm(from.x) + StartTerm), int(from.y));
 		Strings.Free(s);
 	end Print_at;
 

@@ -1,4 +1,1 @@
 main.adb:75:09: warning: no accept for entry "Start"
-snake.ads:42:18: this primitive operation is declared too late
-snake.ads:43:19: this primitive operation is declared too late
-snake.ads:44:19: this primitive operation is declared too late
