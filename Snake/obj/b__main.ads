@@ -37,7 +37,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#214c5d23#;
+   u00001 : constant Version_32 := 16#00191813#;
    pragma Export (C, u00001, "mainB");
    u00002 : constant Version_32 := 16#050ff2f0#;
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -325,9 +325,9 @@ package ada_main is
    pragma Export (C, u00143, "system__finalization_rootS");
    u00144 : constant Version_32 := 16#bbaa76ac#;
    pragma Export (C, u00144, "system__file_control_blockS");
-   u00145 : constant Version_32 := 16#e7b03475#;
+   u00145 : constant Version_32 := 16#df2e1282#;
    pragma Export (C, u00145, "gamecontextB");
-   u00146 : constant Version_32 := 16#ebada734#;
+   u00146 : constant Version_32 := 16#ce6ee9fe#;
    pragma Export (C, u00146, "gamecontextS");
    u00147 : constant Version_32 := 16#932a4690#;
    pragma Export (C, u00147, "system__concat_4B");
@@ -389,9 +389,9 @@ package ada_main is
    pragma Export (C, u00175, "system__communicationB");
    u00176 : constant Version_32 := 16#5f55b9d6#;
    pragma Export (C, u00176, "system__communicationS");
-   u00177 : constant Version_32 := 16#b58f255a#;
+   u00177 : constant Version_32 := 16#7f50a4c3#;
    pragma Export (C, u00177, "utilityB");
-   u00178 : constant Version_32 := 16#f55e4577#;
+   u00178 : constant Version_32 := 16#c1eed2f1#;
    pragma Export (C, u00178, "utilityS");
    u00179 : constant Version_32 := 16#69f6ee6b#;
    pragma Export (C, u00179, "interfaces__c__stringsB");

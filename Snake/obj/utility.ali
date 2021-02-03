@@ -14,14 +14,14 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U utility%b		utility.adb		b58f255a NE OO PK
+U utility%b		utility.adb		7f50a4c3 NE OO PK
 W ada%s			ada.ads			ada.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W interfaces%s		interfac.ads		interfac.ali
 W interfaces.c%s	i-c.adb			i-c.ali
 W interfaces.c.strings%s  i-cstrin.adb		i-cstrin.ali
 
-U utility%s		utility.ads		f55e4577 EE OO PF PK
+U utility%s		utility.ads		c1eed2f1 EE OO PF PK
 W ada%s			ada.ads			ada.ali
 W ada.containers%s	a-contai.ads		a-contai.ali
 Z ada.containers.generic_array_sort%s
@@ -91,8 +91,8 @@ D s-stratt.ads		20200312110721 aedef97e system.stream_attributes%s
 D s-traent.ads		20200312110721 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20200312110721 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20200312110721 1b7d22d2 system.wch_con%s
-D utility.ads		20210202143732 eb4956ec utility%s
-D utility.adb		20210202150321 e2c6cd33 utility%b
+D utility.ads		20210203101252 dff9c16a utility%s
+D utility.adb		20210203101334 1ca9db2c utility%b
 X 1 ada.ads
 16K9*Ada 20e8 45|3r6 3r34 46|2r6 2r23
 X 2 a-contai.ads
@@ -110,11 +110,11 @@ X 17 interfac.ads
 38K9*Interfaces 184e15 45|1r6 1r24 2r6 46|1r6 1r32
 X 18 i-c.ads
 18K20*C 230e17 45|1w17 1r35 2r17 46|1r17 1r43
-35I9*int<integer> 45|28r57 28r65 31r32 31r40 34r34 46|12r39 12r74 20r31 20r51
+35I9*int<integer> 45|29r57 29r65 32r32 32r40 35r34 46|12r39 12r74 20r31 20r51
 . 31r27 31r35 36r29
 X 19 i-cstrin.ads
-36K22*Strings 106e25 45|2w19 28r35 46|1w19 7r20 7r41 14r17 18r20 18r41 21r17
-47P9*chars_ptr 45|28r43 46|7r28 18r28
+36K22*Strings 106e25 45|2w19 29r35 46|1w19 7r20 7r41 14r17 18r20 18r41 21r17
+47P9*chars_ptr 45|29r43 46|7r28 18r28
 60V13*New_String{47P9} 46|7s49 18s49
 62U14*Free 46|14s25 21s25
 X 21 system.ads
@@ -126,7 +126,7 @@ X 29 s-memory.ads
 X 36 s-stalib.adb
 93U14 Break_Start 94i<c,__gnat_break_start>22
 X 45 utility.ads
-4K9*Utility 28E19 37l5 37e12 46|3b14 40l5 40t12
+4K9*Utility 29E19 41l5 41e12 46|3b14 45l5 45t12
 6I14*SizeTerm<integer> 8r29 22r41 22r54 24r32 46|12r43 17r41 17r54 29r32
 8i9*StartTerm{6I14} 46|12r62 20r39
 10R14*Position 12e19 14r54 21r47 46|6r47
@@ -155,15 +155,17 @@ X 45 utility.ads
 24i29 y{6I14} 46|29b29 31r39
 25U19*SetColor 25>28 46|34b19 37l13 37t21
 25e28 c{18E14} 46|34b28 36r47
-28U19 C_print_at 28>30 28>54 28>62 46|12s25 20s17
-28p30 str{19|47P9}
-28i54 x{18|35I9}
-28i62 y{18|35I9}
-31U19 C_move_to 31>29 31>37 46|31s17
-31i29 x{18|35I9}
-31i37 y{18|35I9}
-34U19 C_set_color 34>31 46|36s17
-34i31 c{18|35I9}
+26U19*EraseConsole 46|39b19 42l13 42t25
+29U19 C_print_at 29>30 29>54 29>62 46|12s25 20s17
+29p30 str{19|47P9}
+29i54 x{18|35I9}
+29i62 y{18|35I9}
+32U19 C_move_to 32>29 32>37 46|31s17
+32i29 x{18|35I9}
+32i37 y{18|35I9}
+35U19 C_set_color 35>31 46|36s17
+35i31 c{18|35I9}
+38U19 C_erase_console 46|41s17
 X 46 utility.adb
 7p17 s{19|47P9} 12r36 14m30 14r30
 18p17 s{19|47P9} 20r28 21m30 21r30

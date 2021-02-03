@@ -1,4 +1,5 @@
 with GameContext;
+with InGame;
 with Ada.Text_IO; use Ada.Text_IO;
 with Utility; use Utility;
 
@@ -45,7 +46,7 @@ procedure Main is
 				case c is
 				when 'z'=> selection := (if selection > 0 then selection - 1 else selection);
 				when 's'=> selection := (if selection < 3 then selection + 1 else selection);
-				when 'r'=> ctxt.Game.StopGame; -- TODO: add argument reason
+				when 'r'=> ctxt.Game.StopGame(GameContext.Stoped);
 					return;
 				when ' '=>
 					case selection is
@@ -57,14 +58,15 @@ procedure Main is
 					end case;
 				when others => null;
 				end case;
-				Print("-", SizeTerm(oldSelection + 2), 3);
-				Print("o", SizeTerm(selection + 2), 3);
+				Print_at("-", SizeTerm(oldSelection + 2), 3);
+				Print_at("o", SizeTerm(selection + 2), 3);
 			end;
 		end loop;
 	end Menu;
 
 
 	Ctxt: aliased GameContext.Context := init;
+	field: InGame.Field := InGame.CreatField(ctxt);
 
 	task Keybording is
 		entry Start;
@@ -74,5 +76,5 @@ procedure Main is
 		null;
 	end Keybording;
 begin
-   Menu(Ctxt);
+	Menu(Ctxt);
 end Main;

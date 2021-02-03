@@ -3,32 +3,29 @@ with Ada.Text_IO; use Ada.Text_IO;
 package body GameContext is
 
     procedure ClearMenu(ctxt: in Context) is
-
-    begin -- ClearMenu
-		  for x in 2 .. ctxt.maxHeight - 2 loop
-              for y in 2 .. ctxt.MaxWidth - 2 loop
-                  Print(" ", x, y);
-              end loop;
+    begin
+        for x in 2 .. ctxt.maxHeight - 2 loop
+          for y in 2 .. ctxt.MaxWidth - 2 loop
+              Print_at(" ", x, y);
           end loop;
+        end loop;
     end ClearMenu;
 
 
     procedure displayMenu is
-
     begin -- displayMenu
-        Print("o Configuration", 2, 3);
-        Print("- Resum", 3, 3);
-        Print("- Load field", 4, 3);
-        Print("- Play", 5, 3);
+        Print_at("o Configuration", 2, 3);
+        Print_at("- Resum", 3, 3);
+        Print_at("- Load field", 4, 3);
+        Print_at("- Play", 5, 3);
     end displayMenu;
 
     procedure displayConfigPan(ctxt: in Context) is
         color: String := (if ctxt.conf.color then "on" else "off");
-        --zoom: Integer := ZoomIndice'Pos(ctxt.conf.zoom) + 1;
     begin -- displayConfigPan
-		 Print("o KeyMap", 2, 3);
-         Print("- color " & color, 3, 3);
-         Print("- zoom " & ctxt.conf.zoom'Image, 4, 3);
+        Print_at("o KeyMap", 2, 3);
+        Print_at("- color " & color, 3, 3);
+        Print_at("- zoom " & ctxt.conf.zoom'Image, 4, 3);
     end displayConfigPan;
 
     procedure SetUpKeymap(ctxt: in out Context) is
@@ -38,10 +35,10 @@ package body GameContext is
     begin -- SetUpKeymap
         ClearMenu(ctxt);
         for k in ctxt.conf.keymapping'range loop
-            Print("- " & k'Image & " : " & ctxt.conf.keymapping(k), 2 + SizeTerm(Key'Pos(k)), 3);
+            Print_at("- " & k'Image & " : " & ctxt.conf.keymapping(k), 2 + SizeTerm(Key'Pos(k)), 3);
         end loop;
         loop
-            Print("o", 2 + Key'Pos(selection), 3);
+            Print_at("o", 2 + Key'Pos(selection), 3);
             oldSelection := selection;
             Get_Immediate(c);
             case c is
@@ -58,15 +55,15 @@ package body GameContext is
                     displayConfigPan(ctxt);
                     return;
                 when ' ' =>
-                    Print("* " & selection'Image & " : ", 2 + Key'Pos(selection), 3);
-                    MoveTo(StartTerm + SizeTerm(2 + Key'Pos(selection)), SizeTerm(3 + 2 + selection'Image'Last - selection'Image'First + 4));
+                    Print_at("* " & selection'Image & " : ", 2 + Key'Pos(selection), 3);
+                    MoveTo(SizeTerm(2 + Key'Pos(selection)), SizeTerm(3 + 2 + selection'Image'Last - selection'Image'First + 4));
                     Get_Immediate(c);
 					ctxt.conf.keymapping(selection) := c;
-                    Print("" & ctxt.conf.keymapping(selection));
+                    Print_at("" & ctxt.conf.keymapping(selection));
 				when others =>
 					null;
             end case;
-            Print("-", 2 + Key'Pos(oldSelection), 3);
+            Print_at("-", 2 + Key'Pos(oldSelection), 3);
         end loop;
     end SetUpKeymap;
 
@@ -103,9 +100,9 @@ package body GameContext is
                     when 1 =>
                         ctxt.conf.color := not ctxt.conf.color;
                         if ctxt.conf.color then
-                            Print("on ", 3, 3 + 8); -- 8 for "- color ".len
+                            Print_at("on ", 3, 3 + 8); -- 8 for "- color ".len
                         else
-                            Print("off", 3, 3 + 8);
+                            Print_at("off", 3, 3 + 8);
                         end if;
                     when 2 =>
                         if ctxt.conf.zoom = ZoomIndice'Last then
@@ -113,13 +110,13 @@ package body GameContext is
                         else
                             ctxt.conf.zoom := ctxt.conf.zoom + 1;
                         end if;
-						Print(ctxt.conf.zoom'Image, 4, 3 + 7); -- 7 for "- zoom ".len
+						Print_at(ctxt.conf.zoom'Image, 4, 3 + 7); -- 7 for "- zoom ".len
 					when others => null;
 				end case;
 			when others => null;
             end case;
-            Print("-", SizeTerm(2 + oldSelection), 3);
-            Print("o", SizeTerm(2 + selection), 3);
+            Print_at("-", PosTerm(2 + oldSelection), 3);
+            Print_at("o", PosTerm(2 + selection), 3);
         end loop;
     end SetUpConfig;
 
@@ -141,11 +138,11 @@ package body GameContext is
 	-- GameInfo
 	procedure displayPlayPan is
 	begin
-        Print("o * Lv 1", 2, 3);
-    	Print("-   Lv 2", 2 + 1, 3);
-    	Print("-   Custom", 2 + 2, 3);
-    	Print("- Confirm", 2 + 3, 3);
-    	Print("path:", 2 + 4, 3);
+        Print_at("o * Lv 1", 2, 3);
+    	Print_at("-   Lv 2", 2 + 1, 3);
+    	Print_at("-   Custom", 2 + 2, 3);
+    	Print_at("- Confirm", 2 + 3, 3);
+    	Print_at("path:", 2 + 4, 3);
 	end displayPlayPan;
 
 
@@ -178,21 +175,21 @@ package body GameContext is
                    ctxt.game.lv := prevSelection;
                 else
                     -- 2 + --> offset from the top of the menu
-                    Print("-  ", SizeTerm(2 + Level'Pos(prevSelection)), 3);
+                    Print_at("-  ", PosTerm(2 + Level'Pos(prevSelection)), 3);
                     prevSelection := Level'Val(selection);
-                    Print("o *", SizeTerm(2 + selection), 3);
+                    Print_at("o *", PosTerm(2 + selection), 3);
                     if selection = 2 then
-                        MoveTo(StartTerm + 2 + 4, 3 + 6);-- "path: ".len == 6
+                        MoveTo(2 + 4, 3 + 6);-- "path: ".len == 6
          				ctxt.game.lvRef := Str.To_Unbounded_String(Get_Line);
-         				MoveTo(StartTerm + 2 + 2, 3);
+         				MoveTo(2 + 2, 3);
                     end if;
 				end if;
 			when others => null;
             end case;
-            Print("-", SizeTerm(2 + oldSelection), 3);
-		    Print("o", SizeTerm(2 + selection), 3);
+            Print_at("-", PosTerm(2 + oldSelection), 3);
+		    Print_at("o", PosTerm(2 + selection), 3);
        end loop;
-       ctxt.game.running := True;
+       ctxt.game.running := Processing;
        ctxt.game.pausing := False;
     end SetUpGameInfo;
 

@@ -2,32 +2,29 @@
 
 package body Field is
     function CreatField(ctxt: in out GameContext.Context) return Field is
-    f2D : Field2D(ctxt.MaxWidth, ctxt.MaxHeight);
+    f2D : Field2D;
     begin
 	-- raph: check les ranges mais normalement c'est ok
         for x in 0 .. ctxt.MaxWidth loop
-	    for y in 0 .. ctxt.MaxHeight loop
-		if y = 0 or y = ctxt.MaxHeight or x = 0 or ctxt.MaxWidth then
-		    f2D(x, y) = Wall;
-		else
-		    f2D(x, y) = Space;
-		end if;
-	    end loop;
+            for y in 0 .. ctxt.MaxHeight loop
+            	if y = 0 or y = ctxt.MaxHeight or x = 0 or ctxt.MaxWidth then
+            	    f2D(x, y) = Wall;
+            	else
+            	    f2D(x, y) = Space;
+            	end if;
+            end loop;
         end loop;
-	return Field'(ctxt, Position'(2, 2), Position'(10, 20), f2D);
+	    return Field'(ctxt.MaxWidth, ctxt.MaxHeight, ctxt, Position'(2, 2), Position'(10, 20), f2D);
     end CreatField;
 
     -- raph: ATTENTION, LES VALEURS SONT RANDOM, j'ai pas trouvé cette fonction dans le GO
     function Char(elem: FieldElem) return Character is
     begin
-	case elem is
-	    when Wall =>
-		return 'a';
-	    when Space =>
-		return 'b';
-	    when Empty =>
-		return 'c';
-	end case;
+    	case elem is
+    	    when Wall => return 'a';
+    	    when Space => return 'b';
+    	    when Empty => return 'c';
+    	end case;
     end Char;
 
     -- raph: j'ai pas trouvé nextpoint dans les declaration, dans le doute je te laisse faire ^^
@@ -53,8 +50,8 @@ package body Field is
     y : Integer := 0;
     begin
     	EraseConsole;
-	for i in range 0 .. f.width loop
-		for j in range 0 .. f.height loop
+	for i in 0 .. f.width loop
+		for j in 0 .. f.height loop
 			x := i;
 			y := j + 1;
 			MoveTo(x, y);
@@ -75,7 +72,7 @@ package body Field is
 		end loop;
 	end loop;
     end Paint;
-    
+
     -- raph: pareil, pour ya des printfs
     procedure DisplayPt(f: in Field) is
     begin
@@ -85,5 +82,5 @@ package body Field is
 	end if;
 	Print("+");
     end DisplayPt;
-   
+
 end Field;
