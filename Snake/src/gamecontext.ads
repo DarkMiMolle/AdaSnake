@@ -18,6 +18,8 @@ package GameContext is
 	type ZoomIndice is new Positive range 1 .. 3;
 	type Level is ( Lv1, Lv2, LvCustom);
 
+	type GameStopedInfo is (Processing, LostSnakeEatItself, LostSnakeOnWall, Stoped);
+
 
 	-- Config
 	procedure SetUpConfig(ctxt: in out Context);
@@ -32,7 +34,7 @@ package GameContext is
 
 	function Running(g: in GameInfo) return Boolean;
 	function Pausing(g: in GameInfo) return Boolean;
-	procedure StopGame(g: in out GameInfo); -- TODO: add parametter reason
+	procedure StopGame(g: in out GameInfo; reason: GameStopedInfo);
 
 
 	-- Context
@@ -62,7 +64,7 @@ private
 	end record;
 
 	type GameInfo is tagged record
-		running: Boolean := False;
+		running: GameStopedInfo := Stoped;
 		pausing: Boolean := False;
 		lv: Level := Lv1;
 		lvRef: Unbounded_String; -- or Ada.File. to the .snake.sv

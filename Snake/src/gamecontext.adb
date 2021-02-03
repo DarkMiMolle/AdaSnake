@@ -198,7 +198,7 @@ package body GameContext is
 
     function Running(g: in GameInfo) return Boolean is
     begin
-        return g.running;
+        return g.running = Processing;
     end Running;
 
 	function Pausing(g: in GameInfo) return Boolean is
@@ -206,9 +206,9 @@ package body GameContext is
         return g.pausing;
     end Pausing;
 
-	procedure StopGame(g: in out GameInfo) is
+	procedure StopGame(g: in out GameInfo; reason: GameStopedInfo) is
     begin
-        g.running := false;
+        g.running := reason;
     end StopGame; -- TODO: add parametter reason
 
 

@@ -6,13 +6,13 @@ package body Field is
     begin
 	-- raph: check les ranges mais normalement c'est ok
         for x in 0 .. ctxt.maxWidth loop
-	    for y in 0 .. ctxt.maxHeight loop
-		if y = 0 or y = ctxt.maxHeight or x = 0 or ctxt.maxWidth then
-		    f2D(x, y) = Wall;
-		else
-		    f2D(x, y) = Space;
-		end if;
-	    end loop;
+    	    for y in 0 .. ctxt.maxHeight loop
+        		if y = 0 or y = ctxt.maxHeight or x = 0 or ctxt.maxWidth then
+        		    f2D(x, y) = Wall;
+        		else
+        		    f2D(x, y) = Space;
+        		end if;
+    	    end loop;
         end loop;
 	return (ctxt, (StartTerm + 2, 2), (StartTerm + 10, 20), f2D);
     end CreatField;
@@ -22,11 +22,11 @@ package body Field is
     begin
 	case elem is
 	    when Wall =>
-		return 'a';
+		      return 'a';
 	    when Space =>
-		return 'b';
+		      return 'b';
 	    when Empty =>
-		return 'c';
+		      return 'c';
     end Char;
 
     -- raph: j'ai pas trouvé nextpoint dans les declaration, dans le doute je te laisse faire ^^
@@ -48,8 +48,8 @@ package body Field is
 
     -- raph: tu m'aideras
     procedure Paint(f: in Field);
-    
+
     -- raph: pareil, pour ya des printfs
     procedure DisplayPt(f: in Field);
-   
+
 end Field;
