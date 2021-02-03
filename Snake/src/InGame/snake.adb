@@ -16,7 +16,7 @@ package body Snake is
    	end NexPosFrom;
 	
    	function Creat(ctxt: in out GameContext.Context) return Snake is
-	s : Snake;
+		s : Snake;
    	begin
 		for i in 0 .. 4 loop
 			s.elems.append(Position'(5, 3));
@@ -53,11 +53,22 @@ package body Snake is
    	end Hide;
 	
 	procedure Move(s: in out Snake) is
-	head : SnakeElem;
+		head : SnakeElem;
    	begin
 		head := s.elems.First_Element;
-		head.Pos := 
+		Pos(head, NextPosFrom(s.pos, head.pos));
+		Hide(s.elems.Last_Element, s.ctxt.Config.Zoom);
 		
+		for i in reverse 1 .. s.elems.Length - 1 loop
+			s.elems.Element(i).pos.X := s.elems.Element(i - 1).pos.X;
+			s.elems.Element(i).pos.Y := s.elems.Element(i - 1).pos.Y;
+			Display(s.elems.Element(i), s.ctxt.Config.Zoom, s.ctxt.Config.Color);X
+			if s.elems.Element(i).pos.X = head.pos.X and s.elems.Element(i).pos.Y = head.pos.Y then
+				s.ctxt.Game.StopGame(GameContext.LostSnakeEatItself);
+			end if;
+		end loop;
+		s.elems.Replace_Element(0, head);
+		Display(s.elems.Element(0), s.ctxt.Config.Zoom, s.ctxt.Config.Color);
    	end Move;
    
 	procedure Pos(s: in out Snake; p: Position) is
@@ -70,13 +81,18 @@ package body Snake is
 		return s.elems.First_Element.pos;
    	end Pos;
 	
+	procedure Pos(elem: in SnakeElem; p: Position) is
+	begin
+		elem.pos := p;
+	end Pos;
+	
 	function Pos(elem: in SnakeElem) return Position is
    	begin
 		return elem.pos;
    	end Pos;
    
 	procedure ChangeDir(s: in out Snake; dir: in Direction.Dir) is
-	p : Position;
+		p : Position;
    	begin
 		-- UP + DOWN == 0 (-1 + 1) && LEFT + RIGHT == 0 (-2 + 2)
 		if dir + s.dir /= 0 then
