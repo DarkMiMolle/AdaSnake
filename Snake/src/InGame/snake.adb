@@ -10,10 +10,21 @@ package body Snake is
 	
    	procedure Display(s: in Snake) is
    	begin
+		case s.zoom is
+		when 1 =>
+			MoveTo(s.pos.X, s.pos.Y + 1);
+			if s.color /= None then
+				SetColor(s.color);
+			end if;
+		end case;
    	end Display;
    
 	procedure Hide(s: in Snake) is
    	begin
+		case s.zoom is
+		when 1 =>
+			Print(" ", s.pos.X, s.pos.Y + 1);
+		end case;
    	end Hide;
 	
 	procedure Move(s: in out Snake) is
@@ -22,10 +33,12 @@ package body Snake is
    
 	procedure Pos(s: in out Snake; p: Position) is
    	begin
+		s.pos := p;
    	end Pos;
    
 	function Pos(s: in Snake) return Position is
    	begin
+		return s.pos;
    	end Pos;
    
 	procedure ChangeDir(s: in out Snake; dir: in Direction.Dir) is
