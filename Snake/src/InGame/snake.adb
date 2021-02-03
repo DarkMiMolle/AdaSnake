@@ -2,10 +2,36 @@ package body Snake is
 
    	function NextPosFrom(dir: in Direction.Dir; pos: Position) return Position is
 	begin
+		case dir is
+			when Up =>
+				return (pos.X - 1, pos.Y)
+			when Down =>
+				return (pos.X + 1, pos.Y)
+			when Left =>
+				return (pos.X, pos.Y - 1)
+			when Right =>
+				return (pos.X, pos.Y + 1)
+		end case;
+		--CONTRAT MDR PANIC PAS OMG
    	end NexPosFrom;
 	
    	function Creat(ctxt: in out GameContext.Context) return Snake is
+	s : Snake;
+	e: SnakeElem;
    	begin
+		for i in 0 .. 4 loop
+			e.pos := Position'(5, 3);
+			e.color := None;
+			e.zoom := ctxt.Config.Zoom;
+			
+			if i = 0 and ctxt.Config.Color then
+				e.color := Blue;
+			elif ctxt.Config.Color then
+				e.color := Red;
+			end if;
+			s.elems.append(e);
+		end loop;
+		return (ctxt, s, Down)
    	end Creat;
 	
    	procedure Display(s: in Snake) is
