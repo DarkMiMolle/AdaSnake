@@ -18,7 +18,6 @@ package Snake is
 	function Creat(ctxt: in out GameContext.Context) return Snake;
 
 	procedure Display(s: in Snake);
-	procedure Hide(s: in Snake);
 
 	procedure Move(s: in out Snake);
 	procedure Pos(s: in out Snake; p: Position);
@@ -31,9 +30,7 @@ package Snake is
 private
 
 	type SnakeElem is tagged record
-		zoom: GameContext.ZoomIndice;
 		pos: Position;
-		color: ColorName;
 	end record;
 
 	package VectorSnakeElemPkg is new Vectors(Natural, SnakeElem);
