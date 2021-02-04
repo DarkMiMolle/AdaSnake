@@ -25,7 +25,7 @@ RV SPARK_05
 RV MAX_TASK_ENTRIES=1
 RV MAX_TASKS=1+
 
-U main%b		main.adb		61414282 NE OO SU
+U main%b		main.adb		6d3dc83d NE OO SU
 W ada%s			ada.ads			ada.ali
 Z ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
@@ -71,15 +71,15 @@ D a-tags.ads		20200312110721 491b781d ada.tags%s
 D a-textio.ads		20200312110721 881db35a ada.text_io%s
 D a-unccon.ads		20200312110721 0e9b276f ada.unchecked_conversion%s
 D a-uncdea.ads		20200312110721 eff36322 ada.unchecked_deallocation%s
-D field.ads		20210203171502 221186ca field%s
-D gamecontext.ads	20210203183901 a4885cc9 gamecontext%s
+D field.ads		20210204184314 3f9be4d4 field%s
+D gamecontext.ads	20210204171928 d178e774 gamecontext%s
 D ingame.ads		20210203184758 141e5c57 ingame%s
 D interfac.ads		20200312110721 5ab55268 interfaces%s
 D i-c.ads		20200312110721 5421119b interfaces.c%s
 D i-cstrin.ads		20200312110721 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20200312110721 e53d8b8e interfaces.c_streams%s
-D main.adb		20210203185947 ff347598 main%b
-D snake.ads		20210203180552 34609e58 snake%s
+D main.adb		20210204182452 86b8449a main%b
+D snake.ads		20210204125953 c2a72d28 snake%s
 D system.ads		20200312110721 4635ec04 system%s
 D s-atacco.ads		20200312110721 4c36d12f system.address_to_access_conversions%s
 D s-atocou.ads		20200312110721 b45c2d8d system.atomic_counters%s
@@ -129,52 +129,55 @@ X 12 a-iteint.ads
 X 21 a-textio.ads
 49K13*Text_IO 471e16 31|3w10 3r27
 166U14*New_Line 31|33s25
-223U14*Get_Immediate 31|45s33 82s25
+223U14*Get_Immediate 31|45s33 83s25
 242U14*Put 31|10s17 12s17 26s41 28s41 30s41
 256V13*Get_Line{string} 31|11s45 13s45
 263U14*Put_Line 31|35s17 36s17 37s17 38s17 39s17
 X 24 field.ads
-13V18*Check{boolean} 31|113s37
-14U19*Paint 31|106s15
-15U19*DisplayPt 31|114s23
+20V18*Check{boolean} 31|116s37
+22U19*Paint 31|107s15
+23U19*DisplayPt 31|117s23
+25U19*NextPoint 31|113s31
+28U19*HidePt 31|112s31
 X 25 gamecontext.ads
-3K9*GameContext 85e16 31|1w6 7r30 14r24 18r37 40r17 49r63 53r51 56r51 68r23
-. 83r54 86r53 89r53 92r53 95r53 96r60 98r53
+3K9*GameContext 97e16 31|1w6 7r30 14r24 18r37 40r17 49r63 53r51 56r51 68r23
+. 84r54 87r53 90r53 93r53 96r53 97r60 99r53
 9U19*displayMenu 31|40s29
 11C14*Configuration<11R14>
-13R14*Context 78e19 31|7r42 18r49 68r35
-16n22*Up{16E14} 31|83r66
-16n26*Down{16E14} 31|86r65
-16n32*Left{16E14} 31|89r65
-16n38*Right{16E14} 31|92r65
-16n45*Pause{16E14} 31|98r65
-16n52*ExitGame{16E14} 31|95r65
-21n82*Stoped{21E14} 31|49r75 96r72
+13R14*Context 90e19 31|7r42 18r49 68r35
+16n22*Up{16E14} 31|84r66
+16n26*Down{16E14} 31|87r65
+16n32*Left{16E14} 31|90r65
+16n38*Right{16E14} 31|93r65
+16n45*Pause{16E14} 31|99r65
+16n52*ExitGame{16E14} 31|96r65
+21n82*Stoped{21E14} 31|49r75 97r72
 25U19*SetUpConfig 31|53s63
-29V18*KeyMapped{character} 31|83R44 86R43 89R43 92R43 95R43 98R43
-33U19*SetUpGameInfo 31|56s63
-35V18*Running{boolean} 31|81R49 112R41
-36V18*Pausing{boolean} 31|110R49
-37U19*StopGame 31|49R54 96R51
-38U19*Pause 31|99R51
-42V18*CreatContext{13R14} 31|14s36
-44V18*MaxWidth{73|8I17} 31|24s44 27s62 115s74
-45V18*MaxHeight{73|8I17} 31|23s36 25s59
-46V18*Config{11C14} 31|83s37 86s36 89s36 92s36 95s36 98s36
-47V18*Game(12R14) 31|49s49 81s44 96s46 99s46 110s44 112s36
+30V18*KeyMapped{character} 31|84R44 87R43 90R43 93R43 96R43 99R43
+34U19*SetUpGameInfo 31|56s63
+36V18*Running{boolean} 31|82R49 115R41
+37V18*Pausing{boolean} 31|111R49
+39U19*StopGame 31|49R54 97R51
+42U19*Pause 31|100R51
+48V18*CreatContext{13R14} 31|14s36
+52V18*MaxWidth{73|8I17} 31|24s44 27s62 118s74
+53V18*MaxHeight{73|8I17} 31|23s36 25s59
+54V18*Config{11C14} 31|84s37 87s36 90s36 93s36 96s36 99s36
+55V18*Game(12R14) 31|49s49 82s44 97s46 100s46 111s44 115s36
+62U19*EndGame 31|122s14
 X 26 ingame.ads
-3K9*InGame 17e11 31|2w6 69r16 69r32 70r16 70r32 77r23 84r48 87r48 90r48 93r48
+3K9*InGame 17e11 31|2w6 69r16 69r32 70r16 70r32 78r23 85r48 88r48 91r48 94r48
 6V18*CreatSnake=6:102{32|6R14} 31|70s39
 8R17*Snake{32|6R14} 31|70r23
-10K17*Direction=10:44 31|77r30 84r55 87r55 90r55 93r55
+10K17*Direction=10:44 31|78r30 85r55 88r55 91r55 94r55
 13V18*CreatField=13:102{24|6R14} 31|69s39
 15R17*Field{24|6R14} 31|69r23
 X 31 main.adb
-6U11*Main 6b11 119l5 119t9
+6U11*Main 6b11 123l5 123t9
 7V18 init{25|13R14} 7b18 15l13 15t17 68s46
 8i17 w{73|8I17} 11m17 14r49
 8i20 h{73|8I17} 13m17 14r52
-18U19 Menu 18b19 18=24 65l13 65t17 105s9
+18U19 Menu 18b19 18=24 65l13 65t17 106s9
 18r24 ctxt{25|13R14} 23r31 24r39 25r54 27r57 49m44 49r44 53m75 56m77
 19e17 c{character} 45m47 46r38
 20i17 selection{natural} 43r58 47m44 47r61 47r80 47r99 48m44 48r61 48r80
@@ -182,24 +185,25 @@ X 31 main.adb
 23i21 h<integer> 25r36 25r50
 24i29 w<integer> 27r39 27r53
 43i33 oldSelection{natural} 61r56
-68r9 Ctxt{25|13R14} 69m50 69r50 70m50 70r50 81m39 81r39 83r32 86r31 89r31
-. 92r31 95r31 96m41 96r41 98r31 99m41 99r41 105m14 105r14 110m39 110r39 112m31
-. 112r31 115r69
-69r9 field{26|15R17} 106r9 113m31 113r31 114r17
-70r9 snake{26|8R17} 101m25 101r25 113m43 113r43 115m47 115r47 116m17 116r17
-71t14 Keybording 75b19 103l13 103t23 107r9
-72Y23 Start 79b24 107s20
-76e17 c{character} 82m39 83r28 86r73 89r73 92r74 95r77 98r74
-77i17 dir{32|9I22} 84m41 87m41 90m41 93m41 101r41
+68r9 Ctxt{25|13R14} 69m50 69r50 70m50 70r50 82m39 82r39 84r32 87r31 90r31
+. 93r31 96r31 97m41 97r41 99r31 100m41 100r41 106m14 106r14 111m39 111r39
+. 115m31 115r31 118r69 122r9
+69r9 field{26|15R17} 107r9 112r25 113m25 113r25 116m31 116r31 117r17
+70r9 snake{26|8R17} 102m25 102r25 116m43 116r43 118m47 118r47 119m17 119r17
+. 122m22 122r22
+72t14 Keybording 76b19 104l13 104t23 108r9
+73Y23 Start 80b24 108s20
+77e17 c{character} 83m39 84r28 87r73 90r73 93r74 96r77 99r74
+78i17 dir{32|9I22} 85m41 88m41 91m41 94m41 102r41
 X 32 snake.ads
-9I22*Dir<integer> 31|77r40
-10i17*Up{9I22} 31|84r65
-11i17*Down{9I22} 31|87r65
-12i17*Left{9I22} 31|90r65
-13i17*Right{9I22} 31|93r65
-22U19*Move 31|116s23
-25U19*ChangeDir 31|101s31
-28V18*Score{integer} 31|115s53
+9I22*Dir<integer> 31|78r40
+10i17*Up{9I22} 31|85r65
+11i17*Down{9I22} 31|88r65
+12i17*Left{9I22} 31|91r65
+13i17*Right{9I22} 31|94r65
+22U19*Move 31|119s23
+25U19*ChangeDir 31|102s31
+28V18*Score{integer} 31|118s53 122s28
 X 52 s-stausa.ads
 203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
 268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
@@ -207,6 +211,6 @@ X 73 utility.ads
 5K9*Utility 31|4w6 4r19 8r23 73|46e12
 7I14*PosTerm<integer>
 8I17*SizeTerm{7I14} 31|8r31 11r22 13r22 61r47 62r47
-27U19*Print_at 31|61s33 62s33 115s17
+27U19*Print_at 31|61s33 62s33 118s17
 29U19*MoveTo 31|22s17
 

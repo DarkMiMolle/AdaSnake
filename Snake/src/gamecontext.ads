@@ -23,6 +23,7 @@ package GameContext is
 
 	-- Config
 	procedure SetUpConfig(ctxt: in out Context);
+	--
 
 	function Color(c: in Configuration) return Boolean;
 	function Zoom(c: in Configuration) return ZoomIndice;
@@ -33,22 +34,33 @@ package GameContext is
 	procedure SetUpGameInfo(ctxt: in out Context);
 
 	function Running(g: in GameInfo) return Boolean;
-	function Pausing(g: in GameInfo) return Boolean;
-	procedure StopGame(g: in out GameInfo; reason: GameStopedInfo);
-	procedure Pause(g: in out GameInfo);
+	function Pausing(g: in GameInfo) return Boolean
+		with 	Pre => g.Running;
+	procedure StopGame(g: in out GameInfo; reason: GameStopedInfo)
+		with 	Pre => g.Running,
+				Post => not g.Running;
+	procedure Pause(g: in out GameInfo)
+		with 	Pre => g.Running,
+				Post => g.Running and not g.Pausing;
 
 
 	-- Context
 	function CreatContext(width, height: SizeTerm) return Context;
+	-- Pre => abs(width - height) < 20
+	-- Post => return.MaxWidth == width, ..., return.Game.Running == true
 
 	function MaxWidth(ctxt: in Context) return SizeTerm;
 	function MaxHeight(ctxt: in Context) return SizeTerm;
 	function Config(ctxt: in Context) return Configuration'Class; -- to make the dispatching possible
-	function Game(ctxt: in out Context) return access GameInfo'Class; -- to make the dispatching possible
+	function Game(ctxt: in out Context) return access GameInfo'Class
+		with Post => ctxt.Game /= null; -- to make the dispatching possible
 	-- return *GameInfo, we want to be able to modify it
 	-- not: to return the access to the GameInfo, we must use: 'Access or 'Unchecked_Access
 	-- the in out allows us to return a non const access.
 
+	function G_Game(ctxt: Context) return GameInfo'Class with Ghost;
+	procedure EndGame(ctxt: in Context; score: Integer)
+		with	Pre => not ctxt.G_Game.Running;
 private
 
 	type Configuration is tagged record

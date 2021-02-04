@@ -210,7 +210,7 @@ package body GameContext is
 
     procedure Pause(g: in out GameInfo) is
     begin -- Pause
-        g.pausing := True;
+        g.pausing := not g.pausing;
     end Pause;
 
     -- Context
@@ -243,4 +243,19 @@ package body GameContext is
     begin
         return ctxt.game'Unchecked_Access;
     end Game;
+
+    function G_Game(ctxt: Context) return GameInfo'Class is
+    begin
+            return ctxt.game;
+    end;
+
+    procedure EndGame(ctxt: in Context; Score: Integer) is
+	begin -- EndGame
+		MoveTo(0, Ctxt.MaxWidth + 3);
+		SetColor(Red);
+		Print("You lost with: " & Score'Image & "pts");
+		New_Line;
+		SetColor(None);
+		Print_at("enter to leave", 2, Ctxt.MaxWidth + 3);
+	end EndGame;
 end GameContext;

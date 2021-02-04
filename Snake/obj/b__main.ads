@@ -37,7 +37,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#61414282#;
+   u00001 : constant Version_32 := 16#6d3dc83d#;
    pragma Export (C, u00001, "mainB");
    u00002 : constant Version_32 := 16#050ff2f0#;
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -333,9 +333,9 @@ package ada_main is
    pragma Export (C, u00147, "system__finalization_rootS");
    u00148 : constant Version_32 := 16#bbaa76ac#;
    pragma Export (C, u00148, "system__file_control_blockS");
-   u00149 : constant Version_32 := 16#063781a8#;
+   u00149 : constant Version_32 := 16#2b401df9#;
    pragma Export (C, u00149, "gamecontextB");
-   u00150 : constant Version_32 := 16#82ee1108#;
+   u00150 : constant Version_32 := 16#f71eaab5#;
    pragma Export (C, u00150, "gamecontextS");
    u00151 : constant Version_32 := 16#932a4690#;
    pragma Export (C, u00151, "system__concat_4B");
@@ -397,7 +397,7 @@ package ada_main is
    pragma Export (C, u00179, "system__communicationB");
    u00180 : constant Version_32 := 16#5f55b9d6#;
    pragma Export (C, u00180, "system__communicationS");
-   u00181 : constant Version_32 := 16#98661fd2#;
+   u00181 : constant Version_32 := 16#3ec59422#;
    pragma Export (C, u00181, "utilityB");
    u00182 : constant Version_32 := 16#c90ccaaa#;
    pragma Export (C, u00182, "utilityS");
@@ -431,15 +431,15 @@ package ada_main is
    pragma Export (C, u00196, "system__val_unsB");
    u00197 : constant Version_32 := 16#621b7dbc#;
    pragma Export (C, u00197, "system__val_unsS");
-   u00198 : constant Version_32 := 16#a6e7180c#;
+   u00198 : constant Version_32 := 16#385a72df#;
    pragma Export (C, u00198, "ingameS");
-   u00199 : constant Version_32 := 16#41580ff7#;
+   u00199 : constant Version_32 := 16#d81cd359#;
    pragma Export (C, u00199, "fieldB");
-   u00200 : constant Version_32 := 16#1407c085#;
+   u00200 : constant Version_32 := 16#8abaaa56#;
    pragma Export (C, u00200, "fieldS");
-   u00201 : constant Version_32 := 16#e932b18b#;
+   u00201 : constant Version_32 := 16#264ff3eb#;
    pragma Export (C, u00201, "snakeB");
-   u00202 : constant Version_32 := 16#483d4990#;
+   u00202 : constant Version_32 := 16#cb0a415d#;
    pragma Export (C, u00202, "snakeS");
    u00203 : constant Version_32 := 16#915f61e7#;
    pragma Export (C, u00203, "system__tasking__rendezvousB");

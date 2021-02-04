@@ -1,3 +1,4 @@
+--with Ada.Text_IO; use Ada.Text_IO;
 package body Snake is
 
     function SnakeColorAt(i: Integer; isColored: Boolean) return ColorName is
@@ -52,6 +53,7 @@ package body Snake is
 			if cl /= None then
 				SetColor(cl);
 			end if;
+            Print("*");
         when others => null;
 		end case;
    	end Display;

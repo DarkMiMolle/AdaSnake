@@ -1,17 +1,21 @@
 --with utility; use utility;
-
 package body Field is
+
     function CreatField(ctxt: in out GameContext.Context) return Field is
     f2D : Field2D;
     begin
 	-- raph: check les ranges mais normalement c'est ok
-        for x in 0 .. ctxt.MaxWidth loop
-            for y in 0 .. ctxt.MaxHeight loop
-            	if y = 0 or y = ctxt.MaxHeight or x = 0 or x = ctxt.MaxWidth then
-            	    f2D(x, y) := Wall;
-            	else
-            	    f2D(x, y) := Space;
-            	end if;
+        for x in Field2D'range(1) loop
+            for y in Field2D'range(2) loop
+                if y <= ctxt.MaxHeight and x <= ctxt.MaxWidth then
+                	if y = 0 or y = ctxt.MaxHeight or x = 0 or x = ctxt.MaxWidth then
+                	    f2D(x, y) := Wall;
+                	else
+                	    f2D(x, y) := Space;
+                	end if;
+                else
+                    f2D(x, y) := Empty;
+                end if;
             end loop;
         end loop;
 	    return Field'(ctxt.MaxWidth, ctxt.MaxHeight, ctxt'Unchecked_Access, Position'(2, 2), Position'(10, 20), f2D);
@@ -27,19 +31,27 @@ package body Field is
     	end case;
     end Char;
 
+    function G_Context(f: in Field) return access GameContext.Context is
+    begin
+        return f.ctxt;
+    end;
+    function G_GameRunning(f: in Field) return Boolean is
+    begin
+        return f.ctxt.Game.Running;
+    end;
     -- raph: j'ai pas trouvé nextpoint dans les declaration, dans le doute je te laisse faire ^^
     function Check(f: in out Field; s: in out Snake.Snake) return Boolean is
     begin
         if f.representation(s.Pos.X, s.Pos.Y) = Wall then
-		          f.ctxt.game.StopGame(GameContext.LostSnakeOnWall);
-		return false;
-	end if;
+		    f.ctxt.game.StopGame(GameContext.LostSnakeOnWall);
+			return false;
+		end if;
 
-	if s.Pos.X = f.ptPos.X and s.Pos.Y = f.ptPos.Y then
-		s.AddPoint;
-		f.nextPoint; -- contrat: Post => f.ptPos n'est pas sur un mur ni en dehors du terrain
-	end if;
-	return true;
+    	if s.Pos.X = f.ptPos.X and s.Pos.Y = f.ptPos.Y then
+    		s.AddPoint;
+    		f.nextPoint; -- contrat: Post => f.ptPos n'est pas sur un mur ni en dehors du terrain
+    	end if;
+    	return true;
 
     end Check;
 
@@ -59,7 +71,7 @@ package body Field is
 				if f.ctxt.Config.Color then
 					SetColor(Black);
 				end if;
-				Print("°");
+				Print("�");
 			    when Wall =>
 				if f.ctxt.Config.Color then
 					SetColor(Brown);
@@ -76,11 +88,16 @@ package body Field is
     procedure DisplayPt(f: in Field) is
     begin
     	MoveTo(f.ptPos.X, f.ptPos.Y + 1);
-	if f.ctxt.Config.Color then
-		SetColor(Green);
-	end if;
-	Print("+");
+    	if f.ctxt.Config.Color then
+    		SetColor(Green);
+    	end if;
+	       Print("+");
     end DisplayPt;
+
+    procedure HidePt(f: in Field) is
+    begin
+        Print_at(" ", f.ptPos.x, f.ptPos.y + 1);
+    end;
 
     procedure NextPoint(f: in out Field) is
     	x : PosTerm := 0;
@@ -91,7 +108,7 @@ package body Field is
     	loop
 		x := RandomPosPkg.Random(seed);
 		y := RandomPosPkg.Random(seed);
-		if f.representation(x, y) = Space then
+		if x < f.width and then y < f.height and then f.representation(x, y) = Space then
 			f.ptPos.X := x;
 			f.ptPos.Y := y;
 			return;

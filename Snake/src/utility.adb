@@ -28,8 +28,16 @@ package body Utility is
 	end MoveTo;
 
 	procedure SetColor(c: ColorName) is
+		colorInt: Integer := 0;
 	begin
-		C_set_color(int(ColorName'Pos(c)));
+		colorInt := (case c is
+			when Black => 30,
+			when Red => 31,
+			when Blue => 34,
+			when Green => 32,
+			when Brown => 33,
+			when others => 0);
+		C_set_color(int(colorInt));
 	end SetColor;
 
 	procedure EraseConsole is

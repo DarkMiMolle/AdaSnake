@@ -43,7 +43,7 @@ private
 
 	type Snake is tagged record
 		ctxt: access GameContext.Context;
-		elems: VectorSnakeElem := VectorSnakeElemPkg.to_Vector(4);
+		elems: VectorSnakeElem := VectorSnakeElemPkg.to_Vector(0);
 		dir: Direction.Dir;
 	end record;
 

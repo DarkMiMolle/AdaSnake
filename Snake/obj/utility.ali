@@ -13,7 +13,7 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U utility%b		utility.adb		98661fd2 NE OO PK
+U utility%b		utility.adb		3ec59422 NE OO PK
 W ada%s			ada.ads			ada.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W interfaces%s		interfac.ads		interfac.ali
@@ -102,7 +102,7 @@ D s-unstyp.ads		20200312110721 34867c83 system.unsigned_types%s
 D s-valuns.ads		20200312110721 10a8ed3b system.val_uns%s
 D s-wchcon.ads		20200312110721 1b7d22d2 system.wch_con%s
 D utility.ads		20210203171105 a6fe84de utility%s
-D utility.adb		20210203163208 82982589 utility%b
+D utility.adb		20210204130613 243bae79 utility%b
 X 1 ada.ads
 16K9*Ada 20e8 53|3r6 3r34 4r6 4r40 54|2r6 2r23
 X 2 a-contai.ads
@@ -130,7 +130,7 @@ X 20 interfac.ads
 X 21 i-c.ads
 18K20*C 230e17 53|1w17 1r35 2r17 54|1r17 1r43
 35I9*int<integer> 53|34r57 34r65 37r32 37r40 40r34 54|9r31 9r65 16r31 16r51
-. 27r27 27r47 32r29
+. 27r27 27r47 40r29
 X 22 i-cstrin.ads
 36K22*Strings 106e25 53|2w19 34r35 54|1w19 7r20 7r41 10r17 14r20 14r41 17r17
 47P9*chars_ptr 53|34r43 54|7r28 14r28
@@ -148,7 +148,7 @@ X 36 s-rannum.ads
 X 43 s-stalib.adb
 93U14 Break_Start 94i<c,__gnat_break_start>22
 X 53 utility.ads
-5K9*Utility 34E19 46l5 46e12 54|3b14 41l5 41t12
+5K9*Utility 34E19 46l5 46e12 54|3b14 49l5 49t12
 7I14*PosTerm<integer> 8r29 10r29 13r23 19r53 27r44 27r56 29r32 54|9r35 13r44
 . 13r56 25r32
 8I17*SizeTerm{7I14}
@@ -160,12 +160,12 @@ X 53 utility.ads
 17R17*VectorPos{6|88R9[16]}
 19K17*RandomPosPkg[13|44] 20r30
 20R17*RandomPos{13|50R9[19]}
-23E14*ColorName 23e65 30r31 54|30r31 32r33
-23n28*Blue{23E14}
-23n34*Red{23E14}
-23n39*Green{23E14}
-23n46*Brown{23E14}
-23n53*Black{23E14}
+23E14*ColorName 23e65 30r31 54|30r31
+23n28*Blue{23E14} 54|36r30
+23n34*Red{23E14} 54|35r30
+23n39*Green{23E14} 54|37r30
+23n46*Brown{23E14} 54|38r30
+23n53*Black{23E14} 54|34r30
 23n60*None{23E14}
 26U19*Print_at 26>28 26>41 54|6b19 11l13 11t21
 26a28 str{string} 54|6b28 7r60
@@ -179,9 +179,9 @@ X 53 utility.ads
 29U19*MoveTo 29>26 29>29 54|25b19 28l13 28t19
 29i26 x{7I14} 54|25b26 27r43
 29i29 y{7I14} 54|25b29 27r51
-30U19*SetColor 30>28 54|30b19 33l13 33t21
-30e28 c{23E14} 54|30b28 32r47
-31U19*EraseConsole 54|35b19 38l13 38t25
+30U19*SetColor 30>28 54|30b19 41l13 41t21
+30e28 c{23E14} 54|30b28 33r35
+31U19*EraseConsole 54|43b19 46l13 46t25
 34U19 C_print_at 34>30 34>54 34>62 54|9s17 16s17
 34p30 str{22|47P9}
 34i54 x{21|35I9}
@@ -189,10 +189,11 @@ X 53 utility.ads
 37U19 C_move_to 37>29 37>37 54|27s17
 37i29 x{21|35I9}
 37i37 y{21|35I9}
-40U19 C_set_color 40>31 54|32s17
+40U19 C_set_color 40>31 54|40s17
 40i31 c{21|35I9}
-43U19 C_erase_console 54|37s17
+43U19 C_erase_console 54|45s17
 X 54 utility.adb
 7p17 s{22|47P9} 9r28 10m30 10r30
 14p17 s{22|47P9} 16r28 17m30 17r30
+31i17 colorInt{integer} 33m17 40r33
 

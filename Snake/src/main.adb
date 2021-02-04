@@ -68,6 +68,7 @@ procedure Main is
 	Ctxt: aliased GameContext.Context := init;
 	field: InGame.Field := InGame.CreatField(ctxt);
 	snake: InGame.Snake := InGame.CreatSnake(ctxt);
+
 	task Keybording is
 		entry Start;
 	end Keybording;
@@ -108,6 +109,8 @@ begin
 	loop
 		loop
 			exit when not ctxt.Game.Pausing;
+			field.HidePt;
+			field.NextPoint;
 		end loop;
 		exit when not ctxt.Game.Running;
 		exit when not field.Check(snake);
@@ -116,4 +119,5 @@ begin
 		snake.Move;
 		delay 0.15;
 	end loop;
+	Ctxt.EndGame(snake.Score);
 end Main;
