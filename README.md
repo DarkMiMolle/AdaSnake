@@ -315,3 +315,115 @@ main {
 > **return** `Context`
 > **Post** => `CreatContext'Result.Game.Running`
 
+##InGame Pkg: Field Pkg and Snake Pkg
+
+**package.type** *Direction.Dir*
+
+> A constraint integer from -2 to 2 `with` a value `/= 0`.
+>
+> **const** Up = -1
+>
+> **const** Down = 1
+>
+> **const** Left = -2
+>
+> **const** Right = 2
+>
+> The logic is that it is not possible to make `Up + Down` nor `Left + Right` as 0 isn't a value; And in the snake it is not possible to switch from on direction to its opposite.
+
+**function** *NextPosFrom*
+
+> **args**:
+>
+> *dir* :  `in Direction.Dir`
+>
+> *pos* : `Position`
+>
+> **return** `Position`
+>
+> **Post**  `pos /= NextPosFrom'Result`
+>
+> Gives the next position regarding a direction.
+
+**type** *Snake* `tagged record`
+
+>It represent the snake.
+>
+>TODO
+>
+>function Creat(ctxt: in out GameContext.Context) return Snake
+>		with 	Pre => ctxt.Game.Running and ctxt'Unchecked_Access /= null;
+>
+>?	procedure Display(s: in Snake)
+>?		with 	Pre => s.G_GameRunning;
+>
+>?	procedure Move(s: in out Snake)
+>?		with 	Pre => s.G_GameRunning,
+>?				Post => s.Pos'Old /= s.Pos and s.Pos = NextPosFrom(s.G_Dir, s.Pos);
+>?	procedure Pos(s: in out Snake; p: Position)
+>?		with 	Post => s.Pos = p;
+>?	function Pos(s: in Snake) return Position;
+>?	procedure ChangeDir(s: in out Snake; dir: in Direction.Dir)
+>?		with 	Post => Integer(s.G_Dir) = Integer(dir);
+>
+>?	procedure AddPoint(s: in out Snake)
+>?		with 	Post => s.G_GameRunning and s.Score = s'Old.G_Score + 1;
+>?	function Score(s: in out Snake) return Integer;
+
+**type** *FieldElem*
+
+> Enumeration used to represent the kind of the field.
+
+**function** *Char*
+
+> **args**:
+>
+> *elem* : `in FieldElem`
+>
+> **return** `Character`
+>
+> To get the represented character of the elem.
+
+**type** Field `tagged record`
+
+> (`in out`) **function** *Check*
+>
+> > **args**:
+> >
+> > *s* : `in out Snake.Snake`
+> >
+> > **return** `Boolean`
+> >
+> > **Pre** `.GameRunning` - the game must be running
+> >
+> > **Post** `.Ghost.GameRunning = (.Ghost.FieldElemAt(s.Pos) = Space)
+> > 			and ((.Ghost.GameRunning and then (.Ghost.FieldElemAt(f.G_PtPos) = Space and .Ghost.PtPos /= s.Pos)) or else not .Ghost.GameRunning)` - FieldElemAt gives the FieldElem at the given pos, and PtPos gives the position of the point.
+> >
+> > Check if the game can continue or if it must stope.
+>
+> (`in`) **procedure** *Paint*
+>
+> > **Pre** `.Ghost.GameRunning`
+> >
+> > Paint the field without the point.
+>
+> (`in`) **procedure** *DisplayPt*
+>
+> > **Pre** `.Ghost.GameRunning`
+> >
+> > Display the point
+>
+> (`in out`) **procedure** *NextPoint*
+>
+> > **Pre** `.Ghost.GameRunning and (.Ghost.SnakePos = .Ghost.PtPos or (.Ghost.Context /= null and then .Ghost.Context.Game.Pausing))` - Context return the context of the current game, SnakePos return the current pos of the snake
+> >
+> > **Post** .Ghost.PtPos'Old /= .Ghost.PtPos and .Ghost.FieldElemAt(.Ghost.PtPos) = Space and .Ghost.PtPos /= .Ghost.SnakePos;
+> >
+> > Set the next point on the field and ensure it is not at the place and inside the field.
+>
+> (`in`)	**procedure** *HidePt*
+>
+> > **Pre** .Ghost.GamePausing
+> >
+> > Hide the point if we are in pause.
+
