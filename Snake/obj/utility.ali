@@ -13,7 +13,7 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U utility%b		utility.adb		3ec59422 NE OO PK
+U utility%b		utility.adb		04292cab NE OO PK
 W ada%s			ada.ads			ada.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W interfaces%s		interfac.ads		interfac.ali
@@ -102,7 +102,7 @@ D s-unstyp.ads		20200312110721 34867c83 system.unsigned_types%s
 D s-valuns.ads		20200312110721 10a8ed3b system.val_uns%s
 D s-wchcon.ads		20200312110721 1b7d22d2 system.wch_con%s
 D utility.ads		20210203171105 a6fe84de utility%s
-D utility.adb		20210204130613 243bae79 utility%b
+D utility.adb		20210205090648 1ed716f0 utility%b
 X 1 ada.ads
 16K9*Ada 20e8 53|3r6 3r34 4r6 4r40 54|2r6 2r23
 X 2 a-contai.ads
@@ -149,13 +149,13 @@ X 43 s-stalib.adb
 93U14 Break_Start 94i<c,__gnat_break_start>22
 X 53 utility.ads
 5K9*Utility 34E19 46l5 46e12 54|3b14 49l5 49t12
-7I14*PosTerm<integer> 8r29 10r29 13r23 19r53 27r44 27r56 29r32 54|9r35 13r44
-. 13r56 25r32
+7I14*PosTerm<integer> 8r29 10r29 13r23 19r53 27r44 27r56 29r32 54|9r35 9r69
+. 13r44 13r56 25r32
 8I17*SizeTerm{7I14}
-10i9*StartTerm{7I14} 54|9r53 16r39 27r31
+10i9*StartTerm{7I14} 54|9r53 9r87 16r39 16r59 27r31 27r55
 12R14*Position 14e19 16r54 26r47 54|6r47
 13i17*x{7I14} 54|9r48
-13i20*y{7I14} 54|9r74
+13i20*y{7I14} 54|9r82
 16K17*VectorPosPkg[6|73] 17r30
 17R17*VectorPos{6|88R9[16]}
 19K17*RandomPosPkg[13|44] 20r30
@@ -169,7 +169,7 @@ X 53 utility.ads
 23n60*None{23E14}
 26U19*Print_at 26>28 26>41 54|6b19 11l13 11t21
 26a28 str{string} 54|6b28 7r60
-26r41 from{12R14} 54|6b41 9r43 9r69
+26r41 from{12R14} 54|6b41 9r43 9r77
 27U19*Print_at 27>28 27>41 27>53 54|13b19 18l13 18t21
 27a28 str{string} 54|13b28 14r60
 27i41 x{7I14} 54|13b41 16r35

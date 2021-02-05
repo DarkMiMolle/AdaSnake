@@ -71,7 +71,7 @@ D a-tags.ads		20200312110721 491b781d ada.tags%s
 D a-textio.ads		20200312110721 881db35a ada.text_io%s
 D a-unccon.ads		20200312110721 0e9b276f ada.unchecked_conversion%s
 D a-uncdea.ads		20200312110721 eff36322 ada.unchecked_deallocation%s
-D field.ads		20210204184314 3f9be4d4 field%s
+D field.ads		20210205095832 a04f8dbc field%s
 D gamecontext.ads	20210204171928 d178e774 gamecontext%s
 D ingame.ads		20210203184758 141e5c57 ingame%s
 D interfac.ads		20200312110721 5ab55268 interfaces%s
@@ -134,11 +134,11 @@ X 21 a-textio.ads
 256V13*Get_Line{string} 31|11s45 13s45
 263U14*Put_Line 31|35s17 36s17 37s17 38s17 39s17
 X 24 field.ads
-20V18*Check{boolean} 31|116s37
-22U19*Paint 31|107s15
-23U19*DisplayPt 31|117s23
-25U19*NextPoint 31|113s31
-28U19*HidePt 31|112s31
+24V18*Check{boolean} 31|116s37
+29U19*Paint 31|107s15
+30U19*DisplayPt 31|117s23
+32U19*NextPoint 31|113s31
+37U19*HidePt 31|112s31
 X 25 gamecontext.ads
 3K9*GameContext 97e16 31|1w6 7r30 14r24 18r37 40r17 49r63 53r51 56r51 68r23
 . 84r54 87r53 90r53 93r53 96r53 97r60 99r53

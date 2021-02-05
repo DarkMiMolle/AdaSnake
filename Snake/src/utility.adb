@@ -6,14 +6,14 @@ package body Utility is
 	procedure Print_at(str: String; from: Position) is
 		s: Strings.chars_ptr := Strings.New_String(str);
 	begin
-		C_print_at(s, int(PosTerm(from.x) + StartTerm), int(from.y));
+		C_print_at(s, int(PosTerm(from.x) + StartTerm), int(PosTerm(from.y) + StartTerm));
 		Strings.Free(s);
 	end Print_at;
 
 	procedure Print_at(str: String; x: PosTerm; y: PosTerm) is
 		s: Strings.chars_ptr := Strings.New_String(str);
 	begin
-		C_print_at(s, int(x + StartTerm), int(y));
+		C_print_at(s, int(x + StartTerm), int(y + StartTerm));
 		Strings.Free(s);
 	end Print_at;
 
@@ -24,7 +24,7 @@ package body Utility is
 
 	procedure MoveTo(x, y: PosTerm) is
 	begin
-		C_move_to(int(StartTerm + x), int(y));
+		C_move_to(int(StartTerm + x), int(y + StartTerm));
 	end MoveTo;
 
 	procedure SetColor(c: ColorName) is

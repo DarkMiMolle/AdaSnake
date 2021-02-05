@@ -49,7 +49,7 @@ package body Snake is
    	begin
 		case zm is
 		when 1 =>
-			MoveTo(elem.pos.x, elem.pos.y + 1);
+			MoveTo(elem.pos.x, elem.pos.y);
 			if cl /= None then
 				SetColor(cl);
 			end if;
@@ -62,7 +62,7 @@ package body Snake is
    	begin
 		case zm is
 		when 1 =>
-			Print_at(" ", s.pos.X, s.pos.Y + 1);
+			Print_at(" ", s.pos.X, s.pos.Y);
         when others => null;
 		end case;
    	end Hide;

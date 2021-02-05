@@ -397,7 +397,7 @@ package ada_main is
    pragma Export (C, u00179, "system__communicationB");
    u00180 : constant Version_32 := 16#5f55b9d6#;
    pragma Export (C, u00180, "system__communicationS");
-   u00181 : constant Version_32 := 16#3ec59422#;
+   u00181 : constant Version_32 := 16#04292cab#;
    pragma Export (C, u00181, "utilityB");
    u00182 : constant Version_32 := 16#c90ccaaa#;
    pragma Export (C, u00182, "utilityS");
@@ -431,13 +431,13 @@ package ada_main is
    pragma Export (C, u00196, "system__val_unsB");
    u00197 : constant Version_32 := 16#621b7dbc#;
    pragma Export (C, u00197, "system__val_unsS");
-   u00198 : constant Version_32 := 16#385a72df#;
+   u00198 : constant Version_32 := 16#a78e1bb7#;
    pragma Export (C, u00198, "ingameS");
-   u00199 : constant Version_32 := 16#d81cd359#;
+   u00199 : constant Version_32 := 16#c4415f7c#;
    pragma Export (C, u00199, "fieldB");
-   u00200 : constant Version_32 := 16#8abaaa56#;
+   u00200 : constant Version_32 := 16#156ec33e#;
    pragma Export (C, u00200, "fieldS");
-   u00201 : constant Version_32 := 16#264ff3eb#;
+   u00201 : constant Version_32 := 16#09588c1a#;
    pragma Export (C, u00201, "snakeB");
    u00202 : constant Version_32 := 16#cb0a415d#;
    pragma Export (C, u00202, "snakeS");
