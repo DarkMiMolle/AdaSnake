@@ -1,1 +1,1 @@
-gamecontext.ads:56:34: warning: call to "Game" within its postcondition will lead to infinite recursion
+gamecontext.ads:57:34: warning: call to "Game" within its postcondition will lead to infinite recursion

@@ -13,14 +13,14 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U utility%b		utility.adb		04292cab NE OO PK
+U utility%b		utility.adb		15df0d96 NE OO PK
 W ada%s			ada.ads			ada.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W interfaces%s		interfac.ads		interfac.ali
 W interfaces.c%s	i-c.adb			i-c.ali
 W interfaces.c.strings%s  i-cstrin.adb		i-cstrin.ali
 
-U utility%s		utility.ads		c90ccaaa EE OO PF PK
+U utility%s		utility.ads		d8faeb97 EE OO PF PK
 W ada%s			ada.ads			ada.ali
 W ada.containers%s	a-contai.ads		a-contai.ali
 Z ada.containers.generic_array_sort%s
@@ -101,7 +101,7 @@ D s-traent.ads		20200312110721 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20200312110721 34867c83 system.unsigned_types%s
 D s-valuns.ads		20200312110721 10a8ed3b system.val_uns%s
 D s-wchcon.ads		20200312110721 1b7d22d2 system.wch_con%s
-D utility.ads		20210203171105 a6fe84de utility%s
+D utility.ads		20210205151206 b708a5e3 utility%s
 D utility.adb		20210205090648 1ed716f0 utility%b
 X 1 ada.ads
 16K9*Ada 20e8 53|3r6 3r34 4r6 4r40 54|2r6 2r23

@@ -20,6 +20,7 @@ package GameContext is
 
 	type GameStopedInfo is (Processing, LostSnakeEatItself, LostSnakeOnWall, Stoped);
 
+	function G_Game(ctxt: Context) return GameInfo'Class with Ghost;
 
 	-- Config
 	procedure SetUpConfig(ctxt: in out Context);
@@ -45,20 +46,19 @@ package GameContext is
 
 
 	-- Context
-	function CreatContext(width, height: SizeTerm) return Context;
-	-- Pre => abs(width - height) < 20
-	-- Post => return.MaxWidth == width, ..., return.Game.Running == true
+	function CreatContext(width, height: SizeTerm) return Context
+		with 	Pre => Float(width)/Float(height) >= 0.5 and width/height <= 2 and width >= 20 and height >= 10,
+				Post => CreatContext'Result.MaxWidth = width and CreatContext'Result.MaxHeight = height and CreatContext'Result.G_Game.Running;
 
 	function MaxWidth(ctxt: in Context) return SizeTerm;
 	function MaxHeight(ctxt: in Context) return SizeTerm;
 	function Config(ctxt: in Context) return Configuration'Class; -- to make the dispatching possible
-	function Game(ctxt: in out Context) return access GameInfo'Class
-		with Post => ctxt.Game /= null; -- to make the dispatching possible
+	function Game(ctxt: in out Context) return access GameInfo'Class -- to make the dispatching possible
+		with Post => ctxt.Game /= null;
 	-- return *GameInfo, we want to be able to modify it
-	-- not: to return the access to the GameInfo, we must use: 'Access or 'Unchecked_Access
+	-- note: to return the access to the GameInfo, we must use: 'Access or 'Unchecked_Access
 	-- the in out allows us to return a non const access.
 
-	function G_Game(ctxt: Context) return GameInfo'Class with Ghost;
 	procedure EndGame(ctxt: in Context; score: Integer)
 		with	Pre => not ctxt.G_Game.Running;
 private

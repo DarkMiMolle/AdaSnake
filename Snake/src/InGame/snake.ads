@@ -6,25 +6,38 @@ package Snake is
 	type Snake is tagged private;
 
 	package Direction is
-		type Dir is new Integer range -2 .. 2;
+		type Dir is new Integer range -2 .. 2 with Static_Predicate => Dir /= 0;
 		Up: constant Dir := -1;
 		Down: constant Dir := 1;
 		Left: constant Dir := -2;
 		Right: constant Dir := 2;
 	end Direction;
+	function NextPosFrom(dir: in Direction.Dir; pos: Position) return Position
+		with 	Post => pos /= NextPosFrom'Result;
 
-	function NextPosFrom(dir: in Direction.Dir; pos: Position) return Position;
 
-	function Creat(ctxt: in out GameContext.Context) return Snake;
+	function G_GameRunning(s: in Snake) return Boolean with Ghost;
+	function G_Dir(s: in Snake) return Direction.Dir with Ghost;
+	function G_Score(s: Snake) return Integer with Ghost;
 
-	procedure Display(s: in Snake);
 
-	procedure Move(s: in out Snake);
-	procedure Pos(s: in out Snake; p: Position);
+	function Creat(ctxt: in out GameContext.Context) return Snake
+		with 	Pre => ctxt.Game.Running and ctxt'Unchecked_Access /= null;
+
+	procedure Display(s: in Snake)
+		with 	Pre => s.G_GameRunning;
+
+	procedure Move(s: in out Snake)
+		with 	Pre => s.G_GameRunning,
+				Post => s.Pos'Old /= s.Pos and s.Pos = NextPosFrom(s.G_Dir, s.Pos);
+	procedure Pos(s: in out Snake; p: Position)
+		with 	Post => s.Pos = p;
 	function Pos(s: in Snake) return Position;
-	procedure ChangeDir(s: in out Snake; dir: in Direction.Dir);
+	procedure ChangeDir(s: in out Snake; dir: in Direction.Dir)
+		with 	Post => Integer(s.G_Dir) = Integer(dir);
 
-	procedure AddPoint(s: in out Snake);
+	procedure AddPoint(s: in out Snake)
+		with 	Post => s.G_GameRunning and s.Score = s'Old.G_Score + 1;
 	function Score(s: in out Snake) return Integer;
 
 private

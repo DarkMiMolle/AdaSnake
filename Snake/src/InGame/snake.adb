@@ -17,10 +17,8 @@ package body Snake is
 				return (pos.X, pos.Y - 1);
 			when Direction.Right =>
 				return (pos.X, pos.Y + 1);
-            when others => null; -- case 0; disable it with contrat
+            -- when others => null; -- case 0 unpossible with contrat
 		end case;
-        raise Constraint_Error;
-		--CONTRAT MDR PANIC PAS OMG
    	end NextPosFrom;
 
    	function Creat(ctxt: in out GameContext.Context) return Snake is
@@ -45,16 +43,17 @@ package body Snake is
         end loop;
    	end Display;
 
-	procedure Display(elem: in SnakeElem; zm: GameContext.ZoomIndice; cl: ColorName) is
+	procedure Display(elem: in SnakeElem; zm: GameContext.ZoomIndice; cl: ColorName)
+    is
    	begin
 		case zm is
-		when 1 =>
-			MoveTo(elem.pos.x, elem.pos.y);
-			if cl /= None then
-				SetColor(cl);
-			end if;
-            Print("*");
-        when others => null;
+    		when 1 =>
+    			MoveTo(elem.pos.x, elem.pos.y);
+    			if cl /= None then
+    				SetColor(cl);
+    			end if;
+                Print("*");
+            when others => null;
 		end case;
    	end Display;
 
@@ -138,4 +137,16 @@ package body Snake is
 		return Integer(s.elems.Length);
    	end Score;
 
+    function G_GameRunning(s: in Snake) return Boolean is
+    begin
+        return s.ctxt.Game.Running;
+    end G_GameRunning;
+	function G_Dir(s: in Snake) return Direction.Dir is
+    begin
+        return s.dir;
+    end G_Dir;
+    function G_Score(s: Snake) return Integer is
+    begin
+        return Integer(s.elems.Length);
+    end G_Score;
 end Snake;

@@ -253,9 +253,14 @@ package body GameContext is
 	begin -- EndGame
 		MoveTo(0, Ctxt.MaxWidth + 3);
 		SetColor(Red);
-		Print("You lost with: " & Score'Image & "pts");
+		Print("You lost with: " & Score'Image & " pts");
 		New_Line;
 		SetColor(None);
-		Print_at("enter to leave", 2, Ctxt.MaxWidth + 3);
+        Print_at((case ctxt.game.running is
+                    when LostSnakeOnWall => "You hited a Wall ! does it hurt ?",
+                    when LostSnakeEatItself => "You ate yourself ?! Point have better tast",
+                    when others => "Bye bye"), 2, Ctxt.MaxWidth + 3);
+
+		Print_at("enter to leave", 5, Ctxt.MaxWidth + 3);
 	end EndGame;
 end GameContext;

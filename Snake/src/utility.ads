@@ -4,7 +4,7 @@ with Ada.Containers.Vectors; use Ada.Containers;
 with Ada.Numerics.Discrete_Random; use Ada.Numerics;
 package Utility is
 
-	type PosTerm is new Integer range 0 .. 100;
+	type PosTerm is new Integer range 0 .. 60;
 	subtype SizeTerm is PosTerm;
 
 	StartTerm: constant PosTerm := 2;

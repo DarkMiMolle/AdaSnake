@@ -7,10 +7,21 @@ procedure Main is
 	function init return GameContext.Context is
 		w, h: Utility.SizeTerm;
 	begin
-		Put("Max width of the term: ");
-		w := SizeTerm(Integer'Value(Get_Line));
-		Put("Max Height of the term: ");
-		h := SizeTerm(Integer'Value(Get_Line));
+		loop
+			begin
+				Put("Max width of the term: ");
+				w := SizeTerm(Integer'Value(Get_Line));
+				Put("Max Height of the term: ");
+				h := SizeTerm(Integer'Value(Get_Line));
+				exit when Float(w)/Float(h) >= 0.5 and w/h <= 2 and w >= 20 and h >= 10;
+				EraseConsole;
+				Put_Line("width and height can't be more than 2 time bigger beween each, and must be between 10/20 (height/width) and 60 includes");
+				exception
+					when Constraint_Error =>
+						Put_Line("                         |__ * The value must be <= 60");
+			end;
+		end loop;
+		EraseConsole;
 		return GameContext.CreatContext(w, h);
 	end init;
 
