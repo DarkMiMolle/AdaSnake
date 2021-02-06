@@ -238,6 +238,7 @@ main {
 > (`in`) **function** *Pausing* 
 >
 > > **return** `Boolean`
+> >
 > > **Pre** => `.Running`
 > >
 > > Say if the game is in pause or not.
@@ -295,6 +296,7 @@ main {
 > (`in out`) **function** *Game* 
 >
 > > **return** `access GameInfo'Class` - The game information may change durring the game.
+> >
 > > **Post** => `.Game /= null`
 >
 > (`in`) **procedure** *EndGame* 
@@ -302,6 +304,7 @@ main {
 > > **args**:
 > >
 > > *score* : `Integer` - The score at the end of the game
+> >
 > > **Pre** => `not .Game.Running`
 > >
 > > Display the end of the game with the score and the reason of the lost.
@@ -313,6 +316,7 @@ main {
 > *width*, *height* : `SizeTerm` - the dimention of the max size to set for the context
 >
 > **return** `Context`
+>
 > **Post** => `CreatContext'Result.Game.Running`
 
 ##InGame Pkg: Field Pkg and Snake Pkg
@@ -349,26 +353,79 @@ main {
 
 >It represent the snake.
 >
->TODO
+>(`in`) **procedure** *Display*
 >
->function Creat(ctxt: in out GameContext.Context) return Snake
->		with 	Pre => ctxt.Game.Running and ctxt'Unchecked_Access /= null;
+>> **Pre** `.Ghost.GameRunning`
+>>
+>> Display the snake.
 >
->?	procedure Display(s: in Snake)
->?		with 	Pre => s.G_GameRunning;
+>(`in out`) **procedure** *Move*
 >
->?	procedure Move(s: in out Snake)
->?		with 	Pre => s.G_GameRunning,
->?				Post => s.Pos'Old /= s.Pos and s.Pos = NextPosFrom(s.G_Dir, s.Pos);
->?	procedure Pos(s: in out Snake; p: Position)
->?		with 	Post => s.Pos = p;
->?	function Pos(s: in Snake) return Position;
->?	procedure ChangeDir(s: in out Snake; dir: in Direction.Dir)
->?		with 	Post => Integer(s.G_Dir) = Integer(dir);
+>> **Pre** `.Ghost.GameRunning`
+>>
+>> **Post** `.Pos'Old /= .Pos and .Pos = NextPosFrom(.Ghost.Dir, .Pos)`
+>>
+>> Move the snake to the last direction set.
 >
->?	procedure AddPoint(s: in out Snake)
->?		with 	Post => s.G_GameRunning and s.Score = s'Old.G_Score + 1;
->?	function Score(s: in out Snake) return Integer;
+>
+>
+>(`in out`) 	**procedure** *Pos* 
+>
+>> **args**: 
+>>
+>> *p* : `Position`
+>>
+>> **Post** `.Pos = p`
+>>
+>> Setter of the position of the snake.
+>
+>
+>
+>(`in`)	**function** *Pos* 
+>
+>> **return** `Position`
+>>
+>> Getter of the position of the snake.
+>
+>
+>
+>(`in out`)	**procedure** *ChangeDir* 
+>
+>> **args**:
+>>
+>> *dir* : `in Direction.Dir`
+>>
+>> **Post** `Integer(.Ghost.Dir) = Integer(dir)`
+>>
+>> Change the direction of the snake.
+>
+>
+>
+>(`in out`)	**procedure** *AddPoint*
+>
+>> **Post**  `.Ghost.GameRunning and .Score = .'Old.Score + 1`
+>>
+>> Add a point to the snake, that make its length aka its score bigger.
+>
+>
+>
+>(`in`)	**function** *Score* 
+>
+>> **return** `Integer`
+>>
+>> Return the current score of the snake and its length.
+
+**function** *Creat* 
+
+> **args**:
+>
+> *ctxt* : `in out GameContext.Context` 
+>
+> **return** `Snake`
+>
+> **Pre** `ctxt.Game.Running and ctxt'Unchecked_Access /= null`
+>
+> Creat the snake according to the game context.
 
 **type** *FieldElem*
 
@@ -426,4 +483,3 @@ main {
 > > **Pre** .Ghost.GamePausing
 > >
 > > Hide the point if we are in pause.
-
