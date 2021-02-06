@@ -28,7 +28,7 @@ RV NO_IMPLICIT_LOOPS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U gamecontext%b		gamecontext.adb		dcc555e8 OO PK
+U gamecontext%b		gamecontext.adb		1d171f60 OO PK
 W ada%s			ada.ads			ada.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
 Z ada.tags%s		a-tags.adb		a-tags.ali
@@ -45,7 +45,7 @@ Z system.soft_links%s	s-soflin.adb		s-soflin.ali
 Z system.standard_library%s  s-stalib.adb	s-stalib.ali
 Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
 
-U gamecontext%s		gamecontext.ads		3e023634 EE OO PF PK
+U gamecontext%s		gamecontext.ads		ffd07cbc EE OO PF PK
 W ada%s			ada.ads			ada.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
 Z ada.streams%s		a-stream.adb		a-stream.ali
@@ -82,7 +82,7 @@ D a-tags.ads		20200312110721 491b781d ada.tags%s
 D a-textio.ads		20200312110721 881db35a ada.text_io%s
 D a-unccon.ads		20200312110721 0e9b276f ada.unchecked_conversion%s
 D a-uncdea.ads		20200312110721 eff36322 ada.unchecked_deallocation%s
-D gamecontext.ads	20210205163020 09925ac8 gamecontext%s
+D gamecontext.ads	20210206115520 c8401040 gamecontext%s
 D gamecontext.adb	20210205164808 5d4abc7a gamecontext%b
 D interfac.ads		20200312110721 5ab55268 interfaces%s
 D i-c.ads		20200312110721 5421119b interfaces.c%s
@@ -181,17 +181,17 @@ X 21 gamecontext.ads
 37V18*Running{boolean} 37>26 39s34 41s34 42s47 44s34 45s43 51R152 63R48 22|196b14
 . 199l9 199t16
 37r26 g{12R14} 22|196b22 198r16
-38V18*Pausing{boolean} 38>26 45s61 22|201b18 204l9 204t16
+38V18*Pausing{boolean} 38>26 45s57 45s70 22|201b18 204l9 204t16
 38r26 g{12R14} 39r32 22|201b26 203r16
 40U19*StopGame 40=28 40>48 22|206b19 209l9 209t17
 40r28 g{12R14} 41r32 42r45 22|206b28 208m9
 40e48 reason{21E14} 22|206b48 208r22
 43U19*Pause 43=25 22|211b15 214l9 214t14
-43r25 g{12R14} 44r32 45r41 45r59 22|211b21 213m9 213r26
+43r25 g{12R14} 44r32 45r41 45r55 45r68 22|211b21 213m9 213r26
 49V18*CreatContext{13R14} 49>31 49>38 51r41 51r82 51r125 22|217b18 225l9
 . 225t21
-49i31 width{57|8I17} 50r38 50r70 50r92 51r72 22|217b31 221r26
-49i38 height{57|8I17} 50r51 50r76 50r108 51r114 22|217b38 220r27
+49i31 width{57|8I17} 50r38 50r70 50r92 50r125 51r72 22|217b31 221r26
+49i38 height{57|8I17} 50r51 50r76 50r108 50r155 51r114 22|217b38 220r27
 53V18*MaxWidth{57|8I17} 51s61 53>27 22|227b18 230l9 230t17
 53r27 ctxt{13R14} 22|227b27 229r16
 54V18*MaxHeight{57|8I17} 51s102 54>28 22|232b18 235l9 235t18
@@ -253,8 +253,8 @@ X 46 s-stalib.adb
 X 57 utility.ads
 5K9*Utility 21|2w6 2r19 57|46e12
 7I14*PosTerm<integer> 22|118r27 119r27 178r37 180r37 189r27 190r35
-8I17*SizeTerm{7I14} 21|49r46 53r52 54r53 87r38 22|38r76 59r28 59r62 217r46
-. 227r52 232r53
+8I17*SizeTerm{7I14} 21|49r46 50r133 50r164 53r52 54r53 87r38 22|38r76 59r28
+. 59r62 217r46 227r52 232r53
 23n34*Red{23E14} 22|255r26
 23n60*None{23E14} 22|258r26
 27U19*Print_at 22|9s15 17s9 18s9 19s9 20s9 26s9 27s9 28s9 38s13 41s13 58s21

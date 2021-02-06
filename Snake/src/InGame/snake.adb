@@ -132,7 +132,7 @@ package body Snake is
 		s.elems.append(s.elems.Last_Element);
    	end AddPoint;
 
-	function Score(s: in out Snake) return Integer is
+	function Score(s: in Snake) return Integer is
    	begin
 		return Integer(s.elems.Length);
    	end Score;

@@ -42,12 +42,12 @@ package GameContext is
 				Post => not g.Running;
 	procedure Pause(g: in out GameInfo)
 		with 	Pre => g.Running,
-				Post => g.Running and not g.Pausing;
+				Post => g.Running and g.Pausing /= g.Pausing'Old;
 
 
 	-- Context
 	function CreatContext(width, height: SizeTerm) return Context
-		with 	Pre => Float(width)/Float(height) >= 0.5 and width/height <= 2 and width >= 20 and height >= 10,
+		with 	Pre => Float(width)/Float(height) >= 0.5 and width/height <= 2 and width >= 20 and height >= 10 and width < SizeTerm'Last - 3 and height < SizeTerm'Last - 3,
 				Post => CreatContext'Result.MaxWidth = width and CreatContext'Result.MaxHeight = height and CreatContext'Result.G_Game.Running;
 
 	function MaxWidth(ctxt: in Context) return SizeTerm;

@@ -13,7 +13,7 @@ procedure Main is
 				w := SizeTerm(Integer'Value(Get_Line));
 				Put("Max Height of the term: ");
 				h := SizeTerm(Integer'Value(Get_Line));
-				exit when Float(w)/Float(h) >= 0.5 and w/h <= 2 and w >= 20 and h >= 10;
+				exit when Float(w)/Float(h) >= 0.5 and w/h <= 2 and w >= 20 and h >= 10 and w < SizeTerm'Last - 3 and h < SizeTerm'Last - 3;
 				EraseConsole;
 				Put_Line("width and height can't be more than 2 time bigger beween each, and must be between 10/20 (height/width) and 60 includes");
 				exception
@@ -24,7 +24,6 @@ procedure Main is
 		EraseConsole;
 		return GameContext.CreatContext(w, h);
 	end init;
-
 
 	procedure Menu(ctxt: in out GameContext.Context) is
 		c: Character;
@@ -126,7 +125,7 @@ begin
 		exit when not ctxt.Game.Running;
 		exit when not field.Check(snake);
 		field.DisplayPt;
-		Print_at(" Current Score: " & snake.Score'Image, 2, ctxt.MaxWidth + 2);
+		Print_at("#  Current Score: " & snake.Score'Image, 2, ctxt.MaxWidth);
 		snake.Move;
 		delay 0.15;
 	end loop;

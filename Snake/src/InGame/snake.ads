@@ -38,7 +38,7 @@ package Snake is
 
 	procedure AddPoint(s: in out Snake)
 		with 	Post => s.G_GameRunning and s.Score = s'Old.G_Score + 1;
-	function Score(s: in out Snake) return Integer;
+	function Score(s: in Snake) return Integer;
 
 private
 
